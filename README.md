@@ -1,8 +1,8 @@
-# SistemiDiProduzione
+# Sistemi Di Produzione
 Repository dedicata all'esame di sistemi di produzione
 
 ## 1. FONDAMENTI SUI SISTEMI DI PRODUZIONE
-- [ ] Introduzione ai sistemi di produzione
+- [x] Introduzione ai sistemi di produzione
 - [ ] Definizioni di base di Sistema di produzione e delle sue interazioni
 - [ ] Classificazione dei sistemi di produzione
 - [ ] Matrice di Heisel, flessibilità, Grado di integrazione
@@ -83,3 +83,4 @@ Repository dedicata all'esame di sistemi di produzione
 - [ ] Politiche di manutenzione, scelta della politica manutentiva
 - [ ] MTBF, MTBM, MTTR, MTWS
 - [ ] Calcolo della disponibilità intrinseca ed operativa
+

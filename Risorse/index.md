@@ -141,12 +141,14 @@
    - Passaggio da produzione per reparti a produzione in linea (Pagina 197)
    - Curva caratteristica del prodotto (Pagina 199)
    - Produzione per lotti (Pagina 203)
-   - Le scorte (Pagina 
-
-203)
-   - I costi connessi alle scorte (Pagina 204)
-   - Il lotto ottimo di produzione (Pagina 207)
-   - Modelli di gestione delle scorte (Pagina 212)
+   - Le scorte (Pagina 203)
+   
+      - I costi connessi alle scorte (Pagina 204)
+   
+      - Il lotto ottimo di produzione (Pagina 207)
+   
+      - Modelli di gestione delle scorte (Pagina 212)
+   
 
 6. MANUTENZIONE DEI SISTEMI DI PRODUZIONE:
    - Definizione e obiettivi (Pagina 224)
