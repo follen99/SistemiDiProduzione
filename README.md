@@ -3,14 +3,14 @@ Repository dedicata all'esame di sistemi di produzione
 
 ## 1. FONDAMENTI SUI SISTEMI DI PRODUZIONE
 - [x] Introduzione ai sistemi di produzione
-- [ ] Definizioni di base di Sistema di produzione e delle sue interazioni
-- [ ] Classificazione dei sistemi di produzione
+- [x] Definizioni di base di Sistema di produzione e delle sue interazioni
+- [x] Classificazione dei sistemi di produzione
 - [ ] Matrice di Heisel, flessibilità, Grado di integrazione
 - [ ] Capacità produttiva e Throughput
 
 ## 2. STUDIO DI FATTIBILITÀ
 - [ ] Elementi per l'analisi di mercato
-- [ ] Classificazione dei costi industriali
+- [x] Classificazione dei costi industriali
 - [ ] Ratios di impianto/prodotto/costo
 - [ ] Classificazione degli investimenti
 - [ ] Analisi di Break-Even
