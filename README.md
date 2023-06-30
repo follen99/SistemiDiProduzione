@@ -11,10 +11,11 @@ Repository dedicata all'esame di sistemi di produzione
 ## 2. STUDIO DI FATTIBILITÀ
 - [ ] Elementi per l'analisi di mercato
 - [x] Classificazione dei costi industriali
-- [ ] Ratios di impianto/prodotto/costo
+- [x] Ratios di impianto/prodotto/costo
 - [ ] Classificazione degli investimenti
-- [ ] Analisi di Break-Even
-- [ ] Redditività degli investimenti industriali, capitalizzazione
+- [x] Analisi di Break-Even
+- [x] Redditività degli investimenti industriali 
+- [ ] capitalizzazione
 - [ ] Valore Finale, Net Present Value, Payback Period, Tasso Interno di Redditività
 
 ## 3. PROJECT MANAGEMENT
