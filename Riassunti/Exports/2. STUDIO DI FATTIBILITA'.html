@@ -1,0 +1,2322 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/*
+Theme Name: GitHub Night
+Theme URI: https://github.com/kinoute/typora-github-night-theme
+Authors: Yann Defretin, GitHub Team
+Author URI: https://github.com/kinoute
+Description: Typora themes that reproduces GitHub Dark Color Schemes.
+Version: 0.6.2
+Tags: dark, github, typora
+*/
+
+/* nunito-sans-regular - latin-ext_latin */
+/* nunito-sans-italic - latin-ext_latin */
+/* nunito-sans-800 - latin-ext_latin */
+/* nunito-sans-800italic - latin-ext_latin */
+/* Use a special font for code blocks just like GitHub */
+:root {
+    --text-color: #c9d1d9;
+    --bg-color: #0d1117;
+    --side-bar-bg-color: #0d1117;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #0d1117;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #0d1117;
+    --item-hover-bg-color: #161b22;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #21262d !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+.pane-group {
+    background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+    background-color: var(--bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color) !important;
+    color: #8b949e !important;
+}
+
+.dropdown-menu>li>a {
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: var(--item-hover-bg-color);
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+body {
+    height: 100%;
+    line-height: 1.6;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    background-color: var(--bg-color) !important;
+    font-family: "Nunito", sans-serif;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+content {
+    background-color: var(--bg-color) !important;
+}
+
+/*.md-end-block.md-heading.md-focus {
+  color: #afe61d;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+html {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+    color: rgb(139, 148, 158);
+}
+
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    content: '';
+    border: 0;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.20rem;
+    margin: 0 0 1.25rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px SFMono-Regular, Nunito, Consolas, Liberation Mono, Menlo, monospace;
+    line-height: 10px;
+    color: #b1bac4;
+    vertical-align: middle;
+    background-color: var(--bg-color);
+    border-bottom-color: #6e7681;
+    border: 1px solid #6e7681;
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 #6e7681;
+}
+
+/* Focus Mode */
+
+/*.on-focus-mode {
+  h1.md-end-block:not(.md-focus):not(.md-focus-container) {
+      color: yellow !important;
+    }
+}*/
+
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+table {
+    font-size: 1.25rem;
+}
+
+
+a,
+.md-def-url {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #58a6ff;
+    text-decoration: underline;
+}
+
+/* Summary */
+
+.md-toc {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.md-toc-content {
+    background-color: var(--item-hover-bg-color) !important;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*.md-toc-inner:hover {
+  text-decoration: none;
+}*/
+
+#write div.md-toc-tooltip {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    padding-left: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.md-toc:focus .md-toc-content {
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.md-delete-toc {
+    color: var(--text-color);
+}
+
+table {
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 1.25rem;
+    vertical-align: middle;
+    border-top: 1px solid #3D454D;
+}
+
+table th {
+    font-weight: 700;
+    padding: 6px 13px;
+}
+
+/*
+table thead th {
+  vertical-align: bottom;
+}*/
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody+tbody {
+    border-top: 2px solid #3D454D;
+}
+
+table tr th {
+    border: 1px solid #324560;
+    border-bottom: solid 2px #3D454D;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #3D454D;
+    margin: 0;
+    padding: 0;
+}
+
+thead {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+table tr th {
+    border: 1px solid #3D454D;
+    border-bottom: solid 2px #ccc;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+    line-height: 1.6em;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(1n) td {
+    background-color: var(--item-hover-bg-color);
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(2n) td {
+    background-color: var(--bg-color);
+}
+
+.md-fences,
+tt {
+    border-radius: 3px;
+    color: var(--item-hover-bg-color);
+    font-size: .9em;
+    padding: 0;
+}
+
+code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 1.105rem;
+    background-color: rgba(240, 246, 252, 0.15);
+    border-radius: 6px;
+    font-family: "SFMono-Regular", "Fira Code", Nunito, monospace;
+    line-height: 2;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-bottom: 6px;
+    padding-top: 8px;
+    color: var(--text-color);
+}
+
+.md-task-list-item>input {
+    background: #1a283d;
+    margin-left: -1.3em;
+}
+
+/* Using checkboxes in sublists should not get list circles inside inputs */
+.md-task-list-item {
+    list-style-type: none !important;
+}
+
+/*@media print {
+  html {
+    font-size: 13px;
+  }
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}*/
+
+.file-tree-node {
+     padding-top: 2px;
+ }
+
+#write pre.md-meta-block {
+    background-color: var(--item-hover-bg-color);
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 100%;
+    line-height: 1.45;
+    margin-top: 0 !important;
+    padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    color: inherit;
+    font-size: .9em;
+    padding: 2px 0 0 4px;
+}
+
+.md-tag {
+    color: #70bfd9;
+    opacity: 1;
+}
+
+/*
+.CodeMirror-lines {
+  padding: 4px 0;
+}
+*/
+
+.CodeMirror-line {
+    padding-left: 15px;
+}
+
+.code-tooltip {
+    background: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-radius: 6px;
+    /*margin-right: 13px!important;*/
+}
+
+/* Yellow border when focusing Code block language input */
+.code-tooltip .ty-input {
+    border: 0;
+}
+
+/* Languages suggestions Menu */
+.auto-suggest-container {
+    background-color: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+}
+
+.dropdown-menu {
+    color: #70c0d8;
+    margin-right: 5px;
+}
+
+.md-fences {
+    padding: .3em;
+    font-size: .9em;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+
+.md-fences {
+    margin: 0 0 20px;
+    font-size: 1.105em;
+    padding: 0;
+    padding-top: .4em;
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.task-list-item {
+    padding-left: 2.125rem;
+}
+
+.task-list-item input {
+    top: 7px;
+}
+
+#write ul li.task-list-item input {
+    top: 3px !important;
+}
+
+.task-list-item input:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #324560;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-left: 0;
+    margin-top: -.5rem;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+    content: "\2713";
+    font-size: 1.2125rem;
+    line-height: .9375rem;
+    /*  margin-top: -1rem;
+*/
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+
+    .task-list-item input:before,
+    .task-list-item input:checked:before,
+    .task-list-item input[checked]:before {
+        margin-top: -.2rem;
+    }
+}
+
+blockquote .md-end-block.md-heading {
+    color: inherit;
+}
+
+blockquote .md-end-block.md-heading:before {
+    content: '' !important;
+}
+
+blockquote {
+    margin: 0 0 1.11111rem;
+    padding: .5rem 1.11111rem 0 1.05556rem;
+    border-left: .25em solid #3b434b;
+}
+
+blockquote,
+blockquote p {
+    line-height: 1.6;
+    color: #8b949e;
+}
+
+.MathJax_Display {
+    font-size: 1em !important;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+
+.md-math-block {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-tooltip .md-rawblock-control {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    font-size: 1.105rem;
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-rawblock-control .CodeMirror.cm-s-inner {
+    border: 0px;
+}
+
+/* Inline Math Editing */
+.md-inline-math script {
+    color: #f9826c;
+}
+
+.md-math-tex inline-math-svg {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+    border: 0px;
+}
+
+.md-rawblock-input {
+    font-size: 1.105rem;
+}
+
+/* mathjax edit panel*/
+.md-rawblock-before {
+    border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+    font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+    transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+    transition: 0.5s;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
+
+p.mathjax-block,
+.mathjax-block {
+    padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: 5px;
+    box-shadow: none;
+}
+
+.md-image>.md-meta {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.md-image>img {
+    margin-top: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+    padding-left: 4px;
+}
+
+#typora-source {
+    color: var(--text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    color: var(--text-color);
+    background-color: #484f58;
+}
+
+.md-image-pick-file-btn,
+.md-image-input-src-btn {
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-image-btn.selected,
+.md-image-btn:hover,
+.md-image-pick-file-btn:hover,
+.md-image-input-src-btn:hover {
+    color: #f9826c !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.searchpanel-search-option-btn {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid #30363d;
+}
+
+.searchpanel-search-option-btn.active {
+    color: #ddd;
+    border: 1px solid #8b949e;
+}
+
+.searchpanel-search-option-btn:hover {
+    border: 1px solid #8b949e;
+}
+
+#md-searchpanel {
+    border-bottom: 0 solid #324560;
+    font-family: "Nunito", sans-serif;
+}
+
+#md-searchpanel input {
+    background-color: #21262d !important;
+    border: 1px solid #30363d;
+}
+
+#md-searchpanel .btn {
+    font-size: 11px;
+}
+
+#md-searchpanel .btn:hover {
+    color: #8b949e;
+}
+
+#md-notification:before {
+    top: 14px;
+}
+
+#md-notification {
+    background: var(--bg-color);
+    font-size: 14px;
+    border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+    color: #f9826c;
+}
+
+#md-notification p,
+#md-notification .btn,
+#md-notification label {
+    font-size: 14px !important;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, .12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Nunito", sans-serif;
+}
+
+.megamenu-opened header {
+    background-image: none;
+}
+
+.file-node-content .fa-caret-right,
+.file-node-content .fa-caret-down {
+    color: #f9826c;
+}
+
+.file-node-title {
+    color: var(--text-color);
+}
+
+.active-tab-files {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+    background-color: var(--item-hover-bg-color) !important;
+    border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+    border-bottom: 0;
+}
+
+.megamenu-menu-header {
+    border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+    background: var(--item-hover-bg-color) !important;
+}
+
+/*.file-node-content:hover .file-node-icon:hover, .file-node-content:hover {
+  visibility: visible;
+  background: var(--bg-color) !important;
+}*/
+
+.file-node-open-state {
+    background-color: transparent !important;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--item-hover-bg-color);
+    border-right: 0 solid #090c12;
+    font-weight: 400;
+    font-family: Nunito, sans-serif;
+}
+
+titlebar {
+    background-color: var(--bg-color);
+}
+
+/* Sidebar header on Win/Linux (Files/Plan) */
+.info-panel-tab-title {
+    /*  color: #afe61d;
+*/
+}
+
+/* Plan should get the same sidebar background color on Win/Linux */
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+    background-color: var(--item-hover-bg-color)
+}
+
+/* Bottom border on Win/Linux Sidebar */
+.info-panel-tab-border {
+    background-color: #f9826c !important;
+}
+
+.sidebar-footer-item:hover {
+    background-color: inherit;
+}
+
+.sidebar-tab.active {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.file-node-icon,
+.file-node-open-state {
+    color: #6E7681;
+}
+
+.fa-file-text-o:before {
+    color: var(--text-color) !important;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: var(--bg-color);
+    color: #efb752;
+}
+
+hr {
+    background-color: #30363d;
+    border: 0 none;
+    box-sizing: content-box;
+    height: .25em;
+    margin: 16px 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+input {
+    color: #82bed6;
+}
+
+#searchpanel-word-option-btn,
+#find-and-replace-icon-word,
+#find-and-replace-icon-case,
+.searchpanel-search-option-btn,
+.icon,
+.glyphicon .popover,
+.popover-title {
+    color: #82bed6 !important;
+    fill: #82bed6 !important;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.show-word-count #footer-word-count {
+    background: #000;
+}
+
+#recent-file-panel-action-btn {
+    background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+    border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.cm-s-inner {
+    border: 1px solid #324560;
+    border-radius: .25rem;
+    padding: .5rem .2rem;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #d2a8ff;
+}
+
+.cm-s-inner .cm-header {
+    color: #d2a8ff;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    border: 0;
+    color: #6d8a88;
+    /*    width: 5ch;
+*/
+}
+
+#typora-source .CodeMirror-gutter-wrapper {
+    font-size: 1rem;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+    border-left: solid thin #f8f8f2 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    color: #6d8a88;
+    /*    width: 4ch !important;*/
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner span.cm-comment {
+    color: #8b949e;
+    font-style: normal;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2,
+.cm-s-inner span.cm-quote {
+    color: #a5d6ff;
+}
+
+.cm-s-inner span.cm-number {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-variable-2 {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-def {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-operator {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-meta {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-tag {
+    color: #7ee787;
+}
+
+.cm-s-inner span.cm-attribute {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-defined {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-qualifier {
+    color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable-3 {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-block-start {
+    color: #ffa657;
+}
+
+.cm-s-inner span.cm-type {
+    color: #ffb86c;
+}
+
+.cm-positive {
+    color: #aff5b4;
+    background-color: #033a16;
+}
+
+.cm-negative {
+    color: #aff5b4;
+    background-color: #67060c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    color: var(--text-color) !important;
+    text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext,
+body::selection,
+body::-moz-selection {
+    background: var(--select-text-bg-color) !important;
+    background-color: var(--select-text-bg-color) !important;
+    color: var(--select-text-font-color) !important;
+    text-shadow: none;
+}
+
+#write ol,
+#write ul {
+    padding-left: 2rem;
+    font-size: 1.15rem;
+    /*  margin: .5rem 0;*/
+}
+
+/* code blocks size inside lists */
+#write li .cm-s-inner {
+    font-size: 1.105rem !important;
+}
+
+#write ol>li,
+#write ul>li {
+    /*  color: #f0b752;
+*/
+    font-size:  1.2rem !important;
+    font-weight: 700;
+}
+
+#write ul>li ul>li {
+    list-style-type: circle;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+#write ul>li ul>li ul>li {
+    list-style-type: square;
+    font-size: 1em;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    /*  color: #fff;
+*/
+    font-weight: 400;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+.typora-export li {
+    font-size: 14px !important;
+    text-align: justify !important;
+}
+
+sup.md-footnote {
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    font-weight: 700;
+    font-size: 75%;
+    font-style: normal;
+}
+
+sup.md-footnote a {
+    font-style: normal;
+}
+
+sup.md-footnote:hover {
+    background-color: rgba(56, 139, 253, 0.15);
+}
+
+sup.md-footnote .md-meta {
+    color: #58a6ff;
+}
+
+.md-def-footnote .md-def-name:before,
+.md-def-footnote .md-def-name:after {
+    content: '';
+}
+
+.md-def-footnote .md-def-name {
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+    font-size: 15px;
+}
+
+a.reversefootnote {
+    color: #f9826c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+mark {
+    background-color: #2ea44f;
+    border-radius: 6px;
+    color: white;
+    line-height: 2;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.cm-s-typora-default {
+    font-family: "Nunito", sans-serif;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: var(--text-color);
+}
+
+/*.cm-s-typora-default .cm-header1 {
+  font-size: 3.2rem;
+  margin: .6rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header2 {
+  font-size: 1.8rem;
+  margin: .7rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header3 {
+  font-size: 1.4rem;
+  margin: .5rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header4 {
+  font-size: 1.2rem;
+  margin: .2rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header5, .cm-s-typora-default .cm-header6 {
+  font-size: 1rem;
+  margin: 0;
+  width: auto;
+}*/
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #8b949e;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #a5d6ff;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+    color: #8b949e;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link,
+.cm-s-typora-default .cm-tag {
+    color: rgb(165, 214, 255);
+}
+
+.cm-s-typora-default .cm-string {
+    color: #f0b752;
+}
+
+/*.cm-s-typora-default .cm-comment {
+  background-color: #6952b6;
+  border-radius: 4px;
+  color: #fff!important;
+  line-height: 1;
+  padding: 5px 7px 2px 7px;
+}*/
+
+.cm-s-typora-default pre.cm-s-inner {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.cm-s-typora-default .cm-atom {
+    color: #8b949e;
+}
+
+.CodeMirror-activeline .cm-atom {
+    color: var(--text-color) !important;
+}
+
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: #484f58;
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+    color: #8aa1e1;
+    font-size: 0.9em !important;
+}
+
+/*.CodeMirror-activeline .CodeMirror-activeline-gutter .CodeMirror-gutter-elt {
+  color: var(--text-color) !important;
+}*/
+
+/* mega menu */
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color1);
+}
+
+.megamenu-content {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.megamenu-menu-list {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.megamenu-opened .megamenu-content {
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+    background-color: inherit;
+}
+
+/* mega menu sidebar*/
+.megamenu-menu {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+    border: 0px;
+}
+
+/* remove divider in mega menu */
+.megamenu-menu-header {}
+
+/* return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header #megamenu-menu-header-title:before {
+    color: var(--text-color);
+}
+
+.megamenu-menu-list li a:hover,
+.megamenu-menu-list li a.active {
+    background-color: var(--bg-color);
+}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover {}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {}
+
+/* long button in mega menu */
+.long-btn {
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.long-btn:hover {
+    background-color: var(--item-hover-bg-color);
+    border-color: 1px solid #8b949e;
+    color: var(--text-color) !important;
+}
+
+
+#recent-file-panel-action-btn {
+    background-color: var(--item-hover-bg-color);
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText,
+.pieTitleText {
+    fill: var(--mermaid-contrast-color);
+    font-size: 2rem;
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+}
+
+
+/* Node Overview */
+
+/* Node text */
+.grid .tick text,
+.taskText,
+text.actor,
+.node .label,
+.taskTextOutsideRight,
+.taskTextOutsideLeft,
+.labelText,
+.loopText,
+g.classGroup text {
+    color: var(--text-color);
+    fill: var(--text-color);
+    stroke: black;
+    stroke-width: .05px;
+
+    .title {
+        font-weight: 600;
+    }
+}
+
+/* Node color */
+.actor,
+.task,
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+g.classGroup rect,
+.labelBox {
+    fill: var(--mermaid-node-color);
+    stroke: var(--mermaid-node-border);
+    color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+    color: black;
+    background-color: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+    stroke-width: 1px;
+    height: 20px;
+    text-align: center;
+    /*  padding-top: 2px;*/
+}
+
+.note {
+    fill: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+    color: black;
+}
+
+.noteText>tspan {
+    fill: #333 !important;
+    color: #333 !important;
+}
+
+.taskText {
+    fill: white !important;
+}
+
+/* Class diagram specific */
+g.classGroup line {
+    stroke: var(--text-color);
+}
+
+.classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: var(--primary-color);
+    opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition,
+svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency,
+svg[id^="mermaidChart"] .relation {
+    stroke: var(--text-color);
+}
+
+.classLabel .label {
+    fill: black;
+}
+
+#extensionStart,
+#extensionEnd,
+#compositionStart,
+#compositionEnd,
+#aggregationStart,
+#aggregationEnd,
+#dependencyStart,
+#dependencyEnd {
+    fill: var(--text-color);
+    stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+    stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+    stroke: var(--text-color);
+}
+
+text.slice {
+    fill: var(--text-color);
+}
+
+.legend text {
+    fill: var(--text-color);
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+    fill: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+/* End mermaid */
+
+/* tip when hover on a button */
+#ty-tooltip {
+    background-color: black;
+    color: white;
+}
+
+/* header in setting */
+.window-header {}
+
+/* sidebar in setting */
+.sidebar {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.list-group-content {
+    margin-left: 10px !important;
+}
+
+/* sidebar button in setting menu */
+.nav-group-item {
+    color: var(--text-color) !important;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: #0d1117 !important;
+    color: var(--text-color) !important;
+}
+
+/* the indent example in setting.editor */
+div.pane>div:nth-child(4)>div:nth-child(2) .label-input-group td:last-child div {
+    border: 1px solid #30363d !important;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary);
+    margin: 10px !important;
+}
+
+/* button in setting menu */
+.ty-preferences button.btn-default {
+    border: 1px solid #30363d;
+    background-color: var(--color-border-secondary);
+    border-radius: 6px;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    /* background-color: white !important; */
+    border-color: #8b949e !important;
+    background-color: var(--color-border-secondary) !important;
+}
+
+/* return button in setting menu */
+.window-header button:hover {
+    color: var(--text-color) !important;
+}
+
+/* search input in setting menu */
+.search-input {
+    border: 1px solid #30363d;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 10px !important;
+}
+
+.search-input:hover {
+    border: 1px solid #8b949e;
+}
+
+.search-input:focus {
+    border: none !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+/* radio */
+
+input[type="radio"] {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px !important;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 0.55rem;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+}
+
+/* radio checked */
+input[type="radio"]:checked:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+
+/* remove up and down button from number type input*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+
+input {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* input hover */
+/* input:hover {
+    background-color: var(--hover-bg-color2) !important;
+} */
+/* checkbox */
+input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.11rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+}
+
+/* checkbox checked*/
+input[type="checkbox"]:checked:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+#write input[type="checkbox"]:before,
+#write input[type="checkbox"]:checked:before {
+    margin-top: -0.9rem;
+}
+
+/* checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: white;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* input number in settings for Win/Linux */
+input:not([type="range"]):not([type="color"]) {
+    border: 1px solid #30363d !important;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.pane-sm input[type="search"] {
+    border: 1px solid #30363d !important;
+}
+
+/* search in settings */
+#file-library-search-input:hover {
+    border: 1px solid #8b949e !important;
+}
+
+/* scrollbar */
+/*::-webkit-scrollbar {
+    width: 1px;
+    padding-right: 10px;
+    background-color: #FFF;
+}*/
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+    border-radius: 10px;
+    background-color: #2F333A;
+}
+
+/* Remove dashed border on filenames in the sidebar */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: 0 !important;
+}
+
+/* Handle long filenames in sidebar */
+file-node-title-name-part {
+    white-space: pre-wrap;
+}
+
+/* Custom syntax highlighting */
+div.cm-s-inner[lang="css"] .cm-qualifier {
+    color: #a5d6ff !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-tag {
+    color: #7ee787 !important;
+}
+
+div.cm-s-inner[lang="diff"] .cm-meta {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="diff"] .cm-negative {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="dockerfile"] .cm-variable-2 {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="erlang"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="fsharp"] .cm-variable {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="go"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="http"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="java"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="javascript"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="less"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="kotlin"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="markdown"] .cm-comment.cm-variable-2 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-meta {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-variable-2 {
+    color: #8b949e !important;
+}
+
+div.cm-s-inner[lang="php"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="python"] .cm-property {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-variable-3 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-variable-2 {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-error {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="ruby"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+/* Exports */
+.typora-export li {
+    font-size: 1.25rem !important;
+    padding-bottom: 10px !important;
+}
+
+.typora-export {
+    --monospace: "Fira Code";
+}
+
+.typora-export pre.md-fences {
+    font-size: 1.15rem !important;
+}
+
+.typora-export code {
+    font-size: 1.15rem !important;
+}
+
+.typora-export strong {
+    font-weight: 700 !important;
+}
+
+
+.typora-export #write a {
+    color: #58a6ff;
+}
+
+.typora-export .footnote-line {
+    color: var(--text-color);
+    font-size: 15px !important;
+}
+
+.typora-export .footnote-line a {
+    color: #58a6ff;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+@import '';
+
+:root {
+    --text-color: #adbac7;
+    --bg-color: #22272e;
+    --side-bar-bg-color: #22272e;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #22272e;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #22272e;
+    --item-hover-bg-color: #2d333b;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: #2d333b !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #373e47 !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+
+/*.cm-s-inner span.cm-comment {
+    color: #bdc4cc;
+    font-style: normal;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #bdc4cc;
+}*/
+
+blockquote {
+    border-left-width: 4px !important;
+    border-left: .25em solid #444c56 !important;
+    padding: 0 1em;
+}
+
+blockquote p {
+    color:  #768390 !important;
+}
+
+hr {
+    background-color:  #7a828e !important;
+}
+
+#write ol>li, #write ul>li {
+    font-size:  1.2rem !important;
+    font-weight: normal !important;
+}
+
+
+.ty-preferences button.btn-default {
+    background-color:  var(--item-hover-bg-color) !important;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    border-color: #8b949e !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--item-hover-bg-color) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+
+
+</style><title>2. STUDIO DI FATTIBILITA&#39;</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='cost-accounting'><span>Cost Accounting</span></h1><p><span>Il cost accounting è un elemento critico dell&#39;impresa: se non venisse calcolato correttamente, potrebbe portare ad una sottostima o sovrastima dei costi di produzione; entrambi gli scenari porterebbero ad una perdita di utile.</span></p><blockquote><p><span>Da pagina 33 del libro</span></p></blockquote><p><span>Per poter procedere dobbiamo dare uno sguardo alle </span><strong><span>categorie di costo</span></strong></p><h2 id='analisi-dei-costi-di-impianto-e-di-esercizio'><span>Analisi dei costi di impianto e di esercizio</span></h2><h3 id='costi-di-impianto'><span>Costi di impianto</span></h3><p><span>Sono tutti quei costi che si sostengono per la </span><strong><span>realizzazione</span></strong><span> delle infrastrutture (come acquisto del solo, oneri di progettazione, acquisto di macchinari, etc.)</span></p><h3 id='costi-di-esercizio'><span>Costi di esercizio</span></h3><p><span>Tutti quei costi che possono essere imputati </span><strong><span>al funzionamento dell&#39;impianto e dell&#39;attività</span></strong><span>, compresi i </span><strong><span>costi logistici</span></strong><span>, ovvero il </span><em><span>trasporto</span></em><span> del prodotto dall&#39;impianto di produzione fino ai depositi che si occupano poi della distribuzione.</span></p><p><span>Possiamo fare un esempio banale di costo di esercizio nel caso di un impianto che produce automobili: l&#39;energia elettrica che viene utilizzata all&#39;interno dell&#39;impianto (illuminazione, riscaldamento, macchinari, etc.) è un costo di esercizio.</span></p><p><span>Sono costi di esercizio anche la </span><em><span>manutenzione dei macchinari</span></em><span>, la </span><em><span>manodopera</span></em><span> e gli </span><em><span>affitti</span></em><span> dei locali.</span></p><h2 id='costi-diretti-ed-indiretti'><span>Costi diretti ed indiretti</span></h2><h3 id='costi-diretti'><span>Costi diretti</span></h3><p><span>Ovvero i costi direttamente collegati al prodotto, come le materie prime utilizzate, la manodopera diretta)</span></p><h3 id='costi-indiretti'><span>Costi indiretti</span></h3><p><span>In questa categoria rientrano le materie prime indirette, ovvero tutte quelle materie prime che non compaiono nel prodotto finale (come gli scarti); rientrano in questa categoria anche tutti i costi di esercizio.</span></p><h2 id='costi-fissi-e-variabili'><span>Costi fissi e variabili</span></h2><h3 id='costi-fissi'><span>Costi fissi</span></h3><p><span>Questi non dipendono dal volume di produzione (invarianti); un esempio potrebbe essere proprio il </span><strong><span>salario del personale</span></strong><span>, che non varia a seconda del volume. Bisogna però fare una precisazione: qualora ci fosse bisogno di aumentare il volume di produzione, inevitabilmente il costo della manodopera aumenterà per via del fatto che ci sarà un maggior numero di operai (o maggior numero di ore) a lavorare nella produzione.</span></p><h2 id='il-volume-ottimale-di-produzione'><span>Il volume ottimale di produzione</span></h2><blockquote><p><span>A partire da pagina 37</span></p></blockquote><p><span>L&#39;analisi </span><strong><span>costi-volume-profitto</span></strong><span> può essere rappresentata mediante un diagramma, che viene detto </span><strong><span>diagramma di redditività</span></strong><span> dove lungo l&#39;asse delle x indichiamo il </span><em><span>volume di produzione</span></em><span>, mentre lungo l&#39;asse delle y indichiamo i </span><em><span>costi e ricavi per periodo di tempo</span></em><span>.</span></p><p><span>Bisogna notare che i costi riportati sono relativi ai </span><strong><span>costi unitari</span></strong><span>, ovvero il prezzo del singolo prodotto (</span><em><span>!!!non sono sicuro di questa affermazione credo che il prof si sia sbagliato. i ricavi su un singolo prodotto sono costanti, mentre nel grafico che mostra lui aumentano a seconda delle vendite!!!</span></em><span>).</span></p><p><span>Inoltre, ipotizziamo che i costi variabili, totali ed i ricavi siano </span><strong><span>lineari</span></strong><span>:</span></p><p><img src="assets/266th23-202112.png" referrerpolicy="no-referrer" alt="266th23-202112"></p><p><span>I costi totali </span><strong><span>iniziano</span></strong><span> dall&#39;origine dei </span><strong><span>costi fissi</span></strong><span>: anche quando la produzione è zero c&#39;è un costo fisso da sostenere.</span></p><p><span>I ricavi, invece, iniziano da zero: anche se ho sostenuto dei costi iniziali, ma non ho venduto nulla, non avrò ricavi.</span></p><p><span>Ad un certo punto, l&#39;equazione dei costi totali </span><strong><span>intercetta</span></strong><span> quella dei ricavi: questo punto viene chiamato </span><strong><span>break even point</span></strong><span>.</span>
+<span>N.B. Il </span><strong><span>BEP</span></strong><span> è il valore sull&#39;asse delle y: costi e ricavi.</span></p><p><span>L&#39;area compresa tra i ricavi ed i costi, a sinistra del BEP, è detta </span><strong><span>area di perdita</span></strong><span>; in quest&#39;area il volume dei ricavi non copre ancora i costi sostenuti fino a quel punto.</span></p><h3 id='break-even-point'><span>Break-even-point</span></h3><p><span>Dal BEP possiamo calcolare diversi valori che ci tornano molto </span><em><span>utili</span></em><span>:</span></p><h4 id='utile'><span>Utile</span></h4><p><span>Possiamo definire </span><strong><span>l&#39;utile</span></strong><span> come i </span><em><span>ricavi</span></em><span> meno i </span><em><span>costi</span></em><span>:  </span></p><p><img src="assets/266th23-101126.png" alt="266th23-101126" style="zoom:25%;" /></p><ul><li><p><strong><span>Costi di produzione</span></strong><span>: manodopera diretta, energia, ammortamenti</span></p><ul><li><strong><span>Ammortamento</span></strong><span>: il valore (costo) sostenuto per l&#39;acquisizione di un prodotto, ripartito in </span><em><span>tutto l&#39;intervallo di vita utile</span></em><span> dell&#39;utile stesso.</span>
+<span>Ad esempio, se si acquista un autocarro a 300k€ ed ha una vita utile di 10 anni, il costo di ammortamento sarà pari al costo dell&#39;autocarro diviso il tempo di vita utile:</span>
+<img src="assets/266th23-100457.png" alt="266th23-100457" style="zoom:25%;" />
+<span>Il periodo di ammortamento </span><strong><span>è fissato dalla legge</span></strong><span>, inoltre si dice &quot;il costo dell&#39;autocarro viene </span><em><span>ammortizzato</span></em><span> (e non ammortato o simili) in tot anni.&quot;</span></li></ul></li><li><p><strong><span>Costi generali</span></strong><span>: sono i </span><em><span>costi amministrativi</span></em><span> e </span><em><span>costi commerciali</span></em><span>, come ad esempio la pubblicità e campagne promozionali.</span></p></li></ul><h4 id='utile-netto-di-esercizio'><span>Utile netto di esercizio</span></h4><p><span>In questo caso i ricavi rimangono invariati, mentre i costi vengono </span><strong><span>suddivisi</span></strong><span> in 3 categorie:</span></p><p><img src="assets/266th23-101416.png" alt="266th23-101416" style="zoom:33%;" /></p><p><span>Gli </span><strong><span>oneri finanziari</span></strong><span> sono tutti gli </span><strong><span>interessi</span></strong><span> che vengono pagati sul capitale immobilizzato (capitale sociale, capitale investito, etc.).</span></p><h4 id='utile-complessivo-di-esercizio'><span>Utile complessivo di esercizio</span></h4><p><span>Questo valore si ottiene aggiungendo ai costi anche gli </span><strong><span>oneri tributari</span></strong><span>, ovvero le </span><strong><span>tasse</span></strong><span> che vengono pagate sul capitale (denaro e beni)  posseduto.</span></p><h2 id='progetto-finanziario-1'><span>Progetto finanziario</span></h2><blockquote><p><span>Nome alternativo sul libro: </span><em><span>redditività degli investimenti industriali</span></em><span>  a partire da pagina 41</span></p></blockquote><p><span>Un </span><strong><span>investimento</span></strong><span> è l&#39;impiego di un certo ammontare di capitale in acquisizione di beni strumentali che possono sostituire quelli già presenti (ad esempio andare a sostituire un macchinario vecchio e lento con uno più veloce).</span></p><h3 id='fabbisogni-dellimpianto'><span>Fabbisogni dell&#39;impianto</span></h3><p><span>Ovvero che tipo di fabbisogno economico è necessario per coprire i costi di impianto e di esercizio; tra questi è presente il </span><strong><span>capitale circolante</span></strong><span>: questo capitale non è altro che la </span><em><span>quantità di capitale che deve essere </span><strong><span>sempre disponibile</span></strong><span> al fine di far funzionare l&#39;impianto a regime</span></em><span>:</span></p><p><span>In altre parole il capitale circolante è il denaro che (solitamente, quindi ripetutamente) viene speso per acquistare energia, materiale, combustibili, etc. al fine di far </span><em><span>funzionare</span></em><span> l&#39;impianto.</span>
+<span>Questo capitale </span><strong><span>si rinnova continuamente</span></strong><span>, ma a regime rimane più o meno costante.</span></p><h3 id='fonti'><span>Fonti</span></h3><p><span>E&#39; il denaro necessario a </span><strong><span>far partire l&#39;impianto</span></strong><span>: tra questi abbiamo il </span><em><span>capitale sociale</span></em><span>, i </span><em><span>finanziamenti</span></em><span>.</span>
+<span>In altre parole le fonti </span><strong><span>provengono dall&#39;esterno</span></strong><span>.</span></p><p><span>Se le fonti non sono almeno pari ai fabbisogni </span><strong><span>il progetto non può partire</span></strong><span>.</span>
+<span>Anche se però raggiungiamo la parità tra fonti e fabbisogni, potrebbe non bastare: abbiamo infatti una serie di fattori (ratios di impianto) che ci danno l&#39;idea di come abbiamo progettato la spesa:</span></p><h2 id='progetto-finanziario-2'><span>Progetto finanziario</span></h2><blockquote><p><span>A partire da pagina 55</span></p></blockquote><p><span>Abbiamo diversi indici:</span></p><h3 id='immobilizzazioni-materiali-ma'><span>Immobilizzazioni materiali (MA)</span></h3><p><span>Le chiamiamo </span><em><span>immobilizzazioni</span></em><span> perché abbiamo speso del denaro per acquisirli, e quindi abbiamo </span><em><span>immobilizzato</span></em><span> del denaro, che non può essere speso per acquistare altro.</span></p><p><span>Sono inoltre detti </span><em><span>materiali</span></em><span> perché i beni acquistati con questo capitale sono </span><strong><span>tangibili</span></strong><span>.</span></p><ul><li><strong><span>TE</span></strong><span> acquisto del terreno</span></li><li><strong><span>SE</span></strong><span> spesa per la sistemazione delle </span><em><span>aree di sedime</span></em><span> e più in generale per la sistemazione delle infrastrutture nei dintorni all&#39;impianto.</span></li><li><strong><span>OM</span></strong><span> opere murarie e fabbricati (contenitore dell&#39;impianto)</span></li><li><strong><span>OI</span></strong><span> opere infrastrutturali, che sono sempre collegate alla struttura dell&#39;impianto, come le strade di accesso all&#39;impianto.</span></li><li><strong><span>MP</span></strong><span> mezzi produttivi, ovvero tutto quello che serve o è di supporto alla produzione, come </span><strong><span>l&#39;impianto elettrico</span></strong><span>, </span><strong><span>climatizzazione</span></strong><span>, etc.</span></li><li><strong><span>IA</span></strong><span> antinquinamento, ovvero la parte di depurazione dell&#39;impianto</span></li><li><strong><span>AT</span></strong><span> attrezzature ed arredi (meno importante).</span></li><li><strong><span>AU</span></strong><span> automezzi (meno importante)</span></li></ul><h3 id='immobilizzazioni-immateriali-im'><span>Immobilizzazioni immateriali (IM)</span></h3><ul><li><span>Brevetti</span></li><li><strong><span>Prestazioni professionali</span></strong><span>: questo ci fa capire che, ad esempio, una software house (che quindi ha un personale più specifico e ben pagato) avrà delle immobilizzazioni immateriali maggiori rispetto ad una azienda di produzione (che ha un personale per lo più composto da operai).</span></li><li><strong><span>Oneri di impianto</span></strong><span>: come ad esempio imballi, trasporti, montaggi e collaudi.</span></li><li><strong><span>Oneri di avviamento</span></strong><span>: come ad esempio l&#39;avviamento del personale</span></li><li><span>Corsi d&#39;aggiornamento: tutto ciò che è formazione (esperienza) del personale fa parte dell&#39;immobilizzazione immateriale.</span></li><li><span>Acquisto di licenze software</span></li><li><strong><span>Blasone del marchio</span></strong><span>: ovvero l&#39;azienda che ha maggiore capacità di fare </span><em><span>presa sul mercato</span></em><span>; ad esempio il marchio Ferrari ha una capacità nettamente maggiore di </span><em><span>proporsi sul mercato</span></em><span> di una qualsiasi altra marca di automobili livello </span><em><span>consumer</span></em><span>.</span></li></ul><h2 id='i-ratios'><span>I ratios</span></h2><p><span>I ratios provengono direttamente dalle definizione di MA ed IM appena fatte; i ratios </span><strong><span>valutano l&#39;incidenza delle immobilizzazioni</span></strong><span>:</span></p><h3 id='ratios-di-struttura'><span>Ratios di struttura</span></h3><blockquote><p><span>A partire da pagina 56</span></p></blockquote><h4 id='lindice-m-immobilizzazioni-materiali'><span>L&#39;indice m (immobilizzazioni materiali)</span></h4><p><span>Questo rapporto ci dice quanto incidono le spese per </span><em><span>immobilizzazioni immateriali</span></em><span>.</span></p><p><img src="assets/266th23-114937.png" alt="266th23-114937" style="zoom:25%;" /></p><p><span>Se ad esempio dovessimo confrontare questo indice di due aziende diverse: un&#39;azienda che produce ed una che eroga servizi (ad esempio software), troveremmo che </span><strong><span>l&#39;indice delle immobilizzazioni materiali</span></strong><span> della seconda dovrebbe essere molto più basso della prima.</span></p><h4 id='lindice-s'><span>L&#39;indice s</span></h4><p><span>Questo indice mette in relazione gli indici dell&#39;acquisto del terreno, alla sistemazione del terreno e le opere infrastrutturali, rispetto agli investimenti fissi:</span></p><p><img src="assets/266th23-115521.png" alt="266th23-115521" style="zoom:25%;" /></p><p><span>Un alto valore dell&#39;indice SE ci farebbe capire che  la </span><strong><span>scelta ubicazionale</span></strong><span> non è stata fatta adeguatamente.</span></p><p><strong><span>In poche parole</span></strong><span> l&#39;indice </span><strong><span>s</span></strong><span> è l&#39;incidenza della scelta ubicazionale sugli investimenti fissi.</span></p><h4 id='lindice-p'><span>L&#39;indice p</span></h4><p><span>Ovvero la somma tra mezzi di produzione ed impianti anti inquinamento sugli investimenti fissi:</span></p><p><span> </span><img src="assets/266th23-115926.png" alt="266th23-115926" style="zoom:25%;" /></p><h4 id='lindice-f'><span>L&#39;indice f</span></h4><p><span>Questo indice ci dice </span><strong><span>l&#39;incidenza delle opere murarie sugli investimenti fissi</span></strong><span>:</span></p><p><img src="assets/266th23-120102.png" alt="266th23-120102" style="zoom:25%;" /></p><p><span>Anche in questo caso ci aspettiamo un valore dell&#39;indice f molto più basso in una società di software che in un&#39;azienda di produzione.</span></p><h4 id='lindice-a'><span>L&#39;indice a</span></h4><p><span>Questo è l&#39;indice di incidenza degli </span><strong><span>automezzi sui costi fissi</span></strong><span>:</span></p><p><span> </span><img src="assets/266th23-120633.png" alt="266th23-120633" style="zoom:25%;" /></p><h5 id='relazioni-tra-i-ratios'><span>Relazioni tra i ratios</span></h5><p><span>I ratios devono essere tra di loro:</span></p><ol><li><span>p &gt; s</span></li><li><span>p &gt; f</span></li><li><span>p &gt; a</span></li></ol><p><span>Abbiamo inoltre delle </span><strong><span>agevolazioni finanziarie se</span></strong></p><ol><li><span>p &gt; 2f</span></li></ol><p><span>Ovvero se la spesa in impianti anti inquinamento è più che doppia della spesa per le opere murarie. </span></p><h4 id='lindice-i'><span>L&#39;indice i</span></h4><p><strong><span>Grado di immaterialità</span></strong></p><p><span>E&#39; il rapporto tra gli investimenti immateriali e gli investimenti fissi, e ci dice quanto incidono le immobilizzazioni immateriali rispetto agli investimenti fissi:</span></p><p><img src="assets/266th23-132218.png" alt="266th23-132218" style="zoom:25%;" /></p><h4 id='lindicatore-c'><span>L&#39;indicatore c:</span></h4><p><strong><span>Grado di capitalizzazione</span></strong></p><p><span>Si parla di </span><strong><span>indicatori</span></strong><span> quando il valore risultante da un rapporto (ratio) ha una dimensione: mentre i </span><strong><span>gli indici</span></strong><span> sono </span><em><span>adimensionali</span></em><span> (o numeri puri), gli indicatori hanno un&#39;unità di misura, proprio perché </span><strong><span>sono un rapporto tra due grandezze diverse</span></strong><span>.</span></p><p><span>L&#39;indicatore c ci dice tutto quello che è stato speso in relazione alla </span><em><span>numerosità</span></em><span> degli addetti; più è basso, maggiore è la preponderanza del numero degli addetti rispetto agli investimenti fissi.</span></p><p><img src="assets/266th23-132721.png" alt="266th23-132721" style="zoom:25%;" /></p><h5 id='un-esempio-di-grado-di-capitalizzazione'><span>Un esempio di grado di capitalizzazione</span></h5><p><span>Prendendo come esempio un&#39;azienda in ambito </span><strong><span>tech</span></strong><span>, che ha degli investimenti fissi bassi, perché gli investimenti immateriali sono alti mentre gli investimenti materiali sono bassi; inoltre hanno un personale ben specializzato. Di conseguenza </span><strong><span>hanno un basso grado di capitalizzazione</span></strong><span>.</span></p><p><span>Le aziende di produzione hanno invece in genere un grado più alto di capitalizzazione.</span></p><p><span>Questo grado può anche essere espresso nel seguente modo:</span></p><p><img src="assets/266th23-133607.png" alt="266th23-133607" style="zoom:25%;" /></p><h4 id='lindicatore-g'><span>L&#39;indicatore g</span></h4><p><span> </span><strong><span>Grado di automazione</span></strong></p><p><span>Rapporta i mezzi di produzione rispetto al numero degli addetti </span><strong><span>direttamente impiegati nella produzione</span></strong><span>:</span></p><p><img src="assets/266th23-133147.png" alt="266th23-133147" style="zoom:25%;" /></p><p><span>Diciamo quindi che </span><em><span>un&#39;azienda ha un alto grado di automazione</span></em><span> quando ha speso molto denaro per acquistare i mezzi di produzione rispetto al numero degli operai direttamente  impiegati nell&#39;utilizzo di questi mezzi.</span></p><p><span> </span></p><h2 id='spese-flessibili-e-rigide'><span>Spese flessibili e rigide</span></h2><h3 id='spese-flessibili'><span>Spese Flessibili</span></h3><p><span>Si definiscono </span><strong><span>componenti flessibili</span></strong><span> di un impianto, quelle componenti che possono essere utilizzate anche per altri tipi di produzione dopo la </span><strong><span>riconversione</span></strong><span> dell&#39;impianto (per produrre un prodotto diverso).</span></p><h3 id='spese-rigide'><span>Spese Rigide</span></h3><p><span>Vengono chiamate spese rigide le spese per quei mezzi di produzione che </span><strong><span>non possono essere più utilizzati</span></strong><span> dopo la riconversione dell&#39;impianto; quindi queste macchine vengono utilizzate per produrre un certo prodotto e poi vengono dismesse (spesso vendute).</span></p><h3 id='ratios-delle-spese-flessibili-e-rigide'><span>Ratios delle spese flessibili e rigide</span></h3><p><span>I ratios legati alle spese in mezzi di produzione flessibili o rigide sono i seguenti:</span></p><ul><li><strong><span>Opere murarie</span><sub><span>rigide</span></sub><span> su opere murarie</span></strong>
+<img src="assets/266th23-135936.png" alt="266th23-135936" style="zoom:25%;" /></li><li><strong><span>Opere infrastrutturali</span><sub><span>rigide</span></sub><span> su opere murarie</span></strong>
+<img src="assets/266th23-140002.png" alt="266th23-140002" style="zoom:25%;" /></li><li><strong><span>Mezzi di produzione</span><sub><span>rigidi</span></sub><span> su mezzi di produzione</span></strong>
+<img src="assets/266th23-140048.png" alt="266th23-140048" style="zoom:25%;" /></li></ul><p><span>Vengono detti </span><strong><span>investimenti fissi rigidi</span></strong><span> la somma delle immobilizzazioni immateriali più le immobilizzazioni materiali</span><sub><span>rigide</span></sub><span> diviso gli investimenti fissi:</span></p><p><img src="assets/266th23-135919.png" alt="266th23-135919" style="zoom:25%;" /></p><p><span>Un esempio di </span><strong><span>immobilizazione immateriale rigida</span></strong><span> potrebbe essere uno dei seguenti:</span></p><ul><li><p><span>Corsi di aggiornamento: l&#39;azienda spende del denaro per &quot;istruire&quot; i dipendenti per la progettazione CAD, ma successivamente:</span></p><ul><li><span>L&#39;azienda smette di progettare in CAD --&gt; la spesa è rigida</span></li><li><span>Il dipendente lascia l&#39;azienda</span></li></ul></li><li><p><span>Progetti dell&#39;impianto: le spese per poter progettare l&#39;impianto sono di tipo &quot;rigido&quot; se il progetto (e quindi l&#39;impianto) può essere usato solo per un tipo di prodotto.</span></p></li></ul><p><span>Ovviamente vorremmo vedere l&#39;indice </span><strong><span>IF</span><sub><span>R</span></sub><span>/IF</span></strong><span> il più basso possibile: questo ci direbbe che gli investimenti sono </span><strong><span>flessibili</span></strong><span>.</span></p><h3 id='ratios-di-costo'><span>Ratios di Costo</span></h3><blockquote><p><span>A partire da pagina 59</span></p></blockquote><p><span>Su questi rapporti è fondato lo </span><strong><span>studio di progetto</span></strong><span> di una nuova iniziativa industriale; andando ad </span><em><span>esaminare</span></em><span> questi rapporti potremo valutare l&#39;iniziativa industriale durante il suo ciclo di vita.</span></p><p><span>Andiamo quindi a definire:</span></p><ul><li><p><strong><span>R</span></strong><span> - Ricavi netti vendite</span></p></li><li><p><strong><span>C</span><sub><span>1</span></sub></strong><span> - Costo dei prodotti venduti</span></p><ul><li><span>Consumo delle materie prime necessarie</span></li><li><span>Stipendi</span></li></ul></li><li><p><strong><span>C</span><sub><span>2</span></sub></strong><span> - Spese commerciali: ad esempio la pubblicità</span></p></li><li><p><strong><span>C</span><sub><span>3</span></sub></strong><span> - Spese generali: ovvero gli stipendi ed ammortamenti</span></p></li><li><p><strong><span>C</span><sub><span>4</span></sub></strong><span> - Oneri finanziari: ovvero il pagamento dei mutui / banche</span></p></li><li><p><strong><span>C</span><sub><span>5</span></sub></strong><span> - Oneri tributari: ovvero le tasse </span></p></li></ul><blockquote><p><span>Lezione 2 00:45&#39; manca qualche ratio</span></p></blockquote><p><span>Il primo rapporto che andiamo a vedere è quello che ci dice </span><strong><span>quanto vale l&#39;utile rispetto al fatturato</span></strong><span>:</span></p><p><img src="assets/266th23-152501.png" referrerpolicy="no-referrer" alt="266th23-152501"></p><p><span>Quanto più riusciamo ad abbassare i </span><em><span>costi totali CT</span></em><span>, maggiore diventa il rapporto. Inoltre, qualora i costi totali tendessero a zero, avremmo che il rapporto (e quindi l&#39;utile netto) vale 1; questo ovviamente non è realizzabile in realtà, perché sull&#39;utile netto deve essere pagata una parte di oneri (tasse).</span></p><p>&nbsp;</p><p><img src="assets/266th23-152950.png" referrerpolicy="no-referrer" alt="266th23-152950"></p><p><span>Con questo calcolo andiamo a vedere se </span><strong><span>l&#39;utile rispetto al fatturato</span></strong><span> (a fronte di </span><em><span>ciascun</span></em><span> costo); questo ci serve per capire </span><em><span>qual è quella categoria di costo che incide troppo</span></em><span>.</span></p><p>&nbsp;</p><p><span>E&#39; detto </span><strong><span>costo interno per addetto</span></strong><span> il rapporto:</span></p><p><img src="assets/266th23-153126.png" alt="266th23-153126" style="zoom:25%;" /></p><p>&nbsp;</p><p><span>E&#39; detto rapporto di </span><strong><span>ricavi rispetto agli investimenti fissi</span></strong><span>:</span>
+<img src="assets/266th23-153311.png" alt="266th23-153311" style="zoom:25%;" /></p><p><span>Ci permette di dire, rispetto al denaro ricavato dalla vendita della produzione, quanto i ricavi possono rendere quello che gli investimenti fissi hanno richiesto inizialmente.</span></p><p>&nbsp;</p><p><span>Possiamo definire i rapporti di costi interni e costi esterni nel seguente modo:</span><img src="assets/266th23-153731.png" alt="266th23-153731" style="zoom:25%;" /></p><p><span>Possiamo definire I</span><sub><span>n</span></sub><span> </span><strong><span>utile netto</span></strong><span> che viene calcolato come </span><em><span>fatturato - oneri tributari</span></em><span>; usiamo I</span><sub><span>n</span></sub><span> per calcolare i rapporti:</span></p><ul><li><strong><span>Indice di redditività degli investimenti fissi</span></strong><span>, ovvero quanto gli investimenti fissi stanno rendendo all&#39;azienda</span><img src="assets/266th23-154101.png" referrerpolicy="no-referrer" alt="266th23-154101"></li><li><strong><span>Indice di redditività del capitale</span></strong>
+<img src="assets/266th23-154125.png" referrerpolicy="no-referrer" alt="266th23-154125"></li></ul><p>&nbsp;</p><h1 id='analisi-di-convenienza-per-gli-investimenti'><span>Analisi di convenienza per gli investimenti</span></h1><p><span>Per fare in modo che gli investimenti abbiamo un elevato </span><strong><span>indice di redditività</span></strong><span> (sia del capitale che degli investimenti fissi) dobbiamo </span><strong><span>classificare gli investimenti</span></strong><span>:</span></p><h2 id='classificazione-degli-investimenti---flusso-di-cassa'><span>Classificazione degli investimenti - flusso di cassa</span></h2><p><span>Gli investimenti si classificano in funzione di come il capitale investito </span><em><span>entra ed esce</span></em><span> in relazione al tipo di servizio che è stato acquisito.</span></p><h3 id='point-input---point-output'><span>Point input - Point Output</span></h3><p><span>Abbiamo (ad intervalli) un flusso di denaro in ingresso di tipo </span><em><span>one shot</span></em><span> (ovvero in un singolo &quot;colpo&quot;) ed un corrispondente flusso di denaro in uscita. Questo &quot;comportamento&quot; è tipico dei finanziamenti statali o per alcune spese che si affrontano per alcuni tipi di </span><em><span>immobilizzazioni immateriali</span></em><span> come le spese per le </span><strong><span>consulenze</span></strong><span>.</span></p><p><span>In questo caso </span><strong><span>attendiamo che il denaro entri</span></strong><span> (ad esempio un finanziamento), successivamente </span><em><span>rendicontiamo allo stato</span></em><span> (giustifichiamo) la maniera in cui il denaro è stato speso.</span></p><h3 id='point-input---continuous-output'><span>Point input - Continuous Output</span></h3><p><span>Acquisiamo il bene, e poi </span><strong><span>periodicamente</span></strong><span> versiamo delle quote; ad esempio quando compriamo un&#39;automobile, questa ci &quot;arriva&quot; in un&#39;unica soluzione. periodicamente, poi, paghiamo delle rate in maniera </span><em><span>continuata</span></em><span>.</span></p><h3 id='continuous-input---point-output'><span>Continuous input - Point output</span></h3><p><span>In questo caso concediamo, ad esempio, in leasing una macchina che ci genera un input continuo, e compriamo un macchinario che genera un point output.</span>
+<span>Questo tipo di comportamento è tipico del </span><strong><span>settore dei servizi</span></strong><span>, come ad esempio aziende che offrono automobili in leasing.</span></p><h3 id='continuous-input---continuous-output'><span>Continuous input - Continuous output</span></h3><p><span>Ad esempio acquisto delle attrezzature pagandole a rate/leasing, di conseguenza c&#39;è un flusso in uscita costante. C&#39;è anche però un input continuo che deriva dalla vendita di prodotti/servizi.</span></p><p><span>Questo è il </span><strong><span>tipico investimento di tipo produttivo</span></strong><span>.</span></p><h2 id='classificazione-degli-investimenti---funzione-dellinvestimento'><span>Classificazione degli investimenti - funzione dell&#39;investimento</span></h2><p><span>Possiamo classificare gli investimenti anche a seconda del contesto in cui l&#39;investimento viene effettuato:</span></p><h3 id='investimenti-indipendenti'><span>Investimenti Indipendenti</span></h3><p><span>Gli investimenti indipendenti sono quel tipo di investimento dove si va ad acquistare un bene (o servizio) per uno scopo, potrà essere usato anche per altri scopi:</span>
+<span>Ad esempio acquistando un computer, questo può svolgere un gran numero di funzioni.</span></p><h3 id='investimenti-dipendenti'><span>Investimenti dipendenti</span></h3><p><span>Questi acquisti sono detti </span><em><span>dipendenti</span></em><span> proprio perché </span><strong><span>dipendono da un investimento precedente</span></strong><span> che ne ha generato la necessità.</span>
+<span>Ad esempio se acquisto delle attrezzature informatiche, come il lettore di un codice a barre, devo anche acquistare un software che processa i dati letti dall&#39;hardware.</span></p><p><span>Questi si dividono a loro volta in:</span></p><ul><li><strong><span>Interconnessi</span></strong><span>: associa al fatto di essere </span><em><span>concatenato</span></em><span>, anche il fatto di essere rigido, ovvero </span><strong><span>non posso utilizzarlo per uno scopo terzo</span></strong><span>. Un esempio è sicuramente un&#39;optional di un&#39;automobile: questo, una volta comprato, non potrà essere usato per un altro scopo.</span></li><li><strong><span>Concatenati</span></strong><span>: è un qualcosa da comprare </span><strong><span>necessariamente</span></strong><span>: se compro un computer devo comprare anche una licenza di sistema operativo.</span></li><li><strong><span>Sussidiari</span></strong><span>: è la categoria che impatta meno; è un investimento </span><strong><span>aggiuntivo</span></strong><span> (non necessario) che si acquista per far funzionare </span><em><span>meglio</span></em><span> ciò che già si ha. Ad esempio un investimento dipendente sussidiario, </span><strong><span>dopo</span></strong><span> aver acquistato un computer, è quello di un software di scrittura.</span></li></ul><h2 id='strumenti-per-la-valutazione-degli-investimenti'><span>Strumenti per la valutazione degli investimenti</span></h2><h3 id='periodo-di-recupero'><span>Periodo di recupero</span></h3><p><span>Il periodo di recupero di un investimento è </span><strong><span>l&#39;arco temporale necessario per il recupero della spesa iniziale</span></strong><span>.</span></p><p><span>Possiamo </span><em><span>valutare</span></em><span> l&#39;arco temporale usando un </span><strong><span>sistema di assi</span></strong><span> in cui pongo sugli assi:</span></p><ul><li><span>Asse y: flusso di cassa (continuous input/output)</span></li><li><span>Asse x: tempo</span></li></ul><p><img src="assets/266th23-161716.png" alt="266th23-161716" style="zoom:33%;" /></p><p><span>Notiamo che inizialmente abbiamo un </span><strong><span>flusso di cassa negativo</span></strong><span>, questo perché abbiamo una </span><strong><span>somma algebrica</span></strong><span> tra output ed input, e siccome inizialmente l&#39;input è zero, il flusso sarà negativo.</span></p><p><span>Quando il grafico </span><strong><span>intercetta l&#39;asse del tempo</span></strong><span> (non T0!), quello verrà detto </span><strong><span>tempo di recupero</span></strong><span>.</span></p></div></div>
+</body>
+</html>
