@@ -28,8 +28,8 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] La tecnica PERT
 - [x] Costruzione del reticolo
 - [x] Calcolo dei dati
-- [ ] Ottimizzazione tempo-costo
-- [ ] Critical Path Method
+- [x] Ottimizzazione tempo-costo
+- [x] Critical Path Method
 
 ## 4. FATTIBILITÀ TECNOLOGICA E ASPETTI PROGETTUALI
 - [ ] Disposizione planimetrica delle risorse di stabilimento
