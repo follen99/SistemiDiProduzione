@@ -1,6 +1,10 @@
 # Sistemi Di Produzione
 Repository dedicata all'esame di sistemi di produzione
 
+## Nota dello Studente
+
+Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Studente**, dove esprimo un concetto in parole davvero molto semplici; queste definizioni potrebbero essere errate e non confermate, quindi devono essere considerate poco attendibili.
+
 ## 1. FONDAMENTI SUI SISTEMI DI PRODUZIONE
 - [x] Introduzione ai sistemi di produzione
 - [x] Definizioni di base di Sistema di produzione e delle sue interazioni
@@ -15,15 +19,15 @@ Repository dedicata all'esame di sistemi di produzione
 - [ ] Classificazione degli investimenti
 - [x] Analisi di Break-Even
 - [x] Redditività degli investimenti industriali 
-- [ ] capitalizzazione
-- [ ] Valore Finale, Net Present Value, Payback Period, Tasso Interno di Redditività
+- [x] capitalizzazione
+- [x] Valore Finale, Net Present Value, Payback Period, Tasso Interno di Redditività
 
 ## 3. PROJECT MANAGEMENT
-- [ ] Introduzione al Project Management
-- [ ] Strumenti di base per il PM
-- [ ] La tecnica PERT
-- [ ] Costruzione del reticolo
-- [ ] Calcolo dei dati
+- [x] Introduzione al Project Management
+- [x] Strumenti di base per il PM
+- [x] La tecnica PERT
+- [x] Costruzione del reticolo
+- [x] Calcolo dei dati
 - [ ] Ottimizzazione tempo-costo
 - [ ] Critical Path Method
 
