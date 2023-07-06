@@ -32,12 +32,12 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] Critical Path Method
 
 ## 4. FATTIBILITÀ TECNOLOGICA E ASPETTI PROGETTUALI
-- [ ] Disposizione planimetrica delle risorse di stabilimento
-- [ ] Il layout di impianto
-- [ ] Tipologie di layout: posizione fissa, per processo e per prodotto
+- [x] Disposizione planimetrica delle risorse di stabilimento
+- [x] Il layout di impianto
+- [x] Tipologie di layout: posizione fissa, per processo e per prodotto
 - [ ] Grafico del flusso
 - [ ] Diagramma C-V
-- [ ] Diagramma P-Q
+- [x] Diagramma P-Q
 - [ ] Il layout Group Technology
 - [ ] Algoritmi per la formazione delle celle di macchine
 
