@@ -36,10 +36,10 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] Il layout di impianto
 - [x] Tipologie di layout: posizione fissa, per processo e per prodotto
 - [ ] Grafico del flusso
-- [ ] Diagramma C-V
+- [x] Diagramma C-V
 - [x] Diagramma P-Q
-- [ ] Il layout Group Technology
-- [ ] Algoritmi per la formazione delle celle di macchine
+- [x] Il layout Group Technology
+- [x] Algoritmi per la formazione delle celle di macchine
 
 ## 5. DIMENSIONAMENTO DI UN SISTEMA DI PRODUZIONE
 - [ ] Capacità produttiva necessaria e disponibile
