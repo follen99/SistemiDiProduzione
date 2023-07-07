@@ -1,6 +1,11 @@
 # Sistemi Di Produzione
 Repository dedicata all'esame di sistemi di produzione
 
+**Esercitazioni**:
+
+1. Layout
+2. 
+
 ## Nota dello Studente
 
 Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Studente**, dove esprimo un concetto in parole davvero molto semplici; queste definizioni potrebbero essere errate e non confermate, quindi devono essere considerate poco attendibili.
