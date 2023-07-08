@@ -47,13 +47,13 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] Algoritmi per la formazione delle celle di macchine
 
 ## 5. DIMENSIONAMENTO DI UN SISTEMA DI PRODUZIONE
-- [ ] Capacità produttiva necessaria e disponibile
-- [ ] Aleatorietà e stagionalità della domanda
-- [ ] Definizione di rendimento di un Sistema di Produzione
-- [ ] Rendimento di efficienza, rendimento manutentivo e rendimento di qualità
-- [ ] Calcolo del numero di macchine
-- [ ] Casi layout in linea e reparti
-- [ ] Arrotondamento
+- [x] Capacità produttiva necessaria e disponibile
+- [x] Aleatorietà e stagionalità della domanda
+- [x] Definizione di rendimento di un Sistema di Produzione
+- [x] Rendimento di efficienza, rendimento manutentivo e rendimento di qualità
+- [x] Calcolo del numero di macchine
+- [x] Casi layout in linea e reparti
+- [x] Arrotondamento
 - [ ] Il grado di saturazione e confronto con il rendimento
 
 ## 6. GESTIONE DEGLI APPROVVIGIONAMENTI E DEI MATERIALI
