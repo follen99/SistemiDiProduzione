@@ -74,12 +74,13 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [ ] Capacity Requirement Planning
 
 ## 7. STUDIO DEI METODI, ANALISI DEI TEMPI DI LAVORO E CONDUZIONE MULTIPLA
-- [ ] Tempi e metodi di lavoro, metodo induttivo e metodo deduttivo
-- [ ] Analisi dei micromovimenti ed equazione di normalizzazione
-- [ ] Metodo deduttivo, tecnica di misurazione del lavoro
-- [ ] Definizione di saturazione uomo e saturazione macchina
-- [ ] Diagramma dell'abbinamento
-- [ ] Calcolo del numero di macchine abbinabili ad un operatore, problema dell'arrotondamento
+- [x] Tempi e metodi di lavoro, metodo induttivo e metodo deduttivo
+- [x] Analisi dei micromovimenti ed equazione di normalizzazione
+- [x] Metodo deduttivo, tecnica di misurazione del lavoro
+- [x] Definizione di saturazione uomo e saturazione macchina
+- [x] Diagramma dell'abbinamento
+- [x] Calcolo del numero di macchine abbinabili ad un operatore
+- [ ] problema dell'arrotondamento
 
 ## 8. MANUTENZIONE
 - [ ] Definizione e stati della manutenzione
