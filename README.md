@@ -3,8 +3,10 @@ Repository dedicata all'esame di sistemi di produzione
 
 **Esercitazioni**:
 
-1. Layout
-2. 
+1. **Layout**
+2. **Project management**
+3. MRP
+4. Manutenzione
 
 ## Nota dello Studente
 
@@ -61,10 +63,10 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [ ] La classificazione dei materiali
 - [ ] Analisi di Pareto (ABC) ed utilizzo per la gestione del magazzino
 - [ ] Tipologie di magazzini industriali e Politiche di gestione dei magazzini
-- [ ] Produzione per lotti, definizione di base
-- [ ] Il problema del "Set-up", incidenza sui tempi di produzione
-- [ ] La produzione e l'approvvigionamento per Lotti ed il grafico "de Rossi"
-- [ ] Calcolo del lotto ottimo di approvvigionamento e produzione
+- [x] Produzione per lotti, definizione di base
+- [x] Il problema del "Set-up", incidenza sui tempi di produzione
+- [x] La produzione e l'approvvigionamento per Lotti ed il grafico "de Rossi"
+- [x] Calcolo del lotto ottimo di approvvigionamento e produzione
 - [ ] Definizione e calcolo della scorta di sicurezza
 - [ ] Produzione in Push/Pull
 - [ ] Distinta base di progetto/produzione
@@ -80,7 +82,7 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] Definizione di saturazione uomo e saturazione macchina
 - [x] Diagramma dell'abbinamento
 - [x] Calcolo del numero di macchine abbinabili ad un operatore
-- [ ] problema dell'arrotondamento
+- [x] problema dell'arrotondamento
 
 ## 8. MANUTENZIONE
 - [ ] Definizione e stati della manutenzione
