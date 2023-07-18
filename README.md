@@ -67,10 +67,10 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] Il problema del "Set-up", incidenza sui tempi di produzione
 - [x] La produzione e l'approvvigionamento per Lotti ed il grafico "de Rossi"
 - [x] Calcolo del lotto ottimo di approvvigionamento e produzione
-- [ ] Definizione e calcolo della scorta di sicurezza
+- [x] Definizione e calcolo della scorta di sicurezza
 - [ ] Produzione in Push/Pull
 - [ ] Distinta base di progetto/produzione
-- [ ] Produzione in Push: il Material Requirement Planning
+- [x] Produzione in Push: il Material Requirement Planning
 - [ ] Algoritmo MRP, dati di input, dati di output, Master Production Schedule
 - [ ] Piano degli approvvigionamenti e di produzione
 - [ ] Capacity Requirement Planning
