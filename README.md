@@ -68,10 +68,10 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] La produzione e l'approvvigionamento per Lotti ed il grafico "de Rossi"
 - [x] Calcolo del lotto ottimo di approvvigionamento e produzione
 - [x] Definizione e calcolo della scorta di sicurezza
-- [ ] Produzione in Push/Pull
+- [x] Produzione in Push/Pull
 - [ ] Distinta base di progetto/produzione
 - [x] Produzione in Push: il Material Requirement Planning
-- [ ] Algoritmo MRP, dati di input, dati di output, Master Production Schedule
+- [x] Algoritmo MRP, dati di input, dati di output, Master Production Schedule
 - [ ] Piano degli approvvigionamenti e di produzione
 - [ ] Capacity Requirement Planning
 
@@ -85,15 +85,15 @@ Nei vari riassunti potrebbe comparire la dicitura  **N.d.S** - **Nota dello Stud
 - [x] problema dell'arrotondamento
 
 ## 8. MANUTENZIONE
-- [ ] Definizione e stati della manutenzione
+- [x] Definizione e stati della manutenzione
 - [ ] Teoria dell'affidabilità
-- [ ] Densità di probabilità di guasto f(t)
-- [ ] Affidabilità R(t) e Probabilità di Guasto F(t)
-- [ ] Definizione di tasso di guasto, funzione lambda(t)
-- [ ] Tasso di guasto condizionato/incondizionato
+- [x] Densità di probabilità di guasto f(t)
+- [x] Affidabilità R(t) e Probabilità di Guasto F(t)
+- [x] Definizione di tasso di guasto, funzione lambda(t)
+- [x] Tasso di guasto condizionato/incondizionato
 - [ ] Teorema di Bayes, relazione tra tasso di guasto, affidabilità e densità di probabilità di guasto
-- [ ] Curva del tasso di guasto, costruzione della curva
-- [ ] Politiche di manutenzione, scelta della politica manutentiva
-- [ ] MTBF, MTBM, MTTR, MTWS
+- [x] Curva del tasso di guasto, costruzione della curva
+- [x] Politiche di manutenzione, scelta della politica manutentiva
+- [x] MTBF, MTBM, MTTR, MTWS
 - [ ] Calcolo della disponibilità intrinseca ed operativa
 
