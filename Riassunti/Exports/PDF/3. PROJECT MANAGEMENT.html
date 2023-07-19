@@ -1,0 +1,2399 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+.CodeMirror { height: auto; }
+.CodeMirror.cm-s-inner { background: inherit; }
+.CodeMirror-scroll { overflow: auto hidden; z-index: 3; }
+.CodeMirror-gutter-filler, .CodeMirror-scrollbar-filler { background-color: rgb(255, 255, 255); }
+.CodeMirror-gutters { border-right: 1px solid rgb(221, 221, 221); background: inherit; white-space: nowrap; }
+.CodeMirror-linenumber { padding: 0px 3px 0px 5px; text-align: right; color: rgb(153, 153, 153); }
+.cm-s-inner .cm-keyword { color: rgb(119, 0, 136); }
+.cm-s-inner .cm-atom, .cm-s-inner.cm-atom { color: rgb(34, 17, 153); }
+.cm-s-inner .cm-number { color: rgb(17, 102, 68); }
+.cm-s-inner .cm-def { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-variable { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-variable-2 { color: rgb(0, 85, 170); }
+.cm-s-inner .cm-variable-3 { color: rgb(0, 136, 85); }
+.cm-s-inner .cm-string { color: rgb(170, 17, 17); }
+.cm-s-inner .cm-property { color: rgb(0, 0, 0); }
+.cm-s-inner .cm-operator { color: rgb(152, 26, 26); }
+.cm-s-inner .cm-comment, .cm-s-inner.cm-comment { color: rgb(170, 85, 0); }
+.cm-s-inner .cm-string-2 { color: rgb(255, 85, 0); }
+.cm-s-inner .cm-meta { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-qualifier { color: rgb(85, 85, 85); }
+.cm-s-inner .cm-builtin { color: rgb(51, 0, 170); }
+.cm-s-inner .cm-bracket { color: rgb(153, 153, 119); }
+.cm-s-inner .cm-tag { color: rgb(17, 119, 0); }
+.cm-s-inner .cm-attribute { color: rgb(0, 0, 204); }
+.cm-s-inner .cm-header, .cm-s-inner.cm-header { color: rgb(0, 0, 255); }
+.cm-s-inner .cm-quote, .cm-s-inner.cm-quote { color: rgb(0, 153, 0); }
+.cm-s-inner .cm-hr, .cm-s-inner.cm-hr { color: rgb(153, 153, 153); }
+.cm-s-inner .cm-link, .cm-s-inner.cm-link { color: rgb(0, 0, 204); }
+.cm-negative { color: rgb(221, 68, 68); }
+.cm-positive { color: rgb(34, 153, 34); }
+.cm-header, .cm-strong { font-weight: 700; }
+.cm-del { text-decoration: line-through; }
+.cm-em { font-style: italic; }
+.cm-link { text-decoration: underline; }
+.cm-error { color: red; }
+.cm-invalidchar { color: red; }
+.cm-constant { color: rgb(38, 139, 210); }
+.cm-defined { color: rgb(181, 137, 0); }
+div.CodeMirror span.CodeMirror-matchingbracket { color: rgb(0, 255, 0); }
+div.CodeMirror span.CodeMirror-nonmatchingbracket { color: rgb(255, 34, 34); }
+.cm-s-inner .CodeMirror-activeline-background { background: inherit; }
+.CodeMirror { position: relative; overflow: hidden; }
+.CodeMirror-scroll { height: 100%; outline: 0px; position: relative; box-sizing: content-box; background: inherit; }
+.CodeMirror-sizer { position: relative; }
+.CodeMirror-gutter-filler, .CodeMirror-hscrollbar, .CodeMirror-scrollbar-filler, .CodeMirror-vscrollbar { position: absolute; z-index: 6; display: none; outline: 0px; }
+.CodeMirror-vscrollbar { right: 0px; top: 0px; overflow: hidden; }
+.CodeMirror-hscrollbar { bottom: 0px; left: 0px; overflow: auto hidden; }
+.CodeMirror-scrollbar-filler { right: 0px; bottom: 0px; }
+.CodeMirror-gutter-filler { left: 0px; bottom: 0px; }
+.CodeMirror-gutters { position: absolute; left: 0px; top: 0px; padding-bottom: 10px; z-index: 3; overflow-y: hidden; }
+.CodeMirror-gutter { white-space: normal; height: 100%; box-sizing: content-box; padding-bottom: 30px; margin-bottom: -32px; display: inline-block; }
+.CodeMirror-gutter-wrapper { position: absolute; z-index: 4; background: 0px 0px !important; border: none !important; }
+.CodeMirror-gutter-background { position: absolute; top: 0px; bottom: 0px; z-index: 4; }
+.CodeMirror-gutter-elt { position: absolute; cursor: default; z-index: 4; }
+.CodeMirror-lines { cursor: text; }
+.CodeMirror pre { border-radius: 0px; border-width: 0px; background: 0px 0px; font-family: inherit; font-size: inherit; margin: 0px; white-space: pre; overflow-wrap: normal; color: inherit; z-index: 2; position: relative; overflow: visible; }
+.CodeMirror-wrap pre { overflow-wrap: break-word; white-space: pre-wrap; word-break: normal; }
+.CodeMirror-code pre { border-right: 30px solid transparent; width: fit-content; }
+.CodeMirror-wrap .CodeMirror-code pre { border-right: none; width: auto; }
+.CodeMirror-linebackground { position: absolute; inset: 0px; z-index: 0; }
+.CodeMirror-linewidget { position: relative; z-index: 2; overflow: auto; }
+.CodeMirror-wrap .CodeMirror-scroll { overflow-x: hidden; }
+.CodeMirror-measure { position: absolute; width: 100%; height: 0px; overflow: hidden; visibility: hidden; }
+.CodeMirror-measure pre { position: static; }
+.CodeMirror div.CodeMirror-cursor { position: absolute; visibility: hidden; border-right: none; width: 0px; }
+.CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+.CodeMirror-focused div.CodeMirror-cursor { visibility: inherit; }
+.cm-searching { background: rgba(255, 255, 0, 0.4); }
+span.cm-underlined { text-decoration: underline; }
+span.cm-strikethrough { text-decoration: line-through; }
+.cm-tw-syntaxerror { color: rgb(255, 255, 255); background-color: rgb(153, 0, 0); }
+.cm-tw-deleted { text-decoration: line-through; }
+.cm-tw-header5 { font-weight: 700; }
+.cm-tw-listitem:first-child { padding-left: 10px; }
+.cm-tw-box { border-style: solid; border-right-width: 1px; border-bottom-width: 1px; border-left-width: 1px; border-color: inherit; border-top-width: 0px !important; }
+.cm-tw-underline { text-decoration: underline; }
+@media print {
+  .CodeMirror div.CodeMirror-cursor { visibility: hidden; }
+}
+
+
+/*
+Theme Name: GitHub Night
+Theme URI: https://github.com/kinoute/typora-github-night-theme
+Authors: Yann Defretin, GitHub Team
+Author URI: https://github.com/kinoute
+Description: Typora themes that reproduces GitHub Dark Color Schemes.
+Version: 0.6.2
+Tags: dark, github, typora
+*/
+
+/* nunito-sans-regular - latin-ext_latin */
+/* nunito-sans-italic - latin-ext_latin */
+/* nunito-sans-800 - latin-ext_latin */
+/* nunito-sans-800italic - latin-ext_latin */
+/* Use a special font for code blocks just like GitHub */
+:root {
+    --text-color: #c9d1d9;
+    --bg-color: #0d1117;
+    --side-bar-bg-color: #0d1117;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #0d1117;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #0d1117;
+    --item-hover-bg-color: #161b22;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #21262d !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+.pane-group {
+    background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+    background-color: var(--bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color) !important;
+    color: #8b949e !important;
+}
+
+.dropdown-menu>li>a {
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: var(--item-hover-bg-color);
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+body {
+    height: 100%;
+    line-height: 1.6;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    background-color: var(--bg-color) !important;
+    font-family: "Nunito", sans-serif;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+content {
+    background-color: var(--bg-color) !important;
+}
+
+/*.md-end-block.md-heading.md-focus {
+  color: #afe61d;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+html {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+    color: rgb(139, 148, 158);
+}
+
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    content: '';
+    border: 0;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.20rem;
+    margin: 0 0 1.25rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px SFMono-Regular, Nunito, Consolas, Liberation Mono, Menlo, monospace;
+    line-height: 10px;
+    color: #b1bac4;
+    vertical-align: middle;
+    background-color: var(--bg-color);
+    border-bottom-color: #6e7681;
+    border: 1px solid #6e7681;
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 #6e7681;
+}
+
+/* Focus Mode */
+
+/*.on-focus-mode {
+  h1.md-end-block:not(.md-focus):not(.md-focus-container) {
+      color: yellow !important;
+    }
+}*/
+
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+table {
+    font-size: 1.25rem;
+}
+
+
+a,
+.md-def-url {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #58a6ff;
+    text-decoration: underline;
+}
+
+/* Summary */
+
+.md-toc {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.md-toc-content {
+    background-color: var(--item-hover-bg-color) !important;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*.md-toc-inner:hover {
+  text-decoration: none;
+}*/
+
+#write div.md-toc-tooltip {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    padding-left: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.md-toc:focus .md-toc-content {
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.md-delete-toc {
+    color: var(--text-color);
+}
+
+table {
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 1.25rem;
+    vertical-align: middle;
+    border-top: 1px solid #3D454D;
+}
+
+table th {
+    font-weight: 700;
+    padding: 6px 13px;
+}
+
+/*
+table thead th {
+  vertical-align: bottom;
+}*/
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody+tbody {
+    border-top: 2px solid #3D454D;
+}
+
+table tr th {
+    border: 1px solid #324560;
+    border-bottom: solid 2px #3D454D;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #3D454D;
+    margin: 0;
+    padding: 0;
+}
+
+thead {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+table tr th {
+    border: 1px solid #3D454D;
+    border-bottom: solid 2px #ccc;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+    line-height: 1.6em;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(1n) td {
+    background-color: var(--item-hover-bg-color);
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(2n) td {
+    background-color: var(--bg-color);
+}
+
+.md-fences,
+tt {
+    border-radius: 3px;
+    color: var(--item-hover-bg-color);
+    font-size: .9em;
+    padding: 0;
+}
+
+code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 1.105rem;
+    background-color: rgba(240, 246, 252, 0.15);
+    border-radius: 6px;
+    font-family: "SFMono-Regular", "Fira Code", Nunito, monospace;
+    line-height: 2;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-bottom: 6px;
+    padding-top: 8px;
+    color: var(--text-color);
+}
+
+.md-task-list-item>input {
+    background: #1a283d;
+    margin-left: -1.3em;
+}
+
+/* Using checkboxes in sublists should not get list circles inside inputs */
+.md-task-list-item {
+    list-style-type: none !important;
+}
+
+/*@media print {
+  html {
+    font-size: 13px;
+  }
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}*/
+
+.file-tree-node {
+     padding-top: 2px;
+ }
+
+#write pre.md-meta-block {
+    background-color: var(--item-hover-bg-color);
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 100%;
+    line-height: 1.45;
+    margin-top: 0 !important;
+    padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    color: inherit;
+    font-size: .9em;
+    padding: 2px 0 0 4px;
+}
+
+.md-tag {
+    color: #70bfd9;
+    opacity: 1;
+}
+
+/*
+.CodeMirror-lines {
+  padding: 4px 0;
+}
+*/
+
+.CodeMirror-line {
+    padding-left: 15px;
+}
+
+.code-tooltip {
+    background: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-radius: 6px;
+    /*margin-right: 13px!important;*/
+}
+
+/* Yellow border when focusing Code block language input */
+.code-tooltip .ty-input {
+    border: 0;
+}
+
+/* Languages suggestions Menu */
+.auto-suggest-container {
+    background-color: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+}
+
+.dropdown-menu {
+    color: #70c0d8;
+    margin-right: 5px;
+}
+
+.md-fences {
+    padding: .3em;
+    font-size: .9em;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+
+.md-fences {
+    margin: 0 0 20px;
+    font-size: 1.105em;
+    padding: 0;
+    padding-top: .4em;
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.task-list-item {
+    padding-left: 2.125rem;
+}
+
+.task-list-item input {
+    top: 7px;
+}
+
+#write ul li.task-list-item input {
+    top: 3px !important;
+}
+
+.task-list-item input:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #324560;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-left: 0;
+    margin-top: -.5rem;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+    content: "\2713";
+    font-size: 1.2125rem;
+    line-height: .9375rem;
+    /*  margin-top: -1rem;
+*/
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+
+    .task-list-item input:before,
+    .task-list-item input:checked:before,
+    .task-list-item input[checked]:before {
+        margin-top: -.2rem;
+    }
+}
+
+blockquote .md-end-block.md-heading {
+    color: inherit;
+}
+
+blockquote .md-end-block.md-heading:before {
+    content: '' !important;
+}
+
+blockquote {
+    margin: 0 0 1.11111rem;
+    padding: .5rem 1.11111rem 0 1.05556rem;
+    border-left: .25em solid #3b434b;
+}
+
+blockquote,
+blockquote p {
+    line-height: 1.6;
+    color: #8b949e;
+}
+
+.MathJax_Display {
+    font-size: 1em !important;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+
+.md-math-block {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-tooltip .md-rawblock-control {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    font-size: 1.105rem;
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-rawblock-control .CodeMirror.cm-s-inner {
+    border: 0px;
+}
+
+/* Inline Math Editing */
+.md-inline-math script {
+    color: #f9826c;
+}
+
+.md-math-tex inline-math-svg {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+    border: 0px;
+}
+
+.md-rawblock-input {
+    font-size: 1.105rem;
+}
+
+/* mathjax edit panel*/
+.md-rawblock-before {
+    border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+    font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+    transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+    transition: 0.5s;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
+
+p.mathjax-block,
+.mathjax-block {
+    padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: 5px;
+    box-shadow: none;
+}
+
+.md-image>.md-meta {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.md-image>img {
+    margin-top: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+    padding-left: 4px;
+}
+
+#typora-source {
+    color: var(--text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    color: var(--text-color);
+    background-color: #484f58;
+}
+
+.md-image-pick-file-btn,
+.md-image-input-src-btn {
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-image-btn.selected,
+.md-image-btn:hover,
+.md-image-pick-file-btn:hover,
+.md-image-input-src-btn:hover {
+    color: #f9826c !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.searchpanel-search-option-btn {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid #30363d;
+}
+
+.searchpanel-search-option-btn.active {
+    color: #ddd;
+    border: 1px solid #8b949e;
+}
+
+.searchpanel-search-option-btn:hover {
+    border: 1px solid #8b949e;
+}
+
+#md-searchpanel {
+    border-bottom: 0 solid #324560;
+    font-family: "Nunito", sans-serif;
+}
+
+#md-searchpanel input {
+    background-color: #21262d !important;
+    border: 1px solid #30363d;
+}
+
+#md-searchpanel .btn {
+    font-size: 11px;
+}
+
+#md-searchpanel .btn:hover {
+    color: #8b949e;
+}
+
+#md-notification:before {
+    top: 14px;
+}
+
+#md-notification {
+    background: var(--bg-color);
+    font-size: 14px;
+    border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+    color: #f9826c;
+}
+
+#md-notification p,
+#md-notification .btn,
+#md-notification label {
+    font-size: 14px !important;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, .12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Nunito", sans-serif;
+}
+
+.megamenu-opened header {
+    background-image: none;
+}
+
+.file-node-content .fa-caret-right,
+.file-node-content .fa-caret-down {
+    color: #f9826c;
+}
+
+.file-node-title {
+    color: var(--text-color);
+}
+
+.active-tab-files {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+    background-color: var(--item-hover-bg-color) !important;
+    border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+    border-bottom: 0;
+}
+
+.megamenu-menu-header {
+    border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+    background: var(--item-hover-bg-color) !important;
+}
+
+/*.file-node-content:hover .file-node-icon:hover, .file-node-content:hover {
+  visibility: visible;
+  background: var(--bg-color) !important;
+}*/
+
+.file-node-open-state {
+    background-color: transparent !important;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--item-hover-bg-color);
+    border-right: 0 solid #090c12;
+    font-weight: 400;
+    font-family: Nunito, sans-serif;
+}
+
+titlebar {
+    background-color: var(--bg-color);
+}
+
+/* Sidebar header on Win/Linux (Files/Plan) */
+.info-panel-tab-title {
+    /*  color: #afe61d;
+*/
+}
+
+/* Plan should get the same sidebar background color on Win/Linux */
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+    background-color: var(--item-hover-bg-color)
+}
+
+/* Bottom border on Win/Linux Sidebar */
+.info-panel-tab-border {
+    background-color: #f9826c !important;
+}
+
+.sidebar-footer-item:hover {
+    background-color: inherit;
+}
+
+.sidebar-tab.active {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.file-node-icon,
+.file-node-open-state {
+    color: #6E7681;
+}
+
+.fa-file-text-o:before {
+    color: var(--text-color) !important;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: var(--bg-color);
+    color: #efb752;
+}
+
+hr {
+    background-color: #30363d;
+    border: 0 none;
+    box-sizing: content-box;
+    height: .25em;
+    margin: 16px 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+input {
+    color: #82bed6;
+}
+
+#searchpanel-word-option-btn,
+#find-and-replace-icon-word,
+#find-and-replace-icon-case,
+.searchpanel-search-option-btn,
+.icon,
+.glyphicon .popover,
+.popover-title {
+    color: #82bed6 !important;
+    fill: #82bed6 !important;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.show-word-count #footer-word-count {
+    background: #000;
+}
+
+#recent-file-panel-action-btn {
+    background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+    border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.cm-s-inner {
+    border: 1px solid #324560;
+    border-radius: .25rem;
+    padding: .5rem .2rem;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #d2a8ff;
+}
+
+.cm-s-inner .cm-header {
+    color: #d2a8ff;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    border: 0;
+    color: #6d8a88;
+    /*    width: 5ch;
+*/
+}
+
+#typora-source .CodeMirror-gutter-wrapper {
+    font-size: 1rem;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+    border-left: solid thin #f8f8f2 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    color: #6d8a88;
+    /*    width: 4ch !important;*/
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner span.cm-comment {
+    color: #8b949e;
+    font-style: normal;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2,
+.cm-s-inner span.cm-quote {
+    color: #a5d6ff;
+}
+
+.cm-s-inner span.cm-number {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-variable-2 {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-def {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-operator {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-meta {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-tag {
+    color: #7ee787;
+}
+
+.cm-s-inner span.cm-attribute {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-defined {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-qualifier {
+    color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable-3 {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-block-start {
+    color: #ffa657;
+}
+
+.cm-s-inner span.cm-type {
+    color: #ffb86c;
+}
+
+.cm-positive {
+    color: #aff5b4;
+    background-color: #033a16;
+}
+
+.cm-negative {
+    color: #aff5b4;
+    background-color: #67060c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    color: var(--text-color) !important;
+    text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext,
+body::selection,
+body::-moz-selection {
+    background: var(--select-text-bg-color) !important;
+    background-color: var(--select-text-bg-color) !important;
+    color: var(--select-text-font-color) !important;
+    text-shadow: none;
+}
+
+#write ol,
+#write ul {
+    padding-left: 2rem;
+    font-size: 1.15rem;
+    /*  margin: .5rem 0;*/
+}
+
+/* code blocks size inside lists */
+#write li .cm-s-inner {
+    font-size: 1.105rem !important;
+}
+
+#write ol>li,
+#write ul>li {
+    /*  color: #f0b752;
+*/
+    font-size:  1.2rem !important;
+    font-weight: 700;
+}
+
+#write ul>li ul>li {
+    list-style-type: circle;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+#write ul>li ul>li ul>li {
+    list-style-type: square;
+    font-size: 1em;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    /*  color: #fff;
+*/
+    font-weight: 400;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+.typora-export li {
+    font-size: 14px !important;
+    text-align: justify !important;
+}
+
+sup.md-footnote {
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    font-weight: 700;
+    font-size: 75%;
+    font-style: normal;
+}
+
+sup.md-footnote a {
+    font-style: normal;
+}
+
+sup.md-footnote:hover {
+    background-color: rgba(56, 139, 253, 0.15);
+}
+
+sup.md-footnote .md-meta {
+    color: #58a6ff;
+}
+
+.md-def-footnote .md-def-name:before,
+.md-def-footnote .md-def-name:after {
+    content: '';
+}
+
+.md-def-footnote .md-def-name {
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+    font-size: 15px;
+}
+
+a.reversefootnote {
+    color: #f9826c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+mark {
+    background-color: #2ea44f;
+    border-radius: 6px;
+    color: white;
+    line-height: 2;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.cm-s-typora-default {
+    font-family: "Nunito", sans-serif;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: var(--text-color);
+}
+
+/*.cm-s-typora-default .cm-header1 {
+  font-size: 3.2rem;
+  margin: .6rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header2 {
+  font-size: 1.8rem;
+  margin: .7rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header3 {
+  font-size: 1.4rem;
+  margin: .5rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header4 {
+  font-size: 1.2rem;
+  margin: .2rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header5, .cm-s-typora-default .cm-header6 {
+  font-size: 1rem;
+  margin: 0;
+  width: auto;
+}*/
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #8b949e;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #a5d6ff;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+    color: #8b949e;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link,
+.cm-s-typora-default .cm-tag {
+    color: rgb(165, 214, 255);
+}
+
+.cm-s-typora-default .cm-string {
+    color: #f0b752;
+}
+
+/*.cm-s-typora-default .cm-comment {
+  background-color: #6952b6;
+  border-radius: 4px;
+  color: #fff!important;
+  line-height: 1;
+  padding: 5px 7px 2px 7px;
+}*/
+
+.cm-s-typora-default pre.cm-s-inner {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.cm-s-typora-default .cm-atom {
+    color: #8b949e;
+}
+
+.CodeMirror-activeline .cm-atom {
+    color: var(--text-color) !important;
+}
+
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: #484f58;
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+    color: #8aa1e1;
+    font-size: 0.9em !important;
+}
+
+/*.CodeMirror-activeline .CodeMirror-activeline-gutter .CodeMirror-gutter-elt {
+  color: var(--text-color) !important;
+}*/
+
+/* mega menu */
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color1);
+}
+
+.megamenu-content {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.megamenu-menu-list {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.megamenu-opened .megamenu-content {
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+    background-color: inherit;
+}
+
+/* mega menu sidebar*/
+.megamenu-menu {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+    border: 0px;
+}
+
+/* remove divider in mega menu */
+.megamenu-menu-header {}
+
+/* return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header #megamenu-menu-header-title:before {
+    color: var(--text-color);
+}
+
+.megamenu-menu-list li a:hover,
+.megamenu-menu-list li a.active {
+    background-color: var(--bg-color);
+}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover {}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {}
+
+/* long button in mega menu */
+.long-btn {
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.long-btn:hover {
+    background-color: var(--item-hover-bg-color);
+    border-color: 1px solid #8b949e;
+    color: var(--text-color) !important;
+}
+
+
+#recent-file-panel-action-btn {
+    background-color: var(--item-hover-bg-color);
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText,
+.pieTitleText {
+    fill: var(--mermaid-contrast-color);
+    font-size: 2rem;
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+}
+
+
+/* Node Overview */
+
+/* Node text */
+.grid .tick text,
+.taskText,
+text.actor,
+.node .label,
+.taskTextOutsideRight,
+.taskTextOutsideLeft,
+.labelText,
+.loopText,
+g.classGroup text {
+    color: var(--text-color);
+    fill: var(--text-color);
+    stroke: black;
+    stroke-width: .05px;
+
+    .title {
+        font-weight: 600;
+    }
+}
+
+/* Node color */
+.actor,
+.task,
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+g.classGroup rect,
+.labelBox {
+    fill: var(--mermaid-node-color);
+    stroke: var(--mermaid-node-border);
+    color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+    color: black;
+    background-color: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+    stroke-width: 1px;
+    height: 20px;
+    text-align: center;
+    /*  padding-top: 2px;*/
+}
+
+.note {
+    fill: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+    color: black;
+}
+
+.noteText>tspan {
+    fill: #333 !important;
+    color: #333 !important;
+}
+
+.taskText {
+    fill: white !important;
+}
+
+/* Class diagram specific */
+g.classGroup line {
+    stroke: var(--text-color);
+}
+
+.classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: var(--primary-color);
+    opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition,
+svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency,
+svg[id^="mermaidChart"] .relation {
+    stroke: var(--text-color);
+}
+
+.classLabel .label {
+    fill: black;
+}
+
+#extensionStart,
+#extensionEnd,
+#compositionStart,
+#compositionEnd,
+#aggregationStart,
+#aggregationEnd,
+#dependencyStart,
+#dependencyEnd {
+    fill: var(--text-color);
+    stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+    stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+    stroke: var(--text-color);
+}
+
+text.slice {
+    fill: var(--text-color);
+}
+
+.legend text {
+    fill: var(--text-color);
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+    fill: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+/* End mermaid */
+
+/* tip when hover on a button */
+#ty-tooltip {
+    background-color: black;
+    color: white;
+}
+
+/* header in setting */
+.window-header {}
+
+/* sidebar in setting */
+.sidebar {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.list-group-content {
+    margin-left: 10px !important;
+}
+
+/* sidebar button in setting menu */
+.nav-group-item {
+    color: var(--text-color) !important;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: #0d1117 !important;
+    color: var(--text-color) !important;
+}
+
+/* the indent example in setting.editor */
+div.pane>div:nth-child(4)>div:nth-child(2) .label-input-group td:last-child div {
+    border: 1px solid #30363d !important;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary);
+    margin: 10px !important;
+}
+
+/* button in setting menu */
+.ty-preferences button.btn-default {
+    border: 1px solid #30363d;
+    background-color: var(--color-border-secondary);
+    border-radius: 6px;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    /* background-color: white !important; */
+    border-color: #8b949e !important;
+    background-color: var(--color-border-secondary) !important;
+}
+
+/* return button in setting menu */
+.window-header button:hover {
+    color: var(--text-color) !important;
+}
+
+/* search input in setting menu */
+.search-input {
+    border: 1px solid #30363d;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 10px !important;
+}
+
+.search-input:hover {
+    border: 1px solid #8b949e;
+}
+
+.search-input:focus {
+    border: none !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+/* radio */
+
+input[type="radio"] {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px !important;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 0.55rem;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+}
+
+/* radio checked */
+input[type="radio"]:checked:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+
+/* remove up and down button from number type input*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+
+input {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* input hover */
+/* input:hover {
+    background-color: var(--hover-bg-color2) !important;
+} */
+/* checkbox */
+input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.11rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+}
+
+/* checkbox checked*/
+input[type="checkbox"]:checked:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+#write input[type="checkbox"]:before,
+#write input[type="checkbox"]:checked:before {
+    margin-top: -0.9rem;
+}
+
+/* checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: white;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* input number in settings for Win/Linux */
+input:not([type="range"]):not([type="color"]) {
+    border: 1px solid #30363d !important;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.pane-sm input[type="search"] {
+    border: 1px solid #30363d !important;
+}
+
+/* search in settings */
+#file-library-search-input:hover {
+    border: 1px solid #8b949e !important;
+}
+
+/* scrollbar */
+/*::-webkit-scrollbar {
+    width: 1px;
+    padding-right: 10px;
+    background-color: #FFF;
+}*/
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+    border-radius: 10px;
+    background-color: #2F333A;
+}
+
+/* Remove dashed border on filenames in the sidebar */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: 0 !important;
+}
+
+/* Handle long filenames in sidebar */
+file-node-title-name-part {
+    white-space: pre-wrap;
+}
+
+/* Custom syntax highlighting */
+div.cm-s-inner[lang="css"] .cm-qualifier {
+    color: #a5d6ff !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-tag {
+    color: #7ee787 !important;
+}
+
+div.cm-s-inner[lang="diff"] .cm-meta {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="diff"] .cm-negative {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="dockerfile"] .cm-variable-2 {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="erlang"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="fsharp"] .cm-variable {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="go"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="http"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="java"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="javascript"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="less"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="kotlin"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="markdown"] .cm-comment.cm-variable-2 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-meta {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-variable-2 {
+    color: #8b949e !important;
+}
+
+div.cm-s-inner[lang="php"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="python"] .cm-property {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-variable-3 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-variable-2 {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-error {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="ruby"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+/* Exports */
+.typora-export li {
+    font-size: 1.25rem !important;
+    padding-bottom: 10px !important;
+}
+
+.typora-export {
+    --monospace: "Fira Code";
+}
+
+.typora-export pre.md-fences {
+    font-size: 1.15rem !important;
+}
+
+.typora-export code {
+    font-size: 1.15rem !important;
+}
+
+.typora-export strong {
+    font-weight: 700 !important;
+}
+
+
+.typora-export #write a {
+    color: #58a6ff;
+}
+
+.typora-export .footnote-line {
+    color: var(--text-color);
+    font-size: 15px !important;
+}
+
+.typora-export .footnote-line a {
+    color: #58a6ff;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+@import '';
+
+:root {
+    --text-color: #adbac7;
+    --bg-color: #22272e;
+    --side-bar-bg-color: #22272e;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #22272e;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #22272e;
+    --item-hover-bg-color: #2d333b;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: #2d333b !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #373e47 !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+
+/*.cm-s-inner span.cm-comment {
+    color: #bdc4cc;
+    font-style: normal;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #bdc4cc;
+}*/
+
+blockquote {
+    border-left-width: 4px !important;
+    border-left: .25em solid #444c56 !important;
+    padding: 0 1em;
+}
+
+blockquote p {
+    color:  #768390 !important;
+}
+
+hr {
+    background-color:  #7a828e !important;
+}
+
+#write ol>li, #write ul>li {
+    font-size:  1.2rem !important;
+    font-weight: normal !important;
+}
+
+
+.ty-preferences button.btn-default {
+    background-color:  var(--item-hover-bg-color) !important;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    border-color: #8b949e !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--item-hover-bg-color) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+
+
+</style><title>3. PROJECT MANAGEMENT</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='project-management---gestione-dei-progetti-di-impianto'><span>Project Management - Gestione dei progetti di impianto</span></h1><blockquote><p><span>A partire da pagina 97 - Capitolo 4</span></p><p><span>Lezione 2020 11 10</span></p></blockquote><h2 id='introduzione-al-project-management'><span>Introduzione al Project Management</span></h2><p><span>Con il capitolo sul project management abbiamo come obbiettivo quello di comprendere ed applicare in produzione i seguenti punti:</span></p><ul><li><span>Rispetto dei tempi di consegna</span></li><li><span>Individuazione delle attività che </span><strong><span>condizionano</span></strong><span> la durata del progetto</span></li><li><span>Minimizzazione del tempo di realizzazione</span></li><li><span>Controllo dell&#39;avanzamento del lavoro</span></li><li><span>Eliminazione dei tempi morti</span></li><li><span>Utilizzare al meglio la manodopera ed i mezzi tecnici</span></li><li><span>Tempestivo afflusso dei materiali</span></li></ul><h2 id='strumenti-di-base-per-il-pm'><span>Strumenti di base per il PM</span></h2><p><span>Una delle caratteristiche principali del </span><strong><span>progetto di impianto</span></strong><span> è quella dell&#39;</span><strong><span>indeterminazione</span></strong><span> della fase iniziale; ovviamente ci sono molti interrogativi su come progettare l&#39;impianto, e per questo motivo si sono sviluppate delle vere e proprie tecniche per semplificarne (e strutturarne) l&#39;organizzazione.</span></p><p><span>La fase del progetto di un impianto è composta da </span><strong><span>fasi</span></strong><span> che si </span><em><span>susseguono</span></em><span> tra di loro ed a volte vengono anche </span><strong><span>iterate</span></strong><span> diverse volte: è il caso dell&#39;ingegnerizzazione iniziale e della costruzione; queste vengono iterate fino ad ottenere un risultato soddisfacente.</span></p><p><span>In questo contesto tutta la realizzazione del progetto </span><strong><span>viene scomposta a livelli sempre più bassi</span></strong><span>, fino ad arrivare alle </span><strong><span>attività elementari</span></strong><span>. Una singola attività è dotata di una </span><strong><span>durata</span></strong><span>, e quindi di un </span><strong><span>livello di partenza</span></strong><span> ed un </span><strong><span>livello di fine</span></strong><span>. Sapendo le interazioni e l&#39;ordine con cui le attività si devono succedere, è possibile sapere con un buon anticipo:</span></p><ul><li><span>Quando rendere disponibili i mezzi finanziari per i pagamenti ai fornitori (</span><em><span>ovvero tenere pronti i soldi</span></em><span>)</span></li><li><span>Quando i vari reparti dovranno essere pronti per iniziare i lavori</span></li><li><span>Quando acquistare i materiali necessari all&#39;avvio della produzione</span></li></ul><p><span>Per poter strutturare il susseguirsi delle attività possiamo usare un </span><strong><span>diagramma a barre</span></strong><span> (bar chart), dove sull&#39;asse delle ascisse vengono riportati i </span><strong><span>tempi</span></strong><span>, mentre sull&#39;asse delle ordinate vengono riportate le varie attività:</span></p><p><img src="assets/266th23-105512.png" alt="266th23-105512" style="zoom:50%;" /></p><p><span>Il problema di questa organizzazione è che non vengono evidenziate le </span><strong><span>relazioni di dipendenza</span></strong><span> tra le attività e soprattutto l&#39;organizzazione diventa problematica oltre la decina di attività.</span></p><h2 id='tecnica-di-programmazione-reticolare-il-pert'><span>Tecnica di programmazione reticolare: il PERT</span></h2><blockquote><p><span>L&#39;obbiettivo del PERT è rendere l&#39;organizzazione delle attività il più </span><strong><span>dinamica</span></strong><span> possibile (a differenza del diagramma di Gantt): il suo compito è quello di </span><strong><span>Minimizzare i tempi</span></strong><span> in modo da arrivare ad una data del completamento del progetto il prima possibile.</span></p><p><span>Il PERT ci permette di </span><strong><span>trasferire risorse</span></strong><span> dedicate ad ogni attività, andando a spostarle dalle </span><strong><span>attività non critiche</span></strong><span> (che possono essere ritardate) alle </span><strong><span>attività critiche</span></strong><span> (che </span><strong><span>non</span></strong><span> possono essere ritardate) in modo da poter accorciare i tempi.</span></p></blockquote><p><span>Siccome il metodo precedente è un metodo per nulla soddisfacente, si è sviluppato un metodo molto più efficace e strutturato: il </span><strong><span>PERT</span></strong><span> - Program Evaluation and Review Technique.</span></p><p><span>Questo metodo consiste nell&#39;utilizzare la </span><strong><span>teoria dei grafi</span></strong><span> (rappresentando quindi il progetto mediante un </span><strong><span>reticolo</span></strong><span> di attività ed </span><em><span>eventi</span></em><span>) per trovare il </span><strong><span>percorso critico</span></strong><span> (critical path), ovvero la </span><em><span>successione</span></em><span> di operazioni che </span><strong><span>condizionano la durata</span></strong><span> totale del progetto.</span></p><p><span>L&#39;analisi del grafo con la tecnica PERT prevede le seguenti fasi:</span></p><ol start='' ><li><span>Analisi del progetto e raccolta dati</span></li><li><span>Costruzione della </span><strong><span>Work Breakdown Structure</span></strong></li><li><span>Costruzione del reticolo (grafo)</span></li><li><span>Elaborazione dei dati</span></li><li><span>Ottimizzazione</span></li></ol><p><span>Andiamo quindi a vedere nel particolare le varie fasi del PERT.</span></p><h3 id='1-analisi-del-progetto-e-raccolta-dati'><span>1. Analisi del progetto e raccolta dati</span></h3><p><span>La prima fase del PERT è fondamentale: ci permette di avere un quadro generale del progetto e di </span><strong><span>mettere in evidenza le fasi principali del programma</span></strong><span>; in un primo momento individuiamo delle &quot;macro attività&quot;, andando via via a </span><em><span>specializzarle</span></em><span> giungendo infine ad avere delle attività quanto più </span><em><span>elementari</span></em><span> possibile:</span></p><blockquote><p><span>Un&#39;attività si considera </span><strong><span>elementare</span></strong><span> quando riguarda operazioni che possono svolgersi con </span><strong><span>continuità</span></strong><span> nel tempo, ovvero senza avere interruzioni, spostamenti di luogo o cambiamenti di attrezzatura e/o manodopera.</span></p><p><span>In poche parole: un&#39;attività è elementare quando arreca la minor perdita di tempo e di denaro possibile. (N.d.S.)</span></p></blockquote><p><span>Dopo aver determinato le attività elementari, dobbiamo determinare </span><em><span>per ciascuna di esse</span></em><span>:</span></p><ul><li><span>Le attività che devono </span><strong><span>precederla</span></strong></li><li><span>Le attività che sono </span><strong><span>condizionate</span></strong><span> da essa</span></li><li><span>La </span><strong><span>durata</span></strong><span> presumibile dell&#39;attività</span></li></ul><h4 id='regole-fondamentali-per-la-stesura-del-reticolo'><span>Regole fondamentali per la stesura del reticolo</span></h4><p><span>E&#39; opportuno seguire le seguenti regole fondamentali quando si stende il reticolo:</span></p><ol start='' ><li><p><span>Ogni attività deve essere sempre preceduta e seguita da un </span><strong><span>evento</span></strong><span>; un evento deve essere sempre posto tra un&#39;attività e la successiva, tranne per il primo e l&#39;ultimo evento (che sono marginali).</span></p><blockquote><p><span>Definizione di </span><strong><span>evento</span></strong><span>: l&#39;istante in cui si verificano tutte le condizioni per cui le attività seguenti possono iniziare.</span></p></blockquote></li><li><p><span>Se non si arriva all&#39;evento che precede un&#39;attività, questa non può avere inizio. Allo stesso modo se tutte le attività che precedono un evento non sono state completate, l&#39;evento non si considera raggiunto.</span></p></li><li><p><span>Se ci sono </span><strong><span>dipendenze di tempo</span></strong><span>  tra gli eventi, le dipendenze vengono rappresentate mediante </span><strong><span>attività fittizie di durata nulla</span></strong><span>. </span></p></li><li><p><strong><span>Non sono ammessi loop</span></strong><span>: ovvero nessun evento può essere seguito da un&#39;attività che riconduca, successivamente, allo stesso evento.</span></p></li><li><p><span>Tutte le attività sono seguite e precedute da almeno un&#39;altra attività, ad eccezzione della prima ed ultima attività.</span></p></li></ol><h5 id='attività-fittizie'><span>Attività fittizie</span></h5><p><span>Le attività fittizie sono solitamente delle </span><strong><span>attese</span></strong><span> (ad esempio attesa di materiali necessari all&#39;attività successiva). Se ad esempio abbiamo un reticolo del genere</span></p><p><img src="assets/0.png" referrerpolicy="no-referrer" alt="0"></p><p><span>Se in questo particolare esempio abbiamo t</span><sub><span>13</span></sub><span> &lt; t</span><sub><span>12</span></sub><span> l&#39;evento 3 si verificherebbe </span><strong><span>prima</span></strong><span> dell&#39;evento 2; andando a posizionare un&#39;attività fittizia (quella che va da 2 a 3 con t=0), imponiamo che prima dell&#39;evento 3 si deve verificare l&#39;evento 2, anche se la durata dell&#39;attività 1,2 è minore di quella 1,3.</span></p><h4 id='durata-delle-attività'><span>Durata delle attività</span></h4><p><span>Dobbiamo anche assegnare ad ogni attività una </span><strong><span>durata</span></strong><span>, scegliendo anche la più opportuna </span><strong><span>unità di tempo</span></strong><span> (ore, giorni, settimane).</span></p><p><span>Ovviamente la </span><strong><span>durata effettiva</span></strong><span> dipende principalmente da </span><strong><span>fattori esterni</span></strong><span>: ad esempio un&#39;attività che comprende una colata di cemento può avere diverse durate a seconda dei fattori atmosferici: potrà impiegare 15 giorni se le condizioni sono ideali (</span><strong><span>ottimistiche</span></strong><span>) ma può anche impiegarne 30 se le condizioni sono sfavorevoli.</span></p><p><span>Dobbiamo quindi prevedere </span><strong><span>tre durate diverse</span></strong><span>, che vengono contrassegnate con le lettere:</span></p><ul><li><strong><span>Durata ottimistica - a</span></strong><span>: Condizioni favorevoli</span></li><li><strong><span>Durata più probabile - m</span></strong><span>: Condizioni normali; è detta anche </span><strong><span>moda</span></strong></li><li><strong><span>Durata pessimistica - b</span></strong><span>: condizioni sfavorevoli</span></li></ul><p><span>Possiamo rappresentare la probabilità delle durate attraverso una </span><strong><span>distribuzione di probabilità</span></strong><span>:;utilizziamo la distribuzione </span><strong><span>Beta</span></strong><span> (o di Pearson):</span></p><p>&nbsp;</p><ul><li><p><span>Andiamo ad attribuire al </span><strong><span>valore medio - m</span></strong><span> la probabilità media, ovvero quella con la maggiore probabilità.</span></p></li><li><p><span>Andiamo a porre gli estremi della curva le durate </span><em><span>ottimistiche</span></em><span> e </span><em><span>pessimistiche</span></em><span>; in modo che queste </span><strong><span>coprano lo 0.5% (0.05)</span></strong><span> dell&#39;area sottesa; in questo modo possiamo affermare chè:</span></p><ul><li><span>La durata ottimistica ha la probabilità minore al 0.5% di essere </span><strong><span>anticipata</span></strong><span>.</span></li><li><span>La durata pessimistica ha la probabilità minore al 0.5% di essere </span><strong><span>superata</span></strong><span>.</span></li></ul></li></ul><p><img src="assets/266th23-141414.png" alt="266th23-141414" style="zoom: 50%;" /></p><p><span>Per la costruzione del reticolo, utilizzeremo i valori risultanti dalla nostra distribuzione notevole: </span><strong><span>Valore atteso</span></strong><span> (durata attesa) e </span><strong><span>deviazione standard</span></strong><span>.</span></p><ul><li><strong><span>Valore atteso</span></strong><span> - E&#39; essenzialmente la </span><strong><span>durata media</span></strong></li><li><strong><span>Deviazione standard</span></strong><span> - E&#39; un valore numerico che ci dice quanto il valore atteso è </span><strong><span>attendibile</span></strong><span>: quanto più è bassa la S.D. quanto più sarà attendibile il valore atteso (media).</span>
+<span>In altre parole, quanto più sono </span><strong><span>vicini gli estremi</span></strong><span> a e b, tanto più il valore atteso sarà veritiero.</span></li></ul><p><span>Possiamo calcolare valore atteso e deviazione standard con le formule della distribuzione notevole:</span></p><p><img src="assets/266th23-142450.png" alt="266th23-142450" style="zoom: 25%;" /></p><p><span>Possiamo quindi ricapitolare i dati che ci interessano:</span></p><ul><li><span>a - Estremo inferiore (durata minore meno probabile: </span><em><span>è molto improbabile che i lavori richiedano </span><strong><span>meno</span></strong><span> tempo di a</span></em><span>)</span></li><li><span>b - Estremo superiore (durata maggiore meno probabile: </span><em><span>è molto improbabile che i lavori richiedano </span><strong><span>più</span></strong><span> tempo di b</span></em><span>)</span></li><li><span>m - </span><strong><span>Moda</span></strong><span>: è il valore più probabile (</span><em><span>probabilmente i lavori richiederanno un tempo m</span></em><span>)</span></li><li><span>D</span><sub><span>e</span></sub><span> - </span><strong><span>Valore atteso</span></strong><span> (</span><em><span>in media i tempi richiederanno un tempo D</span><sub><span>e</span></sub></em><span>)</span></li><li><strong><span>σ</span></strong><span> - </span><strong><span>Deviazione standard</span></strong><span>: ci dice quanto D</span><sub><span>e</span></sub><span> è attendibile (σ &lt;&lt; bene, σ &gt;&gt; male)</span></li></ul><h3 id='2-la-work-breakdown-structure'><span>2. La Work Breakdown Structure</span></h3><blockquote><p><span>La WBS è una </span><strong><span>tabella</span></strong><span> in cui:</span></p><ul><li><span>Vengono </span><strong><span>enumerate</span></strong><span> le attività</span></li><li><span>Le attività vengono </span><strong><span>ordinate</span></strong><span> sequenzialmente seguendo la cronologia dei tempi</span></li><li><span>Tempificazione delle attività</span></li><li><span>Programmazione - si decide cosa fare, come farlo ed in quanto tempo.</span></li></ul></blockquote><p><span>La </span><strong><span>WBS</span></strong><span> è una </span><strong><span>struttura gerarchica</span></strong><span> che suddivide il lavoro del progetto in componenti sempre più </span><strong><span>piccole gestibili</span></strong><span> che prendono il nome di </span><strong><span>pacchetti di lavoro</span></strong><span> (work packages). </span>
+<span>La WBS può essere </span><strong><span>rappresentata con una struttura ad albero</span></strong><span>; capiamo quindi che usiamo una struttura gerarchica per organizzare il lavoro.</span></p><h4 id='come-costrure-la-wbs'><span>Come costrure la WBS</span></h4><p><span>Indipendentemente dal progetto in atto, possiamo riconoscere dei passaggi comuni in ogni (o quasi) caso:</span></p><ol start='' ><li><span>L&#39;</span><strong><span>Unione</span></strong><span> di tutti i </span><strong><span>Work Packages WP</span></strong><span> che appartengono ad uno stesso livello di disaggregazione ci da un livello di aggregazione </span><strong><span>superiore</span></strong><span>; in altre parole unendo un livello di nodi otteniamo la radice dei nodi (N.d.S.)</span></li><li><span>Quanto più un Work Package è </span><strong><span>piccolo</span></strong><span>, tanto più sarà semplice da gestire da parte del </span><strong><span>responsabile</span></strong><span> ad esso assegnato; inoltre diminuiscono anche le </span><strong><span>relazioni di interfaccia</span></strong><span> tra di essi.</span></li><li><span>Ci possono essere delle &quot;</span><strong><span>sotto WBS</span></strong><span>&quot;: ad esempio gli attori esterni all&#39;organizzazione del </span><strong><span>main contractor</span></strong><span> (ovvero l&#39;appaltatore principale), come i </span><strong><span>fornitori/subappaltatori</span></strong><span>, sviluppano una WBS </span><strong><span>per conto loro</span></strong><span>.</span></li></ol><h4 id='logica-di-disaggregazione'><span>Logica di disaggregazione</span></h4><p><span>La disaggregazione avviene secondo la logica:</span></p><ol start='' ><li><p><span>In un primo momento si individuano delle </span><strong><span>macro-fasi</span></strong><span> del progetto:</span>
+<img src="assets/266th23-150231.png" alt="266th23-150231" style="zoom:25%;" /></p></li><li><p><span>Succssivamente ogni macro-fase può essere ulteriormente scomposta secondo una logica specifica:</span></p><ol start='' ><li><strong><span>Ingegneria di dettaglio</span></strong><span> - civile, elettrica, meccanica, etc.</span></li><li><strong><span>Approviggionamento</span></strong><span> - macchinari, tubature, etc.</span></li><li><strong><span>Montaggio</span></strong><span> - montaggi meccanici, montaggi elettrici, etc.</span></li></ol><p><img src="assets/266th23-150752.png" alt="266th23-150752" style="zoom:33%;" /></p></li></ol><p><span>Un esempio di WBS in forma tabellare potrebbe essere la seguente, che ha </span><strong><span>tre livelli di dettaglio</span></strong><span>:</span></p><ol start='' ><li><strong><span>Livello 1</span></strong><span> - progetto principale</span></li><li><strong><span>Livello 2</span></strong><span> - Fasi del progetto</span></li><li><strong><span>Livello 3</span></strong><span> - Attività specifiche all&#39;interno di ciascuna fase</span></li></ol><figure><table><thead><tr><th><span>Livello</span></th><th><span>Attività</span></th><th><span>Descrizione</span></th><th><span>Attività Totali</span></th></tr></thead><tbody><tr><td><span>1</span></td><td><span>Progetto XYZ</span></td><td>&nbsp;</td><td><span>8</span></td></tr><tr><td><span>2</span></td><td><span>Fase 1: Pianificazione</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>3</span></td><td><span>3.1 Raccolta requisiti</span></td><td><span>Identificazione dei requisiti del progetto</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>3.2 Definizione budget</span></td><td><span>Stima dei costi e assegnazione delle risorse</span></td><td>&nbsp;</td></tr><tr><td><span>2</span></td><td><span>Fase 2: Sviluppo</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>3</span></td><td><span>3.3 Progettazione</span></td><td><span>Progettazione dell&#39;architettura del sistema</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>3.4 Codifica</span></td><td><span>Implementazione del codice</span></td><td>&nbsp;</td></tr><tr><td><span>2</span></td><td><span>Fase 3: Test</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>3</span></td><td><span>3.5 Test funzionali</span></td><td><span>Verifica delle funzionalità del sistema</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>3.6 Test di integrazione</span></td><td><span>Verifica dell&#39;integrazione tra i moduli</span></td><td>&nbsp;</td></tr><tr><td><span>2</span></td><td><span>Fase 4: Implementazione</span></td><td>&nbsp;</td><td><span>2</span></td></tr><tr><td><span>3</span></td><td><span>3.7 Installazione</span></td><td><span>Installazione del sistema presso il cliente</span></td><td>&nbsp;</td></tr><tr><td><span>3</span></td><td><span>3.8 Formazione</span></td><td><span>Formazione degli utenti sul sistema</span></td><td>&nbsp;</td></tr></tbody></table></figure><h3 id='3-costruzione-del-reticolo'><span>3. Costruzione del reticolo</span></h3><p><span>Rappresentiamo quindi le </span><strong><span>attività</span></strong><span> e gli </span><strong><span>eventi</span></strong><span> attraverso la notazione dei grafi:</span></p><ul><li><strong><span>Nodo</span></strong><span> (un cerchio) -- &gt; </span><strong><span>evento</span></strong>
+<span>Con T</span><sub><span>i</span></sub><span> indichiamo la </span><strong><span>data attesa</span></strong><span> dell&#39;evento i</span>
+<span>con T</span><sub><span>j</span></sub><span> indichiamo la </span><strong><span>data attesa</span></strong><span> dell&#39;evento j</span></li><li><strong><span>Arco</span></strong><span> (una freccia) --&gt; </span><strong><span>attività</span></strong>
+<span>Con t</span><sub><span>ij</span></sub><span> indichiamo il </span><strong><span>tempo necessario per il completamento</span></strong><span> dell&#39;attività ij</span>
+<span>Essenzialmente, T</span><sub><span>i</span></sub><span> e T</span><sub><span>j</span></sub><span> sono gli </span><em><span>estremi</span></em><span> (sottoforma di date) dell&#39;attività N.d.S.</span></li></ul><p><img src="assets/266th23-153259.png" alt="266th23-153259" style="zoom:25%;" /></p><p><span>Si utilizzano inoltre delle </span><strong><span>tecniche</span></strong><span> nel momento in cui il reticolo da costruire è particolarmente impegnativo: Si procede a </span><strong><span>ritroso</span></strong><span> partendo quindi dall&#39;ultimo nodo (evento finale) individuando tutte le attività </span><strong><span>necessarie</span></strong><span> necessarie al compimento dell&#39;evento finale.</span></p><p><span>Bisogna notare che la </span><strong><span>posizione</span></strong><span> dei nodi e la </span><strong><span>lunghezza</span></strong><span> degli archi è puramente simbolica, e </span><strong><span>non rappresenta</span></strong><span> alcun valore ai fini del PERT.</span></p><p><img src="https://www.projectengineer.net/wp-content/uploads/2014/02/pert-2-2.png" referrerpolicy="no-referrer" alt="How to Draw a PERT Chart"></p><p><span>Inoltre si aggiungono delle </span><strong><span>informazioni aggiuntive</span></strong><span> al grafo:</span></p><ul><li><strong><span>Data minima e massima</span></strong><span> dell&#39;evento di inizio e di fine di ogni attività</span></li><li><strong><span>Slittamento</span></strong><span> di ogni attività</span></li><li><strong><span>Percorso critico</span></strong></li><li><strong><span>Data di fine progetto</span></strong></li></ul><h3 id='4-calcolo-dei-dati-e-percorso-critico'><span>4. Calcolo dei dati e percorso critico</span></h3><p><span>In questa fase andiamo ad elaborare il grafo mediante degli </span><strong><span>algoritmi</span></strong><span> che ci permettono di trovare il </span><strong><span>percorso critico</span></strong><span>:</span></p><blockquote><p><span>Il </span><strong><span>Percorso Critico</span></strong><span> è il percorso </span><strong><span>più lungo</span></strong><span> </span><sub><span>(non è un errore)</span></sub><span> e rappresenta il </span><strong><span>tempo necessario</span></strong><span> per la completa esecuzione del progetto.</span></p><p><span>Si definisce ulteriormente come quel percorso che collega tutte le </span><strong><span>attività critiche</span></strong><span> e che porta alla </span><strong><span>data finale</span></strong><span> del progetto.</span></p></blockquote><p><span>Per tutti gli altri percorsi alternativi a quello critico, </span><strong><span>si possono avere ritardi (scorrimenti)</span></strong><span> che non ritarderebbero in alcun modo il progetto.</span></p><p><span>Definiamo le seguenti sigle:</span></p><ul><li><strong><span>ED</span><sub><span>i</span></sub></strong><span> - Earliest Date - Indica il momento in cui </span><strong><span>l&#39;evento</span></strong><span> potrebbe iniziare.</span></li><li><strong><span>LD</span><sub><span>i</span></sub></strong><span> - Latest Date - Indica il momento in cui </span><strong><span>l&#39;evento</span></strong><span> potrebbe finire.</span></li><li><strong><span>EST</span><sub><span>ik</span></sub></strong><span> - Earliest Start Time -  Indica l&#39;istante di tempo (data, estremo </span><u><span>inferiore</span></u><span>) in cui </span><strong><span>l&#39;attività</span></strong><span> potrebbe iniziare</span></li><li><strong><span>EFT</span><sub><span>ik</span></sub></strong><span> - Earliest Finish Time - Indica l&#39;istante di tempo (data, estremo </span><u><span>inferiore</span></u><span>) in cui </span><strong><span>l&#39;attività</span></strong><span> potrebbe essere completata.</span></li><li><strong><span>LST</span><sub><span>ik</span></sub></strong><span> - Latest Start Time -  Indica l&#39;istante di tempo (data, estremo </span><u><span>superiore</span></u><span>) in cui </span><strong><span>l&#39;attività</span></strong><span> potrebbe iniziare</span></li><li><strong><span>LFT</span><sub><span>ik</span></sub></strong><span> - Latest Finish Time - Indica l&#39;istante di tempo (data, estremo </span><u><span>superiore</span></u><span>) in cui </span><strong><span>l&#39;attività</span></strong><span> potrebbe essere completata.</span></li></ul><h4 id='ed---earliest-date'><span>ED - Earliest Date</span></h4><p><strong><span>ED</span><sub><span>i</span></sub></strong><span> (Earliest Date) rappresenta la data </span><strong><span>prima della quale l&#39;evento non può essere completato</span></strong><span>, tenendo conto delle dipendenze temporali e delle durate delle attività precedenti. Indica il momento in cui l&#39;attività potrebbe iniziare.</span></p><p><img src="assets/266th23-162837.png" alt="266th23-162837" style="zoom:33%;" /></p><p><span>Nel caso elementare in cui abbiamo solo un&#39;attività e due eventi avremmo:</span>
+<img src="assets/266th23-163043.png" alt="266th23-163043" style="zoom:25%;" /></p><p><span>Bisogna notare che tutte le </span><strong><span>date minime</span></strong><span> degli </span><strong><span>eventi</span></strong><span> che precedono (ovvero che sono sul cammino del nodo in esame) devono essere calcolate prima di calcolare la data minima del nodo in esame.</span>
+<span>Inoltre, in questo modo possiamo calcolare la </span><strong><span>data minima dell&#39;evento finale</span></strong><span>, ovvero la data di fine del progetto.</span></p><h4 id='ld---latest-date'><span>LD - Latest Date</span></h4><p><span>La latest date rappresenta </span><strong><span>la data oltre la quale l&#39;evento non può verificarsi</span></strong><span>; infatti qualora l&#39;evento si verificasse oltre questa data, andrebbe a </span><strong><span>rallentare</span></strong><span> l&#39;intero progetto.</span></p><p><span>In questo caso, invece di dover calcolare tutte le date dei nodi </span><em><span>precedenti</span></em><span> a quello in esame, </span><strong><span>dobbiamo calcolare tutte le date dei nodi </span><em><span>successivi</span></em><span> a quello in esame</span></strong><span>.</span>
+<img src="assets/266th23-164006.png" alt="266th23-164006" style="zoom:33%;" /></p><h4 id='s---slittamento-totale'><span>S - Slittamento totale </span></h4><blockquote><p><span>Si definisce slittamento o scorrimento la </span><strong><span>differenza</span></strong><span> tra la latest date (L</span><sub><span>j</span></sub><span>) e la Earliest date (T</span><sub><span>j</span></sub><span>) dello stesso elemento.</span></p><ul><li><span>Slittamento </span><strong><span>S</span><sub><span>j</span></sub><span> = L</span><sub><span>j</span></sub><span> - T</span><sub><span>j</span></sub></strong></li></ul><p><span>Lo </span><strong><span>slittamento dell&#39;attività</span></strong><span>  (o scorrimento ammissibile) è pari a:</span></p><ul><li><strong><span>S</span><sub><span>ij</span></sub><span> = L</span><sub><span>j</span></sub><span> - (T</span><sub><span>j</span></sub><span> + t</span><sub><span>ij</span></sub><span>)</span></strong></li></ul><p><span>Quest&#39;ultimo valore di slittamento ci dice </span><strong><span>di quanto possiamo ritardare un&#39;attività</span></strong><span>; questo valore avrà valori del tipo:</span></p><ul><li><strong><span>Valore minimo</span></strong><span>: 0 - ovvero L</span><sub><span>j</span></sub><span> è uguale alla somma tra parentesi - ci indica che l&#39;attività </span><em><span>ij</span></em><span> non può essere ritardata: attività critica</span></li><li><strong><span>Positivo</span></strong><span>: se lo slittamento è maggiore di zero l&#39;attività può essere ritardata.</span></li><li><strong><span>NON può essere minore di zero</span></strong><span>: se lo slittamento di un&#39;attività fosse minore di zero, vuol dire che è un&#39;attività che </span><strong><span>va in ritardo</span></strong><span>, ovvero che la latest date è minore della earliest + t</span><sub><span>ij</span></sub><span>. In ogni caso un valore minore di zero indica un ritardo.</span></li></ul></blockquote><p><span>Una volta calcolate le date minime e massime per </span><em><span>ciascun</span></em><span> evento, possiamo calcolare lo </span><strong><span>slittamento totale</span></strong><span>, ovvero il </span><em><span>l&#39;intervallo di tempo del quale essa può essere ritardata senza avere ritardi sulla </span><strong><span>data finale</span></strong><span> del progetto.</span></em></p><p><span>Questo valore si calcola </span><em><span>sottraendo</span></em><span> alla </span><strong><span>data massima</span></strong><span> dell&#39;evento di </span><strong><span>fine attività</span></strong><span> e la somma tra la </span><strong><span>data minima</span></strong><span> dell&#39;evento di partenza (inizio attività) e la durata attesa dell&#39;attività:</span></p><p><img src="assets/266th23-164824.png" alt="266th23-164824" style="zoom:33%;" /></p><p><span>Quando la </span><strong><span>data massima</span></strong><span> e la </span><strong><span>data minima</span></strong><span> di un evento </span><strong><span>coincidono</span></strong><span>, allora siamo in presenza di un </span><strong><span>evento critico</span></strong><span>:</span></p><ul><li><span>LD</span><sub><span>i</span></sub><span> = ED</span><sub><span>i</span></sub><span> --&gt; </span><strong><span>Evento Critico</span></strong></li></ul><p><span>Quando, calcolando il tempo di slittamento di un&#39;attività, si ottiene </span><strong><span>zero</span></strong><span>, allora quell&#39;attività è dette </span><strong><span>attività critica</span></strong><span> e quell&#39;attività </span><strong><span>non permette alcun tipo di slittamento</span></strong><span>, altrimenti andrebbe a ritardare l&#39;intero progetto:</span></p><ul><li><span>S</span><sub><span>ij</span></sub><span> = 0 --&gt; </span><strong><span>Attività Critica</span></strong><span> - Indicata in </span><strong><span>grassetto</span></strong><span> sul grafo.</span></li></ul><p><span>Se invece otteniamo un valore </span><strong><span>negativo</span></strong><span> per il tempo di slittamento di un&#39;attività, allora quell&#39;attività è detta </span><strong><span>ipercritica</span></strong><span>; questo risultato indica che </span><strong><span>non sarà possibile completare l&#39;attività entro la latest date</span></strong><span> dell&#39;evento finale.</span></p><ul><li><span>S</span><sub><span>ij</span></sub><span> &lt; 0 --&gt; </span><strong><span>Attività Ipercritica</span></strong></li></ul><p><span>Se un percorso è composto </span><strong><span>interamente da attività critiche</span></strong><span>, allora è detto anch&#39;esso </span><strong><span>critico</span></strong><span>; questo vuol dire che qualora ci fosse un qualsiasi ritardo in una qualsiasi delle attività che lo compongono, genera un pari ritardo sulla data massima dell&#39;evento finale del progetto.</span></p><h3 id='5-ottimizzazione---critical-path-method'><span>5. Ottimizzazione - Critical Path Method</span></h3><p><img src="assets/266th23-180638.png" alt="266th23-180638" style="zoom:33%;" /></p><p><span>Possiamo rappresentare su un asse cartesiano i </span><strong><span>costi</span></strong><span> in funzione del </span><strong><span>tempo</span></strong><span> che ci si impiega ad ultimare un&#39;attività. Vediamo come c&#39;è un </span><strong><span>punto limite</span></strong><span>, che è quel punto in cui non si può ulteriormente ridurre il tempo di completamento detto </span><strong><span>tempo limite</span></strong><span>, anche utilizzando dutto il budget disponibile; questo corrisponde al </span><strong><span>costo limite</span></strong><span>, ovvero il costo massimo dell&#39;attività.</span></p><p><span>Abbiamo anche un altro punto: il </span><strong><span>punto normale</span></strong><span>, ovvero quel punto dove si ha il </span><strong><span>costo minimo</span></strong><span> (ovvero il costo più basso dell&#39;attività), ma anche il </span><strong><span>tempo normale</span></strong><span>.</span></p><p><span>Possiamo infine </span><strong><span>approssimare linearmente</span></strong><span> (ovvero unire le coordinate corrispondenti al punto limite e punto normale) la curva nell&#39;intervallo T</span><sub><span>L </span></sub><span>- T</span><sub><span>N</span></sub><span> in modo da poter approssimare il suo </span><strong><span>coefficiente angolare</span></strong><span>: questo valore ci dice </span><strong><span>l&#39;incremento di costo diretto per unità di tempo</span></strong><span>. Il nostro compito è quello di scegliere </span><strong><span>per la riduzione del tempo di realizzazione</span></strong><span> le attività aventi il coefficiente α minore:</span></p><p><img src="assets/266th23-181658.png" alt="266th23-181658" style="zoom:33%;" /></p><p><span>Chiamiamo α </span><strong><span>costo di accelerazione</span></strong><span>; a seconda di questo valore avremo:</span></p><ul><li><strong><span>Costo accelerazione positivo</span></strong><span>: Indica che accelerare l&#39;attività richiederà risorse finanziarie aggiuntive. Ciò significa che investire ulteriori risorse per completare l&#39;attività in un tempo più breve comporterà costi aggiuntivi. </span></li><li><strong><span>Costo accelerazione negativo</span></strong><span>: Indica che accelerare l&#39;attività può portare a risparmi finanziari. </span></li><li><strong><span>Costo accelerazione uguale a zero</span></strong><span>: Indica che non ci sono implicazioni finanziarie dirette associate all&#39;accelerazione dell&#39;attività.</span></li></ul><h2 id='esempio-di-applicazione-di-pert-e-cpm'><span>Esempio di applicazione di PERT e CPM</span></h2><p><span>Usiamo i dati delle tabelle:</span></p><p><img src="assets/WBS-1688499374831-15.png" alt="WBS" style="zoom:33%;" /></p><blockquote><p><span>WBS</span></p></blockquote><p><img src="assets/durate-costi-1688499378057-17.png" alt="durate-costi" style="zoom:33%;" /></p><blockquote><p><span>Durate-costi</span></p><p><span>Bisogna tenere conto che la riga dei </span><em><span>premi</span></em><span> ha dei valori circondati da parentesi: questi sono valori che andranno </span><strong><span>sottratti</span></strong><span> al conto finale, perchè sono degli incentivi, non penali!</span></p></blockquote><p><span>Otteniamo il grafo dalla tabella del WBS:</span>
+<img src="assets/266th23-220405.png" alt="266th23-220405" style="zoom:50%;" /></p><p><span>Siccome la durata del progetto totale, </span></p><p>&nbsp;</p><p><span>Possiamo calcolare i costi di accelerazione mediante la formula vista in precedenza; su excel abbiamo:</span></p><pre class="md-fences md-end-block ty-contain-cm modeLoaded" spellcheck="false" lang="excel"><div class="CodeMirror cm-s-inner cm-s-null-scroll CodeMirror-wrap" lang="excel"><div style="overflow: hidden; position: relative; width: 3px; height: 0px; top: 18.375px; left: 7.79688px;"><textarea autocorrect="off" autocapitalize="off" spellcheck="false" tabindex="0" style="position: absolute; bottom: -1em; padding: 0px; width: 1000px; height: 1em; outline: none;"></textarea></div><div class="CodeMirror-scrollbar-filler" cm-not-content="true"></div><div class="CodeMirror-gutter-filler" cm-not-content="true"></div><div class="CodeMirror-scroll" tabindex="-1"><div class="CodeMirror-sizer" style="margin-left: 0px; margin-bottom: 0px; border-right-width: 0px; padding-right: 0px; padding-bottom: 0px;"><div style="position: relative; top: 0px;"><div class="CodeMirror-lines" role="presentation"><div role="presentation" style="position: relative; outline: none;"><div class="CodeMirror-measure"><pre><span>xxxxxxxxxx</span></pre></div><div class="CodeMirror-measure"></div><div style="position: relative; z-index: 1;"></div><div class="CodeMirror-code" role="presentation"><div class="CodeMirror-activeline" style="position: relative;"><div class="CodeMirror-activeline-background CodeMirror-linebackground"></div><div class="CodeMirror-gutter-background CodeMirror-activeline-gutter" style="left: 0px; width: 0px;"></div><pre class=" CodeMirror-line " role="presentation"><span role="presentation" style="padding-right: 0.1px;"><span class="cm-atom">=</span><span class="cm-keyword">IFERROR</span><span class="cm-bracket">((</span><span class="cm-variable-2">Table1</span><span class="cm-bracket">[</span><span class="cm-operator">@CL</span><span class="cm-bracket">]</span><span class="cm-atom">-</span><span class="cm-variable-2">Table1</span><span class="cm-bracket">[</span><span class="cm-operator">@CN</span><span class="cm-bracket">])</span><span class="cm-atom">/</span><span class="cm-bracket">(</span><span class="cm-variable-2">Table1</span><span class="cm-bracket">[</span><span class="cm-operator">@Tn</span><span class="cm-bracket">]</span><span class="cm-atom">-</span><span class="cm-variable-2">Table1</span><span class="cm-bracket">[</span><span class="cm-operator">@TL</span><span class="cm-bracket">])</span><span class="cm-atom">;</span><span class="cm-number">0</span><span class="cm-bracket">)</span></span></pre></div></div></div></div></div></div><div style="position: absolute; height: 0px; width: 1px; border-bottom: 0px solid transparent; top: 25px;"></div><div class="CodeMirror-gutters" style="display: none; height: 25px;"></div></div></div></pre><p><span>Otteniamo la tabella dei costi di accelerazione</span></p><p><img src="assets/costi_accelerazione1.png" alt="costi_accelerazione1" style="zoom:25%;" /></p><p><span>Possiamo </span><strong><span>sommare</span></strong><span> il </span><strong><span>totale</span></strong><span> dei costi normali della tabella della WBS (</span><strong><span>1220</span></strong><span>) ai valori corrispondenti alla durata (12) della tabella dei costi (penali + canoni = 400 + 1200 = </span><strong><span>1600</span></strong><span>) ottenendo i </span><strong><span>costi diretti</span></strong><span> pari a </span><strong><span>2820</span></strong><span> unità di moneta.</span></p><p><span>Dopo aver calcolato questo valore, guardiamo la tabella delle accelerazioni e cerchiamo di </span><strong><span>velocizzare il progetto</span></strong><span> andando a pescare tra le attività che hanno il costo di accelerazione più basso; siccome l&#39;attività 3,4 ha un costo di accelerazione zero, la ignoriamo. Prendiamo in considerazione invece l&#39;attività 1,3:</span></p><p><img src="assets/266th23-223058.png" alt="266th23-223058" style="zoom:33%;" /></p><p><span>Notiamo come questa decisione si ripercuota su gran parte del grafo e sul tempo totale, che passa da 12 ad 11. Di conseguenza, i costi passano da 2820 a </span><strong><span>2270</span></strong><span>:</span></p><p><img src="assets/266th23-224509.png" alt="266th23-224509" style="zoom: 33%;" /></p><hr /><p><strong><span>Esercizio aggiuntivi</span></strong><span> al seguente </span><a href='https://my.liuc.it/MatSup/2002/Y71017/lez2.pdf'><span>link</span></a><span>.</span></p><h1 id='dalla-lezione'><span>Dalla lezione</span></h1><blockquote><p><span>Lezione 2020 11 10</span><span>				</span><span>01:00 </span></p></blockquote><p><span>Il reticolo viene costruito </span><strong><span>sempre a partire dalla fine</span></strong><span>, ovvero dall&#39;ultimo evento: quello di consegna del progetto.</span></p><h2 id='strutturare-il-reticolo'><span>Strutturare il reticolo</span></h2><p><span>Si parte sempre dalla </span><strong><span>latest date</span></strong></p><p><img src="assets/reticolo.png" referrerpolicy="no-referrer" alt="reticolo"></p><ul><li><p><span>In questo caso, nell&#39;evento 6 abbiamo una latest date di 17 unità di tempo (le consideriamo come </span><strong><span>settimane</span></strong><span>, la latest date è riportata nella posizione in alto a destra delle croci).</span></p><p><span>Successivamente andiamo a ritroso: l&#39;attività che va da 5 a 6 si compie in 3 settimane, quindi la latest date dell&#39;evento 5 è data da </span><code>LD5 = 17 - 3 = 14</code><span> --&gt; l&#39;attività 5 si compie in 14 settimane.</span></p><p><span>Tra parentesi possiamo trovare lo </span><strong><span>slittamento</span></strong><span>: l&#39;attività 5-6 può essere completata in 3 unità di tempo, ma </span><strong><span>ammette uno slittamento</span></strong><span> di 6 unità di tempo. L&#39;attività 4-6, invece, </span><strong><span>deve</span></strong><span> essere completata in 5 settimane, ma ha slittamento zero: è un&#39;attività critica. Questo ci porta a dire che la latest date dell&#39;evento 4 è 17 - 5 = 12.</span></p></li><li><p><span>Le attività critiche vengono </span><strong><span>indicate in grassetto</span></strong><span>, come avviene in figura.</span></p></li><li><p><span>Osserviamo che l&#39;evento 3 non può essere completato finché non si completa l&#39;evento 2: l&#39;attività 2-3 è un&#39;attività dummy (a durata nulla).</span></p></li><li><p><span>La </span><strong><span>Latest Date</span></strong><span> dell&#39;evento 3 viene calcolata a partire dall&#39;attività 3-4 e 4-6: questo perché l&#39;attività 3-4 ha tempo di completamento maggiore rispetto all&#39;attività 3-5. Nel calcolo della latest date dobbiamo sempre prendere il percorso massimo.</span></p></li><li><p><span>Anche nel caso dell&#39;evento 2 la latest date viene calcolata a partire dal percorso maggiore: invece di prendere 2-4-6 (ovvero 17 - 5 - 6 = 6), scegliamo 2-3-4-6 (ovvero 17 - 5 - 7 = 5)</span></p></li></ul><h3 id='il-percorso-critico'><span>Il percorso critico</span></h3><p><span>Nel nostro caso il percorso critico è dato dalla sequenza </span><code>Critical Path = 1-3-4-6</code><span>: </span><strong><span>il ritardo di anche una sola attività conduce al ritardo del progetto.</span></strong></p><p><span>Infatti, il ritardo di anche una sola attività si ripercuote su tutte le altre: se ritarda l&#39;attività 1-3, l&#39;attività 3-4 comincerà in ritardo, poi ritarderà anche la 4-6, e di conseguenza manda in ritardo anche </span><strong><span>l&#39;evento 6</span></strong><span>, ovvero la fine del progetto.</span></p><h2 id='ridistribuire-le-risorse---il-pert-e-cpm'><span>Ridistribuire le risorse - il PERT e CPM</span></h2><p><span>Una volta realizzato il reticolo cerchiamo di </span><strong><span>ridistribuire le risorse</span></strong><span>: le attività critiche che hanno problemi di completamento e che potrebbero ritardare l&#39;intero progetto, necessitano di ulteriori risorsi, che andiamo ad attingere dalle attività non critiche.</span></p><h3 id='cosa-ci-serve'><span>Cosa ci serve?</span></h3><ul><li><span>Durata minima del progetto</span></li><li><span>Conoscere gli eventi ed attività critiche</span></li><li><span>Scorrimenti</span></li></ul><h3 id='il-critical-path-method---cpm'><span>Il Critical Path Method - CPM</span></h3><p><span>Utilizziamo diversi valori del tempo:</span></p><ul><li><strong><span>T</span><sub><span>A</span></sub><span> - Tempo abituale</span></strong><span>: il tempo misurato senza alcuna ottimizzazione</span></li><li><strong><span>T</span><sub><span>N</span></sub><span> - Tempo Normale</span></strong><span>: tempo ottenuto dopo aver ottimizzato il più possibile il lavoro</span></li><li><strong><span>T</span><sub><span>L</span></sub><span> - Tempo Limite</span></strong><span>: è il tempo al di sotto del quale non si può più andare. Possiamo quindi investire tutte le risorse possibili, ma non riusciremo mai a sfondare questa soglia.</span></li></ul><p><span>Definiamo </span><strong><span>costo di accelerazione</span></strong><span> il valore:</span></p><ul><li><span>C</span><sub><span>A</span></sub><span> = (C</span><sub><span>L</span></sub><span> - C</span><sub><span>N</span></sub><span>) / (T</span><sub><span>N</span></sub><span> - T</span><sub><span>L</span></sub><span>)</span></li></ul><p><span>Che si ricava da una tabella; il costo di accelerazione è essenzialmente la retta che si ottiene dalla curva dei costi (vedi il punto 5).</span></p><p>&nbsp;</p></div></div>
+</body>
+</html>

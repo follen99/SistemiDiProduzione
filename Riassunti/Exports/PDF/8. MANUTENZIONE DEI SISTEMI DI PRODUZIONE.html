@@ -1,0 +1,2314 @@
+<!doctype html>
+<html>
+<head>
+<meta charset='UTF-8'><meta name='viewport' content='width=device-width initial-scale=1'>
+
+<style type='text/css'>html {overflow-x: initial !important;}:root { --bg-color:#ffffff; --text-color:#333333; --select-text-bg-color:#B5D6FC; --select-text-font-color:auto; --monospace:"Lucida Console",Consolas,"Courier",monospace; --title-bar-height:20px; }
+.mac-os-11 { --title-bar-height:28px; }
+html { font-size: 14px; background-color: var(--bg-color); color: var(--text-color); font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; -webkit-font-smoothing: antialiased; }
+body { margin: 0px; padding: 0px; height: auto; inset: 0px; font-size: 1rem; line-height: 1.42857; overflow-x: hidden; background: inherit; tab-size: 4; }
+iframe { margin: auto; }
+a.url { word-break: break-all; }
+a:active, a:hover { outline: 0px; }
+.in-text-selection, ::selection { text-shadow: none; background: var(--select-text-bg-color); color: var(--select-text-font-color); }
+#write { margin: 0px auto; height: auto; width: inherit; word-break: normal; overflow-wrap: break-word; position: relative; white-space: normal; overflow-x: visible; padding-top: 36px; }
+#write.first-line-indent p { text-indent: 2em; }
+#write.first-line-indent li p, #write.first-line-indent p * { text-indent: 0px; }
+#write.first-line-indent li { margin-left: 2em; }
+.for-image #write { padding-left: 8px; padding-right: 8px; }
+body.typora-export { padding-left: 30px; padding-right: 30px; }
+.typora-export .footnote-line, .typora-export li, .typora-export p { white-space: pre-wrap; }
+.typora-export .task-list-item input { pointer-events: none; }
+@media screen and (max-width: 500px) {
+  body.typora-export { padding-left: 0px; padding-right: 0px; }
+  #write { padding-left: 20px; padding-right: 20px; }
+}
+#write li > figure:last-child { margin-bottom: 0.5rem; }
+#write ol, #write ul { position: relative; }
+img { max-width: 100%; vertical-align: middle; image-orientation: from-image; }
+button, input, select, textarea { color: inherit; font: inherit; }
+input[type="checkbox"], input[type="radio"] { line-height: normal; padding: 0px; }
+*, ::after, ::before { box-sizing: border-box; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p, #write pre { width: inherit; }
+#write h1, #write h2, #write h3, #write h4, #write h5, #write h6, #write p { position: relative; }
+p { line-height: inherit; }
+h1, h2, h3, h4, h5, h6 { break-after: avoid-page; break-inside: avoid; orphans: 4; }
+p { orphans: 4; }
+h1 { font-size: 2rem; }
+h2 { font-size: 1.8rem; }
+h3 { font-size: 1.6rem; }
+h4 { font-size: 1.4rem; }
+h5 { font-size: 1.2rem; }
+h6 { font-size: 1rem; }
+.md-math-block, .md-rawblock, h1, h2, h3, h4, h5, h6, p { margin-top: 1rem; margin-bottom: 1rem; }
+.hidden { display: none; }
+.md-blockmeta { color: rgb(204, 204, 204); font-weight: 700; font-style: italic; }
+a { cursor: pointer; }
+sup.md-footnote { padding: 2px 4px; background-color: rgba(238, 238, 238, 0.7); color: rgb(85, 85, 85); border-radius: 4px; cursor: pointer; }
+sup.md-footnote a, sup.md-footnote a:hover { color: inherit; text-transform: inherit; text-decoration: inherit; }
+#write input[type="checkbox"] { cursor: pointer; width: inherit; height: inherit; }
+figure { overflow-x: auto; margin: 1.2em 0px; max-width: calc(100% + 16px); padding: 0px; }
+figure > table { margin: 0px; }
+thead, tr { break-inside: avoid; break-after: auto; }
+thead { display: table-header-group; }
+table { border-collapse: collapse; border-spacing: 0px; width: 100%; overflow: auto; break-inside: auto; text-align: left; }
+table.md-table td { min-width: 32px; }
+.CodeMirror-gutters { border-right: 0px; background-color: inherit; }
+.CodeMirror-linenumber { user-select: none; }
+.CodeMirror { text-align: left; }
+.CodeMirror-placeholder { opacity: 0.3; }
+.CodeMirror pre { padding: 0px 4px; }
+.CodeMirror-lines { padding: 0px; }
+div.hr:focus { cursor: none; }
+#write pre { white-space: pre-wrap; }
+#write.fences-no-line-wrapping pre { white-space: pre; }
+#write pre.ty-contain-cm { white-space: normal; }
+.CodeMirror-gutters { margin-right: 4px; }
+.md-fences { font-size: 0.9rem; display: block; break-inside: avoid; text-align: left; overflow: visible; white-space: pre; background: inherit; position: relative !important; }
+.md-fences-adv-panel { width: 100%; margin-top: 10px; text-align: center; padding-top: 0px; padding-bottom: 8px; overflow-x: auto; }
+#write .md-fences.mock-cm { white-space: pre-wrap; }
+.md-fences.md-fences-with-lineno { padding-left: 0px; }
+#write.fences-no-line-wrapping .md-fences.mock-cm { white-space: pre; overflow-x: auto; }
+.md-fences.mock-cm.md-fences-with-lineno { padding-left: 8px; }
+.CodeMirror-line, twitterwidget { break-inside: avoid; }
+svg { break-inside: avoid; }
+.footnotes { opacity: 0.8; font-size: 0.9rem; margin-top: 1em; margin-bottom: 1em; }
+.footnotes + .footnotes { margin-top: 0px; }
+.md-reset { margin: 0px; padding: 0px; border: 0px; outline: 0px; vertical-align: top; background: 0px 0px; text-decoration: none; text-shadow: none; float: none; position: static; width: auto; height: auto; white-space: nowrap; cursor: inherit; -webkit-tap-highlight-color: transparent; line-height: normal; font-weight: 400; text-align: left; box-sizing: content-box; direction: ltr; }
+li div { padding-top: 0px; }
+blockquote { margin: 1rem 0px; }
+li .mathjax-block, li p { margin: 0.5rem 0px; }
+li blockquote { margin: 1rem 0px; }
+li { margin: 0px; position: relative; }
+blockquote > :last-child { margin-bottom: 0px; }
+blockquote > :first-child, li > :first-child { margin-top: 0px; }
+.footnotes-area { color: rgb(136, 136, 136); margin-top: 0.714rem; padding-bottom: 0.143rem; white-space: normal; }
+#write .footnote-line { white-space: pre-wrap; }
+@media print {
+  body, html { border: 1px solid transparent; height: 99%; break-after: avoid; break-before: avoid; font-variant-ligatures: no-common-ligatures; }
+  #write { margin-top: 0px; padding-top: 0px; border-color: transparent !important; padding-bottom: 0px !important; }
+  .typora-export * { -webkit-print-color-adjust: exact; }
+  .typora-export #write { break-after: avoid; }
+  .typora-export #write::after { height: 0px; }
+  .is-mac table { break-inside: avoid; }
+  .typora-export-show-outline .typora-export-sidebar { display: none; }
+}
+.footnote-line { margin-top: 0.714em; font-size: 0.7em; }
+a img, img a { cursor: pointer; }
+pre.md-meta-block { font-size: 0.8rem; min-height: 0.8rem; white-space: pre-wrap; background: rgb(204, 204, 204); display: block; overflow-x: hidden; }
+p > .md-image:only-child:not(.md-img-error) img, p > img:only-child { display: block; margin: auto; }
+#write.first-line-indent p > .md-image:only-child:not(.md-img-error) img { left: -2em; position: relative; }
+p > .md-image:only-child { display: inline-block; width: 100%; }
+#write .MathJax_Display { margin: 0.8em 0px 0px; }
+.md-math-block { width: 100%; }
+.md-math-block:not(:empty)::after { display: none; }
+.MathJax_ref { fill: currentcolor; }
+[contenteditable="true"]:active, [contenteditable="true"]:focus, [contenteditable="false"]:active, [contenteditable="false"]:focus { outline: 0px; box-shadow: none; }
+.md-task-list-item { position: relative; list-style-type: none; }
+.task-list-item.md-task-list-item { padding-left: 0px; }
+.md-task-list-item > input { position: absolute; top: 0px; left: 0px; margin-left: -1.2em; margin-top: calc(1em - 10px); border: none; }
+.math { font-size: 1rem; }
+.md-toc { min-height: 3.58rem; position: relative; font-size: 0.9rem; border-radius: 10px; }
+.md-toc-content { position: relative; margin-left: 0px; }
+.md-toc-content::after, .md-toc::after { display: none; }
+.md-toc-item { display: block; color: rgb(65, 131, 196); }
+.md-toc-item a { text-decoration: none; }
+.md-toc-inner:hover { text-decoration: underline; }
+.md-toc-inner { display: inline-block; cursor: pointer; }
+.md-toc-h1 .md-toc-inner { margin-left: 0px; font-weight: 700; }
+.md-toc-h2 .md-toc-inner { margin-left: 2em; }
+.md-toc-h3 .md-toc-inner { margin-left: 4em; }
+.md-toc-h4 .md-toc-inner { margin-left: 6em; }
+.md-toc-h5 .md-toc-inner { margin-left: 8em; }
+.md-toc-h6 .md-toc-inner { margin-left: 10em; }
+@media screen and (max-width: 48em) {
+  .md-toc-h3 .md-toc-inner { margin-left: 3.5em; }
+  .md-toc-h4 .md-toc-inner { margin-left: 5em; }
+  .md-toc-h5 .md-toc-inner { margin-left: 6.5em; }
+  .md-toc-h6 .md-toc-inner { margin-left: 8em; }
+}
+a.md-toc-inner { font-size: inherit; font-style: inherit; font-weight: inherit; line-height: inherit; }
+.footnote-line a:not(.reversefootnote) { color: inherit; }
+.reversefootnote { font-family: ui-monospace, sans-serif; }
+.md-attr { display: none; }
+.md-fn-count::after { content: "."; }
+code, pre, samp, tt { font-family: var(--monospace); }
+kbd { margin: 0px 0.1em; padding: 0.1em 0.6em; font-size: 0.8em; color: rgb(36, 39, 41); background: rgb(255, 255, 255); border: 1px solid rgb(173, 179, 185); border-radius: 3px; box-shadow: rgba(12, 13, 14, 0.2) 0px 1px 0px, rgb(255, 255, 255) 0px 0px 0px 2px inset; white-space: nowrap; vertical-align: middle; }
+.md-comment { color: rgb(162, 127, 3); opacity: 0.6; font-family: var(--monospace); }
+code { text-align: left; vertical-align: initial; }
+a.md-print-anchor { white-space: pre !important; border-width: initial !important; border-style: none !important; border-color: initial !important; display: inline-block !important; position: absolute !important; width: 1px !important; right: 0px !important; outline: 0px !important; background: 0px 0px !important; text-decoration: initial !important; text-shadow: initial !important; }
+.os-windows.monocolor-emoji .md-emoji { font-family: "Segoe UI Symbol", sans-serif; }
+.md-diagram-panel > svg { max-width: 100%; }
+[lang="flow"] svg, [lang="mermaid"] svg { max-width: 100%; height: auto; }
+[lang="mermaid"] .node text { font-size: 1rem; }
+table tr th { border-bottom: 0px; }
+video { max-width: 100%; display: block; margin: 0px auto; }
+iframe { max-width: 100%; width: 100%; border: none; }
+.highlight td, .highlight tr { border: 0px; }
+mark { background: rgb(255, 255, 0); color: rgb(0, 0, 0); }
+.md-html-inline .md-plain, .md-html-inline strong, mark .md-inline-math, mark strong { color: inherit; }
+.md-expand mark .md-meta { opacity: 0.3 !important; }
+mark .md-meta { color: rgb(0, 0, 0); }
+@media print {
+  .typora-export h1, .typora-export h2, .typora-export h3, .typora-export h4, .typora-export h5, .typora-export h6 { break-inside: avoid; }
+}
+.md-diagram-panel .messageText { stroke: none !important; }
+.md-diagram-panel .start-state { fill: var(--node-fill); }
+.md-diagram-panel .edgeLabel rect { opacity: 1 !important; }
+.md-fences.md-fences-math { font-size: 1em; }
+.md-fences-advanced:not(.md-focus) { padding: 0px; white-space: nowrap; border: 0px; }
+.md-fences-advanced:not(.md-focus) { background: inherit; }
+.typora-export-show-outline .typora-export-content { max-width: 1440px; margin: auto; display: flex; flex-direction: row; }
+.typora-export-sidebar { width: 300px; font-size: 0.8rem; margin-top: 80px; margin-right: 18px; }
+.typora-export-show-outline #write { --webkit-flex:2; flex: 2 1 0%; }
+.typora-export-sidebar .outline-content { position: fixed; top: 0px; max-height: 100%; overflow: hidden auto; padding-bottom: 30px; padding-top: 60px; width: 300px; }
+@media screen and (max-width: 1024px) {
+  .typora-export-sidebar, .typora-export-sidebar .outline-content { width: 240px; }
+}
+@media screen and (max-width: 800px) {
+  .typora-export-sidebar { display: none; }
+}
+.outline-content li, .outline-content ul { margin-left: 0px; margin-right: 0px; padding-left: 0px; padding-right: 0px; list-style: none; }
+.outline-content ul { margin-top: 0px; margin-bottom: 0px; }
+.outline-content strong { font-weight: 400; }
+.outline-expander { width: 1rem; height: 1.42857rem; position: relative; display: table-cell; vertical-align: middle; cursor: pointer; padding-left: 4px; }
+.outline-expander::before { content: ""; position: relative; font-family: Ionicons; display: inline-block; font-size: 8px; vertical-align: middle; }
+.outline-item { padding-top: 3px; padding-bottom: 3px; cursor: pointer; }
+.outline-expander:hover::before { content: ""; }
+.outline-h1 > .outline-item { padding-left: 0px; }
+.outline-h2 > .outline-item { padding-left: 1em; }
+.outline-h3 > .outline-item { padding-left: 2em; }
+.outline-h4 > .outline-item { padding-left: 3em; }
+.outline-h5 > .outline-item { padding-left: 4em; }
+.outline-h6 > .outline-item { padding-left: 5em; }
+.outline-label { cursor: pointer; display: table-cell; vertical-align: middle; text-decoration: none; color: inherit; }
+.outline-label:hover { text-decoration: underline; }
+.outline-item:hover { border-color: rgb(245, 245, 245); background-color: var(--item-hover-bg-color); }
+.outline-item:hover { margin-left: -28px; margin-right: -28px; border-left: 28px solid transparent; border-right: 28px solid transparent; }
+.outline-item-single .outline-expander::before, .outline-item-single .outline-expander:hover::before { display: none; }
+.outline-item-open > .outline-item > .outline-expander::before { content: ""; }
+.outline-children { display: none; }
+.info-panel-tab-wrapper { display: none; }
+.outline-item-open > .outline-children { display: block; }
+.typora-export .outline-item { padding-top: 1px; padding-bottom: 1px; }
+.typora-export .outline-item:hover { margin-right: -8px; border-right: 8px solid transparent; }
+.typora-export .outline-expander::before { content: "+"; font-family: inherit; top: -1px; }
+.typora-export .outline-expander:hover::before, .typora-export .outline-item-open > .outline-item > .outline-expander::before { content: "−"; }
+.typora-export-collapse-outline .outline-children { display: none; }
+.typora-export-collapse-outline .outline-item-open > .outline-children, .typora-export-no-collapse-outline .outline-children { display: block; }
+.typora-export-no-collapse-outline .outline-expander::before { content: "" !important; }
+.typora-export-show-outline .outline-item-active > .outline-item .outline-label { font-weight: 700; }
+.md-inline-math-container mjx-container { zoom: 0.95; }
+mjx-container { break-inside: avoid; }
+
+
+/*
+Theme Name: GitHub Night
+Theme URI: https://github.com/kinoute/typora-github-night-theme
+Authors: Yann Defretin, GitHub Team
+Author URI: https://github.com/kinoute
+Description: Typora themes that reproduces GitHub Dark Color Schemes.
+Version: 0.6.2
+Tags: dark, github, typora
+*/
+
+/* nunito-sans-regular - latin-ext_latin */
+/* nunito-sans-italic - latin-ext_latin */
+/* nunito-sans-800 - latin-ext_latin */
+/* nunito-sans-800italic - latin-ext_latin */
+/* Use a special font for code blocks just like GitHub */
+:root {
+    --text-color: #c9d1d9;
+    --bg-color: #0d1117;
+    --side-bar-bg-color: #0d1117;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #0d1117;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #0d1117;
+    --item-hover-bg-color: #161b22;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: var(--item-hover-bg-color) !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #21262d !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+.pane-group {
+    background-color: var(--bg-color);
+}
+
+.dropdown-menu {
+    background-color: var(--bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color) !important;
+    color: #8b949e !important;
+}
+
+.dropdown-menu>li>a {
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+.dropdown-menu>li>a:hover {
+    background-color: var(--item-hover-bg-color);
+    border-left: 1px solid var(--bg-color);
+    border-right: 1px solid var(--bg-color);
+    color: var(--text-color) !important;
+}
+
+body {
+    height: 100%;
+    line-height: 1.6;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    background-color: var(--bg-color) !important;
+    font-family: "Nunito", sans-serif;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 30px;
+    padding-bottom: 100px;
+}
+
+@media only screen and (min-width: 1400px) {
+    #write {
+        max-width: 1024px;
+    }
+}
+
+@media only screen and (min-width: 1800px) {
+    #write {
+        max-width: 1200px;
+    }
+}
+
+#write>ul:first-child,
+#write>ol:first-child {
+    margin-top: 30px;
+}
+
+content {
+    background-color: var(--bg-color) !important;
+}
+
+/*.md-end-block.md-heading.md-focus {
+  color: #afe61d;
+}*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--text-color);
+    font-family: "Nunito", sans-serif;
+    font-weight: 400;
+    padding-top: 20px;
+}
+
+html {
+    font-size: 14px;
+    font-family: "Nunito", sans-serif;
+}
+
+#write {
+    text-align: justify;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+
+h1 {
+    font-size: 2.25em;
+    line-height: 1.2;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+h2 {
+    font-size: 1.75em;
+    line-height: 1.225;
+    padding-bottom: .3em;
+    border-bottom: 1px solid var(--color-border-secondary);
+}
+
+/*@media print {
+    .typora-export h1,
+    .typora-export h2 {
+        border-bottom: none;
+        padding-bottom: initial;
+    }
+
+    .typora-export h1::after,
+    .typora-export h2::after {
+        content: "";
+        display: block;
+        height: 100px;
+        margin-top: -96px;
+        border-top: 1px solid #eee;
+    }
+}*/
+
+h3 {
+    font-size: 1.5em;
+    line-height: 1.43;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: 1em;
+    color: rgb(139, 148, 158);
+}
+
+h1.md-focus:before,
+h2.md-focus:before,
+h3.md-focus:before,
+h4.md-focus:before,
+h5.md-focus:before,
+h6.md-focus:before {
+    content: '';
+    border: 0;
+}
+
+p {
+    color: var(--text-color);
+    line-height: 1.20rem;
+    margin: 0 0 1.25rem;
+}
+
+kbd {
+    display: inline-block;
+    padding: 3px 5px;
+    font: 11px SFMono-Regular, Nunito, Consolas, Liberation Mono, Menlo, monospace;
+    line-height: 10px;
+    color: #b1bac4;
+    vertical-align: middle;
+    background-color: var(--bg-color);
+    border-bottom-color: #6e7681;
+    border: 1px solid #6e7681;
+    border-radius: 6px;
+    box-shadow: inset 0 -1px 0 #6e7681;
+}
+
+/* Focus Mode */
+
+/*.on-focus-mode {
+  h1.md-end-block:not(.md-focus):not(.md-focus-container) {
+      color: yellow !important;
+    }
+}*/
+
+
+p {
+    font-size: 1.25rem;
+    line-height: 1.8;
+}
+
+table {
+    font-size: 1.25rem;
+}
+
+
+a,
+.md-def-url {
+    color: #58a6ff;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #58a6ff;
+    text-decoration: underline;
+}
+
+/* Summary */
+
+.md-toc {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.md-toc-content {
+    background-color: var(--item-hover-bg-color) !important;
+    border-radius: 6px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+/*.md-toc-inner:hover {
+  text-decoration: none;
+}*/
+
+#write div.md-toc-tooltip {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    padding-left: 5px;
+    font-size: 1.4rem;
+    color: var(--text-color);
+}
+
+.md-toc:focus .md-toc-content {
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.md-delete-toc {
+    color: var(--text-color);
+}
+
+table {
+    margin-bottom: 20px;
+    line-height: 24px;
+}
+
+table th,
+table td {
+    padding: 8px;
+    line-height: 1.25rem;
+    vertical-align: middle;
+    border-top: 1px solid #3D454D;
+}
+
+table th {
+    font-weight: 700;
+    padding: 6px 13px;
+}
+
+/*
+table thead th {
+  vertical-align: bottom;
+}*/
+
+table caption+thead tr:first-child th,
+table caption+thead tr:first-child td,
+table colgroup+thead tr:first-child th,
+table colgroup+thead tr:first-child td,
+table thead:first-child tr:first-child th,
+table thead:first-child tr:first-child td {
+    border-top: 0;
+}
+
+table tbody+tbody {
+    border-top: 2px solid #3D454D;
+}
+
+table tr th {
+    border: 1px solid #324560;
+    border-bottom: solid 2px #3D454D;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+table tr {
+    border-top: 1px solid #3D454D;
+    margin: 0;
+    padding: 0;
+}
+
+thead {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+table tr th {
+    border: 1px solid #3D454D;
+    border-bottom: solid 2px #ccc;
+    border-bottom: 0;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 16px;
+}
+
+table tr td {
+    background: #192534;
+    border: 1px solid #3D454D;
+    margin: 0;
+    padding: 10px 16px;
+    line-height: 1.6em;
+}
+
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(1n) td {
+    background-color: var(--item-hover-bg-color);
+}
+
+table tr:nth-child(2n),
+table tr:nth-child(2n) td {
+    background-color: var(--bg-color);
+}
+
+.md-fences,
+tt {
+    border-radius: 3px;
+    color: var(--item-hover-bg-color);
+    font-size: .9em;
+    padding: 0;
+}
+
+code {
+    padding: .2em .4em;
+    margin: 0;
+    font-size: 1.105rem;
+    background-color: rgba(240, 246, 252, 0.15);
+    border-radius: 6px;
+    font-family: "SFMono-Regular", "Fira Code", Nunito, monospace;
+    line-height: 2;
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-bottom: 6px;
+    padding-top: 8px;
+    color: var(--text-color);
+}
+
+.md-task-list-item>input {
+    background: #1a283d;
+    margin-left: -1.3em;
+}
+
+/* Using checkboxes in sublists should not get list circles inside inputs */
+.md-task-list-item {
+    list-style-type: none !important;
+}
+
+/*@media print {
+  html {
+    font-size: 13px;
+  }
+  table, pre {
+    page-break-inside: avoid;
+  }
+  pre {
+    word-wrap: break-word;
+  }
+}*/
+
+.file-tree-node {
+     padding-top: 2px;
+ }
+
+#write pre.md-meta-block {
+    background-color: var(--item-hover-bg-color);
+    border: 0;
+    border-radius: 3px;
+    color: #fff;
+    font-size: 100%;
+    line-height: 1.45;
+    margin-top: 0 !important;
+    padding: 1rem;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+.md-image>.md-meta {
+    border-radius: 3px;
+    color: inherit;
+    font-size: .9em;
+    padding: 2px 0 0 4px;
+}
+
+.md-tag {
+    color: #70bfd9;
+    opacity: 1;
+}
+
+/*
+.CodeMirror-lines {
+  padding: 4px 0;
+}
+*/
+
+.CodeMirror-line {
+    padding-left: 15px;
+}
+
+.code-tooltip {
+    background: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    box-shadow: 0 1px 1px 0 rgba(0, 28, 36, .3);
+    border-radius: 6px;
+    /*margin-right: 13px!important;*/
+}
+
+/* Yellow border when focusing Code block language input */
+.code-tooltip .ty-input {
+    border: 0;
+}
+
+/* Languages suggestions Menu */
+.auto-suggest-container {
+    background-color: var(--item-hover-bg-color);
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    border-radius: 6px;
+}
+
+.dropdown-menu {
+    color: #70c0d8;
+    margin-right: 5px;
+}
+
+.md-fences {
+    padding: .3em;
+    font-size: .9em;
+    margin-left: .2em;
+    margin-right: .2em;
+}
+
+.md-fences {
+    margin: 0 0 20px;
+    font-size: 1.105em;
+    padding: 0;
+    padding-top: .4em;
+}
+
+.task-list {
+    padding-left: 0;
+}
+
+.task-list-item {
+    padding-left: 2.125rem;
+}
+
+.task-list-item input {
+    top: 7px;
+}
+
+#write ul li.task-list-item input {
+    top: 3px !important;
+}
+
+.task-list-item input:before {
+    content: "";
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #324560;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-left: 0;
+    margin-top: -.5rem;
+}
+
+.task-list-item input:checked:before,
+.task-list-item input[checked]:before {
+    content: "\2713";
+    font-size: 1.2125rem;
+    line-height: .9375rem;
+    /*  margin-top: -1rem;
+*/
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+
+    .task-list-item input:before,
+    .task-list-item input:checked:before,
+    .task-list-item input[checked]:before {
+        margin-top: -.2rem;
+    }
+}
+
+blockquote .md-end-block.md-heading {
+    color: inherit;
+}
+
+blockquote .md-end-block.md-heading:before {
+    content: '' !important;
+}
+
+blockquote {
+    margin: 0 0 1.11111rem;
+    padding: .5rem 1.11111rem 0 1.05556rem;
+    border-left: .25em solid #3b434b;
+}
+
+blockquote,
+blockquote p {
+    line-height: 1.6;
+    color: #8b949e;
+}
+
+.MathJax_Display {
+    font-size: 1em !important;
+    margin-top: .5em;
+    margin-bottom: 0;
+}
+
+.md-math-block {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-tooltip .md-rawblock-control {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* Edit Math Blocks */
+.md-rawblock-control:not(.md-rawblock-tooltip) {
+    font-size: 1.105rem;
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-rawblock-control .CodeMirror.cm-s-inner {
+    border: 0px;
+}
+
+/* Inline Math Editing */
+.md-inline-math script {
+    color: #f9826c;
+}
+
+.md-math-tex inline-math-svg {
+    font-size: 1.4rem;
+}
+
+.md-rawblock-panel .code-tooltip {
+    border: 0px;
+}
+
+.md-rawblock-input {
+    font-size: 1.105rem;
+}
+
+/* mathjax edit panel*/
+.md-rawblock-before {
+    border-top-left-radius: 6px;
+}
+
+.md-rawblock-after {
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+}
+
+/* Inline Math */
+.MathJax_SVG {
+    font-size: 1.4rem;
+}
+
+.MathJax_SVG:focus {
+    outline: none;
+    background-color: transparent;
+}
+
+.md-rawblock>.md-rawblock-container {
+    transition: 0.5s;
+}
+
+.md-rawblock>.md-rawblock-tooltip {
+    transition: 0.5s;
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+}
+
+.md-rawblock:hover>.md-rawblock-tooltip {
+    transition: 0.5s;
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+}
+
+p.mathjax-block,
+.mathjax-block {
+    padding-bottom: 0;
+}
+
+.mathjax-block>.code-tooltip {
+    bottom: 5px;
+    box-shadow: none;
+}
+
+.md-image>.md-meta {
+    padding-left: .5em;
+    padding-right: .5em;
+}
+
+.md-image>img {
+    margin-top: 2px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.md-image>.md-meta:first-of-type:before {
+    padding-left: 4px;
+}
+
+#typora-source {
+    color: var(--text-color);
+}
+
+.typora-sourceview-on #toggle-sourceview-btn {
+    color: var(--text-color);
+    background-color: #484f58;
+}
+
+.md-image-pick-file-btn,
+.md-image-input-src-btn {
+    background-color: var(--item-hover-bg-color);
+}
+
+.md-image-btn.selected,
+.md-image-btn:hover,
+.md-image-pick-file-btn:hover,
+.md-image-input-src-btn:hover {
+    color: #f9826c !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.searchpanel-search-option-btn {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid #30363d;
+}
+
+.searchpanel-search-option-btn.active {
+    color: #ddd;
+    border: 1px solid #8b949e;
+}
+
+.searchpanel-search-option-btn:hover {
+    border: 1px solid #8b949e;
+}
+
+#md-searchpanel {
+    border-bottom: 0 solid #324560;
+    font-family: "Nunito", sans-serif;
+}
+
+#md-searchpanel input {
+    background-color: #21262d !important;
+    border: 1px solid #30363d;
+}
+
+#md-searchpanel .btn {
+    font-size: 11px;
+}
+
+#md-searchpanel .btn:hover {
+    color: #8b949e;
+}
+
+#md-notification:before {
+    top: 14px;
+}
+
+#md-notification {
+    background: var(--bg-color);
+    font-size: 14px;
+    border-bottom: 0;
+}
+
+#md-notification .ty-enter-mode-warning-header {
+    color: #f9826c;
+}
+
+#md-notification p,
+#md-notification .btn,
+#md-notification label {
+    font-size: 14px !important;
+}
+
+.megamenu-menu-panel .btn {
+    border: 1px solid #ccc;
+}
+
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, .12);
+}
+
+header,
+.context-menu,
+.megamenu-content,
+footer {
+    font-family: "Nunito", sans-serif;
+}
+
+.megamenu-opened header {
+    background-image: none;
+}
+
+.file-node-content .fa-caret-right,
+.file-node-content .fa-caret-down {
+    color: #f9826c;
+}
+
+.file-node-title {
+    color: var(--text-color);
+}
+
+.active-tab-files {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+#typora-sidebar #ty-sidebar-footer {
+    background-color: var(--item-hover-bg-color) !important;
+    border-top: 0 solid #090b10;
+}
+
+.sidebar-tabs {
+    border-bottom: 0;
+}
+
+.megamenu-menu-header {
+    border-bottom: 1px solid #090b10;
+}
+
+.megamenu-menu-list li:not(.saved) a:not(.active):hover,
+.megamenu-menu-list li a.active {
+    background: var(--item-hover-bg-color) !important;
+}
+
+/*.file-node-content:hover .file-node-icon:hover, .file-node-content:hover {
+  visibility: visible;
+  background: var(--bg-color) !important;
+}*/
+
+.file-node-open-state {
+    background-color: transparent !important;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: var(--item-hover-bg-color);
+    border-right: 0 solid #090c12;
+    font-weight: 400;
+    font-family: Nunito, sans-serif;
+}
+
+titlebar {
+    background-color: var(--bg-color);
+}
+
+/* Sidebar header on Win/Linux (Files/Plan) */
+.info-panel-tab-title {
+    /*  color: #afe61d;
+*/
+}
+
+/* Plan should get the same sidebar background color on Win/Linux */
+.typora-node.pin-outline:not(.megamenu-opened):not(.typora-sourceview-on) #typora-sidebar {
+    background-color: var(--item-hover-bg-color)
+}
+
+/* Bottom border on Win/Linux Sidebar */
+.info-panel-tab-border {
+    background-color: #f9826c !important;
+}
+
+.sidebar-footer-item:hover {
+    background-color: inherit;
+}
+
+.sidebar-tab.active {
+    color: var(--text-color);
+    font-weight: 700;
+}
+
+.file-node-icon,
+.file-node-open-state {
+    color: #6E7681;
+}
+
+.fa-file-text-o:before {
+    color: var(--text-color) !important;
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: var(--bg-color);
+    color: #efb752;
+}
+
+hr {
+    background-color: #30363d;
+    border: 0 none;
+    box-sizing: content-box;
+    height: .25em;
+    margin: 16px 0;
+    overflow: hidden;
+    padding: 0;
+}
+
+input {
+    color: #82bed6;
+}
+
+#searchpanel-word-option-btn,
+#find-and-replace-icon-word,
+#find-and-replace-icon-case,
+.searchpanel-search-option-btn,
+.icon,
+.glyphicon .popover,
+.popover-title {
+    color: #82bed6 !important;
+    fill: #82bed6 !important;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.show-word-count #footer-word-count {
+    background: #000;
+}
+
+#recent-file-panel-action-btn {
+    background-color: #82bed6;
+}
+
+.dropdown-menu .divider {
+    border-color: #303d50;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    background: var(--bg-color);
+    color: var(--text-color);
+}
+
+.cm-s-inner {
+    border: 1px solid #324560;
+    border-radius: .25rem;
+    padding: .5rem .2rem;
+}
+
+.cm-s-inner .cm-link,
+.cm-s-inner.cm-link {
+    color: #d2a8ff;
+}
+
+.cm-s-inner .cm-header {
+    color: #d2a8ff;
+}
+
+.cm-s-inner.CodeMirror,
+.cm-s-inner .CodeMirror-gutters {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+}
+
+.cm-s-inner .CodeMirror-gutters {
+    border: 0;
+    color: #6d8a88;
+    /*    width: 5ch;
+*/
+}
+
+#typora-source .CodeMirror-gutter-wrapper {
+    font-size: 1rem;
+}
+
+.cm-s-inner .CodeMirror-cursor {
+    border-left: solid thin #f8f8f2 !important;
+}
+
+.cm-s-inner .CodeMirror-linenumber {
+    color: #6d8a88;
+    /*    width: 4ch !important;*/
+}
+
+.cm-s-inner .CodeMirror-line::selection,
+.cm-s-inner .CodeMirror-line::-moz-selection,
+.cm-s-inner .CodeMirror-line>span::selection,
+.cm-s-inner .CodeMirror-line>span::-moz-selection,
+.cm-s-inner .CodeMirror-line>span>span::selection,
+.cm-s-inner .CodeMirror-line>span>span::-moz-selection {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner span.cm-comment {
+    color: #8b949e;
+    font-style: normal;
+}
+
+.cm-s-inner span.cm-string,
+.cm-s-inner span.cm-string-2,
+.cm-s-inner span.cm-quote {
+    color: #a5d6ff;
+}
+
+.cm-s-inner span.cm-number {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-variable-2 {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-def {
+    color: var(--text-color);
+}
+
+.cm-s-inner span.cm-operator {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-keyword {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-atom {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-meta {
+    color: #8b949e;
+}
+
+.cm-s-inner span.cm-tag {
+    color: #7ee787;
+}
+
+.cm-s-inner span.cm-attribute {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-defined {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-qualifier {
+    color: #50fa7b;
+}
+
+.cm-s-inner span.cm-property {
+    color: #d2a8ff;
+}
+
+.cm-s-inner span.cm-builtin {
+    color: #79c0ff;
+}
+
+.cm-s-inner span.cm-variable-3 {
+    color: #ff7b72;
+}
+
+.cm-s-inner span.cm-block-start {
+    color: #ffa657;
+}
+
+.cm-s-inner span.cm-type {
+    color: #ffb86c;
+}
+
+.cm-positive {
+    color: #aff5b4;
+    background-color: #033a16;
+}
+
+.cm-negative {
+    color: #aff5b4;
+    background-color: #67060c;
+}
+
+.md-fences.md-focus .cm-s-inner .CodeMirror-activeline-background {
+    background: rgba(255, 255, 255, .1);
+}
+
+.cm-s-inner .CodeMirror-matchingbracket {
+    color: var(--text-color) !important;
+    text-decoration: underline;
+}
+
+.cm-s-inner .CodeMirror-selected,
+.cm-s-inner .CodeMirror-selectedtext,
+body::selection,
+body::-moz-selection {
+    background: var(--select-text-bg-color) !important;
+    background-color: var(--select-text-bg-color) !important;
+    color: var(--select-text-font-color) !important;
+    text-shadow: none;
+}
+
+#write ol,
+#write ul {
+    padding-left: 2rem;
+    font-size: 1.15rem;
+    /*  margin: .5rem 0;*/
+}
+
+/* code blocks size inside lists */
+#write li .cm-s-inner {
+    font-size: 1.105rem !important;
+}
+
+#write ol>li,
+#write ul>li {
+    /*  color: #f0b752;
+*/
+    font-size:  1.2rem !important;
+    font-weight: 700;
+}
+
+#write ul>li ul>li {
+    list-style-type: circle;
+    background-color: transparent;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+#write ul>li ul>li ul>li {
+    list-style-type: square;
+    font-size: 1em;
+}
+
+#write ol>li>*,
+#write ul>li>* {
+    /*  color: #fff;
+*/
+    font-weight: 400;
+}
+
+#write ol>li>*:not(ol):not(ul),
+#write ul>li>*:not(ol):not(ul) {
+    padding-left: .25rem;
+}
+
+#write ul {
+    list-style-type: disc;
+}
+
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+.typora-export li {
+    font-size: 14px !important;
+    text-align: justify !important;
+}
+
+sup.md-footnote {
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    font-weight: 700;
+    font-size: 75%;
+    font-style: normal;
+}
+
+sup.md-footnote a {
+    font-style: normal;
+}
+
+sup.md-footnote:hover {
+    background-color: rgba(56, 139, 253, 0.15);
+}
+
+sup.md-footnote .md-meta {
+    color: #58a6ff;
+}
+
+.md-def-footnote .md-def-name:before,
+.md-def-footnote .md-def-name:after {
+    content: '';
+}
+
+.md-def-footnote .md-def-name {
+    padding: 2px;
+    padding-left: 4px;
+    padding-right: 4px;
+    background-color: rgba(56, 139, 253, 0.1);
+    color: #58a6ff;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footnotes {
+    opacity: 1;
+}
+
+.md-def-footnote .md-def-content {
+    font-size: 15px;
+}
+
+a.reversefootnote {
+    color: #f9826c;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+mark {
+    background-color: #2ea44f;
+    border-radius: 6px;
+    color: white;
+    line-height: 2;
+    padding: 5px 10px;
+    white-space: nowrap;
+}
+
+.cm-s-typora-default {
+    font-family: "Nunito", sans-serif;
+    font-size: 17px;
+    color: var(--text-color);
+}
+
+.cm-s-typora-default .cm-header,
+.cm-s-typora-default .cm-property {
+    color: var(--text-color);
+}
+
+/*.cm-s-typora-default .cm-header1 {
+  font-size: 3.2rem;
+  margin: .6rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header2 {
+  font-size: 1.8rem;
+  margin: .7rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header3 {
+  font-size: 1.4rem;
+  margin: .5rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header4 {
+  font-size: 1.2rem;
+  margin: .2rem 0;
+  width: auto;
+}
+
+.cm-s-typora-default .cm-header5, .cm-s-typora-default .cm-header6 {
+  font-size: 1rem;
+  margin: 0;
+  width: auto;
+}*/
+
+.CodeMirror.cm-s-typora-default div.CodeMirror-cursor {
+    border-left: 3px solid #b8bfc6;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #8b949e;
+}
+
+.cm-s-typora-default .cm-string {
+    color: #a5d6ff;
+}
+
+.cm-s-typora-default .cm-atom,
+.cm-s-typora-default .cm-number {
+    color: #8b949e;
+    font-style: italic;
+}
+
+.cm-s-typora-default .cm-link,
+.cm-s-typora-default .cm-tag {
+    color: rgb(165, 214, 255);
+}
+
+.cm-s-typora-default .cm-string {
+    color: #f0b752;
+}
+
+/*.cm-s-typora-default .cm-comment {
+  background-color: #6952b6;
+  border-radius: 4px;
+  color: #fff!important;
+  line-height: 1;
+  padding: 5px 7px 2px 7px;
+}*/
+
+.cm-s-typora-default pre.cm-s-inner {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 1px solid var(--item-hover-bg-color);
+    color: var(--text-color);
+    font-size: 0.9em;
+}
+
+.cm-s-typora-default .cm-atom {
+    color: #8b949e;
+}
+
+.CodeMirror-activeline .cm-atom {
+    color: var(--text-color) !important;
+}
+
+
+.cm-s-typora-default .CodeMirror-activeline-background {
+    background: #484f58;
+}
+
+.cm-s-typora-default .cm-comment,
+.cm-s-typora-default .cm-code {
+    color: #8aa1e1;
+    font-size: 0.9em !important;
+}
+
+/*.CodeMirror-activeline .CodeMirror-activeline-gutter .CodeMirror-gutter-elt {
+  color: var(--text-color) !important;
+}*/
+
+/* mega menu */
+.megamenu-content,
+.megamenu-opened header {
+    background: var(--bg-color1);
+}
+
+.megamenu-content {
+    display: block;
+    visibility: hidden;
+    opacity: 0;
+    transition: 0.3s;
+}
+
+.megamenu-menu-list {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.megamenu-opened .megamenu-content {
+    visibility: visible;
+    opacity: 1;
+    animation: none;
+    background-color: inherit;
+}
+
+/* mega menu sidebar*/
+.megamenu-menu {
+    background-color: var(--item-hover-bg-color);
+}
+
+/* return button in mega menu */
+#megamenu-menu-sidebar .menu-style-btn {
+    border: 0px;
+}
+
+/* remove divider in mega menu */
+.megamenu-menu-header {}
+
+/* return button color in mega menu */
+.megamenu-menu-header #megamenu-menu-header-title,
+.megamenu-menu-header #megamenu-menu-header-title:before {
+    color: var(--text-color);
+}
+
+.megamenu-menu-list li a:hover,
+.megamenu-menu-list li a.active {
+    background-color: var(--bg-color);
+}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover {}
+
+/* return button hover in mega menu */
+.megamenu-menu-header:hover #megamenu-menu-header-title {}
+
+/* long button in mega menu */
+.long-btn {
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.long-btn:hover {
+    background-color: var(--item-hover-bg-color);
+    border-color: 1px solid #8b949e;
+    color: var(--text-color) !important;
+}
+
+
+#recent-file-panel-action-btn {
+    background-color: var(--item-hover-bg-color);
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, .2);
+    margin-bottom: 10px;
+    margin-left: 10px;
+}
+
+/* Mermaid Diagrams */
+
+.titleText,
+.pieTitleText {
+    fill: var(--mermaid-contrast-color);
+    font-size: 2rem;
+    font-family: Nunito, sans-serif;
+    font-weight: 400;
+}
+
+
+/* Node Overview */
+
+/* Node text */
+.grid .tick text,
+.taskText,
+text.actor,
+.node .label,
+.taskTextOutsideRight,
+.taskTextOutsideLeft,
+.labelText,
+.loopText,
+g.classGroup text {
+    color: var(--text-color);
+    fill: var(--text-color);
+    stroke: black;
+    stroke-width: .05px;
+
+    .title {
+        font-weight: 600;
+    }
+}
+
+/* Node color */
+.actor,
+.task,
+.node rect,
+.node circle,
+.node ellipse,
+.node polygon,
+g.classGroup rect,
+.labelBox {
+    fill: var(--mermaid-node-color);
+    stroke: var(--mermaid-node-border);
+    color: var(--text-color);
+}
+
+/* Node Labels (Notes & On path) */
+.edgeLabel foreignObject {
+    color: black;
+    background-color: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+    stroke-width: 1px;
+    height: 20px;
+    text-align: center;
+    /*  padding-top: 2px;*/
+}
+
+.note {
+    fill: var(--primary-color);
+    stroke: var(--primary-btn-border-color);
+}
+
+.noteText {
+    color: black;
+}
+
+.noteText>tspan {
+    fill: #333 !important;
+    color: #333 !important;
+}
+
+.taskText {
+    fill: white !important;
+}
+
+/* Class diagram specific */
+g.classGroup line {
+    stroke: var(--text-color);
+}
+
+.classLabel .box {
+    stroke: none;
+    stroke-width: 0;
+    fill: var(--primary-color);
+    opacity: 1;
+}
+
+svg[id^="mermaidChart"] .composition,
+svg[id^="mermaidChart"] .aggregation,
+svg[id^="mermaidChart"] .dependency,
+svg[id^="mermaidChart"] .relation {
+    stroke: var(--text-color);
+}
+
+.classLabel .label {
+    fill: black;
+}
+
+#extensionStart,
+#extensionEnd,
+#compositionStart,
+#compositionEnd,
+#aggregationStart,
+#aggregationEnd,
+#dependencyStart,
+#dependencyEnd {
+    fill: var(--text-color);
+    stroke: var(--text-color);
+}
+
+/* Gantt Specific */
+svg[id^="mermaidChart"] .today {
+    stroke: var(--mermaid-contrast-color);
+}
+
+/* Pie Chart Specific */
+
+svg[id^="mermaidChart"] g path {
+    stroke: var(--text-color);
+}
+
+text.slice {
+    fill: var(--text-color);
+}
+
+.legend text {
+    fill: var(--text-color);
+}
+
+.doneCritText0,
+.doneCritText1,
+.doneCritText2,
+.doneCritText3 {
+    fill: var(--text-color) !important;
+    stroke: var(--text-color) !important;
+}
+
+/* End mermaid */
+
+/* tip when hover on a button */
+#ty-tooltip {
+    background-color: black;
+    color: white;
+}
+
+/* header in setting */
+.window-header {}
+
+/* sidebar in setting */
+.sidebar {
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+.list-group-content {
+    margin-left: 10px !important;
+}
+
+/* sidebar button in setting menu */
+.nav-group-item {
+    color: var(--text-color) !important;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: #0d1117 !important;
+    color: var(--text-color) !important;
+}
+
+/* the indent example in setting.editor */
+div.pane>div:nth-child(4)>div:nth-child(2) .label-input-group td:last-child div {
+    border: 1px solid #30363d !important;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary);
+    margin: 10px !important;
+}
+
+/* button in setting menu */
+.ty-preferences button.btn-default {
+    border: 1px solid #30363d;
+    background-color: var(--color-border-secondary);
+    border-radius: 6px;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    /* background-color: white !important; */
+    border-color: #8b949e !important;
+    background-color: var(--color-border-secondary) !important;
+}
+
+/* return button in setting menu */
+.window-header button:hover {
+    color: var(--text-color) !important;
+}
+
+/* search input in setting menu */
+.search-input {
+    border: 1px solid #30363d;
+    border-top-left-radius: 6px !important;
+    border-bottom-left-radius: 6px !important;
+    border-top-right-radius: 0px !important;
+    border-bottom-right-radius: 0px !important;
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+    margin-left: 10px !important;
+}
+
+.search-input:hover {
+    border: 1px solid #8b949e;
+}
+
+.search-input:focus {
+    border: none !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--color-border-secondary) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+/* radio */
+
+input[type="radio"] {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px !important;
+}
+
+input[type="radio"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.1rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 0.55rem;
+    background-color: var(--item-hover-bg-color) !important;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* radio hover */
+input[type="radio"]:not([disabled]):not(:checked):hover:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+}
+
+/* radio checked */
+input[type="radio"]:checked:before {
+    content: "\25CF";
+    font-size: 1rem;
+    line-height: 1rem;
+    color: var(--text-color);
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+
+/* remove up and down button from number type input*/
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none !important;
+}
+
+input {
+    background-color: var(--item-hover-bg-color) !important;
+    border: 0px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* input hover */
+/* input:hover {
+    background-color: var(--hover-bg-color2) !important;
+} */
+/* checkbox */
+input[type="checkbox"]:before {
+    content: "";
+    display: inline-block;
+    width: 1.1rem;
+    height: 1.11rem;
+    vertical-align: middle;
+    text-align: center;
+    border: 1px solid #30363d;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* checkbox hover */
+input[type="checkbox"]:not([disabled]):not(:checked):hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+}
+
+/* checkbox checked*/
+input[type="checkbox"]:checked:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: var(--text-color);
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+#write input[type="checkbox"]:before,
+#write input[type="checkbox"]:checked:before {
+    margin-top: -0.9rem;
+}
+
+/* checkbox checked hover*/
+input[type="checkbox"]:checked:hover:before {
+    content: "\2713";
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    color: white;
+    margin-top: -0.5rem;
+    margin-left: -0.1rem;
+}
+
+/* input number in settings for Win/Linux */
+input:not([type="range"]):not([type="color"]) {
+    border: 1px solid #30363d !important;
+    border-radius: 3px;
+    background-color: var(--item-hover-bg-color);
+}
+
+.pane-sm input[type="search"] {
+    border: 1px solid #30363d !important;
+}
+
+/* search in settings */
+#file-library-search-input:hover {
+    border: 1px solid #8b949e !important;
+}
+
+/* scrollbar */
+/*::-webkit-scrollbar {
+    width: 1px;
+    padding-right: 10px;
+    background-color: #FFF;
+}*/
+
+::-webkit-scrollbar-thumb,
+::-webkit-scrollbar-thumb:active {
+    border-radius: 10px;
+    background-color: #2F333A;
+}
+
+/* Remove dashed border on filenames in the sidebar */
+.file-library-node:not(.file-node-root):focus>.file-node-content {
+    outline: 0 !important;
+}
+
+/* Handle long filenames in sidebar */
+file-node-title-name-part {
+    white-space: pre-wrap;
+}
+
+/* Custom syntax highlighting */
+div.cm-s-inner[lang="css"] .cm-qualifier {
+    color: #a5d6ff !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="css"] .cm-tag {
+    color: #7ee787 !important;
+}
+
+div.cm-s-inner[lang="diff"] .cm-meta {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="diff"] .cm-negative {
+    color: #d2a8ff !important;
+    font-weight: 700;
+}
+
+div.cm-s-inner[lang="dockerfile"] .cm-variable-2 {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="elixir"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="erlang"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="fsharp"] .cm-variable {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="go"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="http"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="java"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="javascript"] .cm-def {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="less"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="kotlin"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="markdown"] .cm-comment.cm-variable-2 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-meta {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="perl"] .cm-variable-2 {
+    color: #8b949e !important;
+}
+
+div.cm-s-inner[lang="php"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="python"] .cm-property {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-def {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="rust"] .cm-variable-3 {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-def {
+    color: #ff7b72 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-variable-2 {
+    color: #ffa657 !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-tag {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="scss"] .cm-error {
+    color: #d2a8ff !important;
+}
+
+div.cm-s-inner[lang="ruby"] .cm-atom {
+    color: #d2a8ff !important;
+}
+
+/* Exports */
+.typora-export li {
+    font-size: 1.25rem !important;
+    padding-bottom: 10px !important;
+}
+
+.typora-export {
+    --monospace: "Fira Code";
+}
+
+.typora-export pre.md-fences {
+    font-size: 1.15rem !important;
+}
+
+.typora-export code {
+    font-size: 1.15rem !important;
+}
+
+.typora-export strong {
+    font-weight: 700 !important;
+}
+
+
+.typora-export #write a {
+    color: #58a6ff;
+}
+
+.typora-export .footnote-line {
+    color: var(--text-color);
+    font-size: 15px !important;
+}
+
+.typora-export .footnote-line a {
+    color: #58a6ff;
+}
+
+@include-when-export url(https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Nunito:ital,wght@0,400;0,700;1,400;1,700&display=swap);
+@import '';
+
+:root {
+    --text-color: #adbac7;
+    --bg-color: #22272e;
+    --side-bar-bg-color: #22272e;
+    --control-text-color: #a9aaab;
+    --primary-color: #f9826c;
+    --primary-btn-border-color: #f9826c;
+    --active-file-text-color: inherit;
+    --active-file-border-color: #f9826c;
+    --active-file-bg-color: #22272e;
+    --primary-btn-text-color: #f9826c;
+    --window-border: 0 solid #22272e;
+    --item-hover-bg-color: #2d333b;
+    --item-hover-text-color: #f9826c;
+    --meta-content-color: #f9826c;
+    --search-select-text-color: #f9826c;
+    --control-text-color: var(--text-color);
+    --control-text-hover-color: var(--text-color);
+    --heading-char-color: #f9826c;
+    --active-toggle-btn-color: #192133;
+    --blur-text-color: rgba(200, 200, 200, 0.33);
+    --rawblock-edit-panel-bd: #2d333b !important;
+    --select-text-bg-color: rgba(53, 82, 116, 0.97) !important;
+    --select-text-font-color: #fff !important;
+    --color-border-secondary: #373e47 !important;
+    /* Mermaid diagrams*/
+    --mermaid-node-color: #b87f62 !important;
+    --mermaid-node-border: #bd7958;
+    --mermaid-contrast-color: #afe61d;
+    --mermaid-theme: dark;
+    --monospace: "SFMono-Regular";
+}
+
+
+/*.cm-s-inner span.cm-comment {
+    color: #bdc4cc;
+    font-style: normal;
+}
+
+.cm-s-typora-default .cm-comment {
+    color: #bdc4cc;
+}*/
+
+blockquote {
+    border-left-width: 4px !important;
+    border-left: .25em solid #444c56 !important;
+    padding: 0 1em;
+}
+
+blockquote p {
+    color:  #768390 !important;
+}
+
+hr {
+    background-color:  #7a828e !important;
+}
+
+#write ol>li, #write ul>li {
+    font-size:  1.2rem !important;
+    font-weight: normal !important;
+}
+
+
+.ty-preferences button.btn-default {
+    background-color:  var(--item-hover-bg-color) !important;
+}
+
+/* button hover in setting menu */
+.ty-preferences .btn-default:not([disabled]):hover {
+    border-color: #8b949e !important;
+    background-color: var(--item-hover-bg-color) !important;
+}
+
+/* sidebar button hover in setting menu */
+.nav-group-item:hover,
+.nav-group-item:active,
+.nav-group-item.active {
+    background-color: var(--bg-color) !important;
+    color: var(--text-color) !important;
+}
+
+/* select item (mostly in setting menu) */
+select {
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background-color: var(--item-hover-bg-color) !important;
+    padding-top: 5px !important;
+    padding-bottom: 5px !important;
+}
+
+/* enabled select item hover */
+select:not([disabled]):hover {
+    color: var(--text-color);
+    opacity: 1;
+    border: 1px solid #8b949e;
+}
+
+/* disabled select item hover */
+select[disabled]:hover {
+    opacity: 0.5;
+    border: 1px solid #8b949e;
+}
+
+
+
+</style><title>8. MANUTENZIONE DEI SISTEMI DI PRODUZIONE</title>
+</head>
+<body class='typora-export os-windows'><div class='typora-export-content'>
+<div id='write'  class=''><h1 id='manutenzione-dei-sistemi-di-produzione'><span>Manutenzione dei sistemi di produzione</span></h1><p><span>La manutenzione è un elemento fondamentale per gli impianti di produzione; essa è definita come </span><strong><span>controlli costanti sull&#39;impianto</span></strong><span>, insieme a </span><strong><span>lavori di riparazione</span></strong><span> e revisioni che sono necessari per assicurare il corretto funzionamento degli impianti produttivi.</span></p><p><span>Ci sono diverse </span><strong><span>politiche di manutenzione</span></strong><span>, che andiamo ad elencare:</span></p><h2 id='politiche-di-manutenzione'><span>Politiche di manutenzione</span></h2><h3 id='manutenzione-correttiva'><span>Manutenzione correttiva</span></h3><p><span>Questo tipo di manutenzione si applica </span><strong><span>dopo un guasto</span></strong><span>: la macchina viene </span><strong><span>fermata</span></strong><span> e quindi riparata. Lo scopo è quello di riportare la macchina (entità) allo stato in cui è possibile il corretto funzionamento.</span></p><p><span>Questo tipo di manutenzione ha dei </span><strong><span>fattori negativi</span></strong><span>: andiamo infatti a </span><strong><span>perdere dei ricavi</span></strong><span>, perdita dovuta al fermo improvviso delle macchine.</span>
+<span>Ci conviene quindi applicare questo tipo di manutenzione solo se il </span><strong><span>fermo macchina</span></strong><span> non comporta gravi perdite e se l&#39;opera di manutenzione è &quot;semplice&quot;.</span></p><h3 id='manutenzione-migliorativa'><span>Manutenzione migliorativa</span></h3><p><span>Questo tipo di manutenzione consiste nella </span><strong><span>modifica ad apparecchiature e macchinari funzionanti</span></strong><span>, allo scopo di </span><strong><span>migliorare</span></strong><span> le loro prestazioni.</span></p><p><span>Questo tipo di manutenzione mira ad ottimizzare le prestazioni delle apparecchiature ed a ridurre i tempi di fermo macchina.</span></p><h3 id='manutenzione-preventiva'><span>Manutenzione preventiva</span></h3><p><span>Questo tipo di manutenzione viene eseguita ad </span><strong><span>intervalli predeterminati</span></strong><span> o in accordo a </span><strong><span>criteri prescritti</span></strong><span> in modo da </span><strong><span>ridurre le probabilità di guasto</span></strong><span>.</span></p><p><span>Si basa sulla sostituzione programmata di un determinato componente ancora funzionante della macchina (ma possibilmente usurato e prossimo alla rottura) in modo da prevenire i guasti prima che si verifichino.</span></p><p><span>I componenti da sostituire vengono scelti a seconda di </span><strong><span>parametri - limiti</span></strong><span> di componenti: ad esempio ogni lampadina ha una durata in ore, oltre le quali la lampadina potrebbe smettere di funzionare da un momento all&#39;altro.</span></p><h3 id='manutenzione-predittiva'><span>Manutenzione predittiva</span></h3><p><span>Questa manutenzione si basa sulla </span><strong><span>capacità di prevedere un guasto</span></strong><span>, quindi dal riconoscimento di </span><strong><span>un&#39;anomalia</span></strong><span> che porterà inevitabilmente al guasto di un componente.</span></p><p><span>Abbiamo quindi bisogno di un </span><strong><span>servizio di informazione</span></strong><span> e di strumenti informativi sullo </span><strong><span>stato del macchinario</span></strong><span>.</span></p><h3 id='manutenzione-produttiva'><span>Manutenzione produttiva</span></h3><p><span>La filosofia dietro questo tipo di manutenzione si basa sul </span><strong><span>continuo miglioramento delle prestazioni</span></strong><span> assegnando alcune attività agli operatori delle macchine: l&#39;obbiettivo è quello di permettere agli operatori stessi di identificare e risolvere i problemi di manutenzione.</span></p><h3 id='manutenzione-centrata-sullaffidabilità'><span>Manutenzione centrata sull&#39;affidabilità</span></h3><p><span>Questo tipo di manutenzione prevede l&#39;utilizzo di </span><strong><span>tecniche di analisi dei sistemi</span></strong><span> come la </span><strong><span>Reliability Centered Maintenance - RCM</span></strong><span>.</span></p><p><span>Questa analisi RCM prevede l&#39;esecuzione in successione dei seguenti step:</span></p><ol start='' ><li><strong><span>Scomposizione fisica del sistema</span></strong><span> in moduli, mettendone in evidenza le interconnessioni.</span></li><li><strong><span>Scomposizione funzionale.</span></strong></li><li><strong><span>Scomposizione affidabilistica.</span></strong></li><li><strong><span>Analisi dei modi di guasto</span></strong><span>.</span></li><li><strong><span>Analisi delle criticità.</span></strong></li><li><strong><span>Selezione di una strategia di manutenzione.</span></strong></li><li><strong><span>Piano delle attività di manutenzione</span></strong><span>.</span></li></ol><p><span>L&#39;RCM, attraverso un&#39;accurata analisi del sistema e dei componenti, valutando i </span><strong><span>modi di guasto</span></strong><span>, consente di scegliere la </span><strong><span>migliore politica manutentiva per ciascun elemento</span></strong></p><h2 id='fmea-e-fmeca'><span>FMEA e FMECA</span></h2><p><span>Gli approcci che si basano sui concetti della </span><strong><span>manutenzione centrata sull&#39;affidabilità</span></strong><span> sono scostituiti dalla metodologia </span><strong><span>FMEA - Failure Modes and Eccets Analysis</span></strong><span> e dalla metodologia </span><strong><span>FMECA - Failure Modes, Effects abd Criticity Analysis</span></strong><span>.</span></p><h3 id='metodologia-fmea'><span>Metodologia FMEA</span></h3><blockquote><p><span>Pagina 238</span></p></blockquote><p><span>E&#39; un </span><strong><span>processo sistematico</span></strong><span> utile per </span><strong><span>identificare e prevenire errori di progettazione</span></strong><span> in modo da eliminarli o limitare il rischio a loro associato. </span></p><p><span>La metodologia FMEA si compone di tre fasi:</span></p><ol start='' ><li><span>La prima fase è </span><strong><span>qualitativa</span></strong><span> ed analizza tutti i possibili modi di guasto o rottura, valutandone anche gli effetti che possono verificarsi (rispecchiandosi sul prodotto finale).</span></li><li><span>La seconda fase è </span><strong><span>quantitativa</span></strong><span> ed ha come obbiettivo quello di quantificare effettivamente la pericolosità della terna </span><strong><span>causa - modo - effetto</span></strong><span>.</span></li><li><span>La terza fase è </span><strong><span>correttiva</span></strong><span> ed individua le possibili azioni correttive mirate a ridurre la pericolosità e la criticità della modalità di rottura.</span></li></ol><h3 id='metodologia-fmeca'><span>Metodologia FMECA</span></h3><blockquote><p><span>Pagina 241</span></p></blockquote><p><span>Questa tipologia consiste nel </span><strong><span>suddividere i possibili effetti</span></strong><span> delle varie modalità di rottura in quattro </span><strong><span>classi di gravità</span></strong><span>:</span></p><ol start='' ><li><strong><span>Catastrofica</span></strong></li><li><strong><span>Critica</span></strong></li><li><strong><span>Marginale</span></strong></li><li><strong><span>Minore</span></strong></li></ol><p><span>Possiamo </span><strong><span>calcolare l&#39;indice di criticità</span></strong><span> mediante la formula:</span></p><p><img src="assets/equazione.png" referrerpolicy="no-referrer" alt="equazione"></p><p><span>Dove ogni variabile significa:</span></p><p><img src="assets/significato-1689687832115-6.png" referrerpolicy="no-referrer" alt="significato"></p><p><span>andiamo quindi a calcolare </span><strong><span>I</span><sub><span>c</span></sub></strong><span> (indice di criticità) complessivo dei modi di rottura per </span><strong><span>ogni classe di gravità</span></strong><span> e si sommano gli indici di criticità di tutti i modi di rottura della classe.</span></p><h2 id='differenza-tra-guasto-ed-avaria'><span>Differenza tra guasto ed avaria</span></h2><p><span>Si deduce che </span><strong><span>il guasto è un evento</span></strong><span>, ovvero un passaggio da uno stato di corretto funzionamento ad uno stato che non permette di rispettare le prestazioni prestabilite.</span></p><p><strong><span>L&#39;avaria è uno stato</span></strong><span> vero e proprio, in cui la macchina </span><strong><span>non è in grado di operare.</span></strong></p><h2 id='approcci-quantitativi-per-la-manutenzione'><span>Approcci quantitativi per la manutenzione</span></h2><h3 id='teoria-dellaffidabilità'><span>Teoria dell&#39;affidabilità</span></h3><p><span>L&#39;affidabilità di un elemento p definita come la </span><strong><span>probabilità che l&#39;elemento funzioni senza guastarsi per un certo tempo t</span></strong><span> in determinate condizioni ambientali.</span></p><p><span>L&#39;elemento in esame può assumere due stati:</span></p><ul><li><strong><span>Funzionamento buono</span></strong></li><li><strong><span>Funzionamento cattivo</span></strong></li></ul><p><span>Ovviamente dobbiamo </span><strong><span>stabilire un criterio</span></strong><span> per </span><strong><span>stabilire se l&#39;elemento è funzionante o meno</span></strong><span>, inoltre devono essere stabilite anche le </span><strong><span>condizioni ambientali</span></strong><span> che si devono </span><strong><span>mantenere costanti</span></strong><span> durante il </span><strong><span>tempo prestabilito</span></strong><span> (ovvero l&#39;arco temporale in cui ci aspettiamo che il componente funzioni correttamente).</span></p><p><span>Definiamo la variabile </span><strong><span>T - tempo fino al guasto di un elemento</span></strong><span> che ci dice il tempo che intercorre tra l&#39;istante iniziale in cui si avvia la valutazione dell&#39;affidabilità e l&#39;istante in cui l&#39;elemento si rompe.</span></p><p><span>Definiamo una </span><strong><span>densità di probabilità di guasto</span></strong><span>  una funzione f(t) tale che la probabilità infinitesima che l&#39;elemento si guasti al tempo t o in un suo introno infinitesimo (praticamente t) sia:</span></p><p><img src="assets/dt.png" referrerpolicy="no-referrer" alt="dt"></p><p><span>In altre parole, la probabilità che il componente si guasti rappresenta l&#39;area sottesa alla curva in un intervallo che va da </span><em><span>t</span></em><span> a </span><em><span>t + dt</span></em><span>:</span></p><p><img src="assets/187th23-161403.png" alt="187th23-161403" style="zoom:25%;" /></p><blockquote><p><span>Densità di probabilità di guasto - PDF</span></p></blockquote><p><span>Sappiamo che l&#39;area sottesa di una PDF vale 1 (probabilità di normalizzazione vista nell&#39;</span><a href='https://github.com/follen99/Fondamenti-Di-Telecomunicazioni/blob/main/Appunti/2.07%20-%20PDF%20E%20Gaussiana.pdf'><span>esame di fondamenti di telecomunicazioni</span></a><span>), possiamo dire che </span><strong><span>se calcoliamo un intervallo di tempo </span><em><span>infinito</span></em><span> la probabilità che un qualsiasi elemento si guasti è 1, ovvero certa</span></strong><span>.</span></p><p><span>Possiamo a questo punto calcolare diversi dati:</span></p><ul><li><strong><span>Probabilità che l&#39;elemento si guasti </span><em><span>entro</span></em><span> un certo tempo</span></strong><span>: ci basta calcolare l&#39;area sottesa alla curva </span><em><span>fino</span></em><span> al momento t, ovvero l&#39;integrale tra zero e t della funzione:</span>
+<img src="assets/int1-1689690029797-12.png" referrerpolicy="no-referrer" alt="int1"></li><li><strong><span>Probabilità che l&#39;elemento funzioni </span><em><span>dopo</span></em><span> un certo tempo</span></strong><span>: ci basta calcolare l&#39;area sottesa alla curva da t a più infinito; questo non possiamo farlo perchè c&#39;è un asintoto, per cui sottraiamo ad 1 (probabilità certa, ovvero l&#39;area di tutta la curva), la probabilità che l&#39;elemento arrivi sano </span><em><span>fino</span></em><span> al tempo t.</span>
+<img src="assets/ttt.png" referrerpolicy="no-referrer" alt="ttt"></li></ul><h3 id='leggi-statistiche-della-durata-di-vita'><span>Leggi statistiche della durata di vita</span></h3><p><span>Per un sistema meccanico complesso possiamo individuare tre fasi di vita principale:</span></p><ul><li><span>Mortalità infantile</span></li><li><span>Vita utile</span></li><li><span>Senilità / usura</span></li></ul><h4 id='mortalità-infantile'><span>Mortalità infantile</span></h4><p><span>Mettiamo in funzionamento al tempo </span><strong><span>T = 0</span></strong><span> delle macchine nuove; di conseguenza se nella popolazione di componenti ci sono dei pezzi affetti da </span><strong><span>errori di progettazione</span></strong><span> e quindi di struttura più debole, questi si andranno a guastare quasi subito.</span></p><p><span>La curva </span><strong><span>λ(t)</span></strong><span> indicherà quindi </span><strong><span>alti valori del tasso di guasto</span></strong><span>.</span></p><p><span>Questo periodo è detto mortalità infantile proprio perchè è il periodo di vita iniziale dei componenti: ad esempio nel caso automobilistico, ogni modello </span><strong><span>pre serie</span></strong><span> viene testato in pista in modo da identificare tutti quei pezzi affetti da errori di produzione; ogni volta che se ne scopre uno lo si corregge.</span></p><p><span>Di conseguenza la curva λ(t) avrà valori molto alti inizialmente, ma via via che si correggono i pezzi, questa curva scenderà, assumendo un aspetto del genere:</span></p><p><img src="assets/187th23-171205.png" referrerpolicy="no-referrer" alt="187th23-171205"></p><p><span>I </span><strong><span>parametri</span></strong><span> alpha e beta sono:</span></p><ul><li><strong><span>Apha</span></strong><span> - Caratteristica</span></li><li><strong><span>Beta</span></strong><span> - Parametro di forma</span></li></ul><p><span>Man mano che si va avanti nel tempo il valore si stabilizza fino a diventare </span><strong><span>costante</span></strong><span>.</span></p><h4 id='vita-utile'><span>Vita utile</span></h4><p><span>Come abbiamo visto, dopo un certo periodo di tempo, i componenti prima o poi raggiungono un </span><strong><span>tasso di guasto basso e costante</span></strong><span>; il periodo di tempo in cui il tasso rimane costante viene detto </span><strong><span>vita utile</span></strong><span>:</span></p><p><img src="assets/187th23-171553.png" referrerpolicy="no-referrer" alt="187th23-171553"></p><p><span>Siccome l&#39;affidabilità è </span><strong><span>l&#39;area sottesa alla curva in un dato intervallo</span></strong><span>, con il passare del tempo questa non è ovviamente costante (a differenza della funzione).</span></p><h4 id='senilità-o-usura'><span>Senilità o usura</span></h4><p><span>Quando i componenti raggiungono </span><strong><span>l&#39;età T</span><sub><span>u</span></sub></strong><span> ha inizio il fenomeno dell&#39;usura: da questo momento in poi il </span><strong><span>tasso di guasto cresce</span></strong><span> rapidamente. Otteniamo quindi la curva finale, detta </span><strong><span>curva a vasca da bagno</span></strong><span>:</span></p><p><img src="assets/187th23-172228.png" referrerpolicy="no-referrer" alt="187th23-172228"></p><h3 id='le-politiche-di-manutenzione-nelle-fasi-di-vita-di-un-prodotto'><span>Le politiche di manutenzione nelle fasi di vita di un prodotto</span></h3><p><span>Possiamo quindi identificare le diverse politiche di manutenzione nelle diverse fasi di vita di un prodotto:</span></p><ol start='' ><li><strong><span>Mortalità infantile</span></strong><span> - In questo caso la politica di manutenzione è di tipo </span><strong><span>migliorativa</span></strong></li><li><strong><span>Vita utile</span></strong><span> - </span><strong><span>Manutenzione di tipo preventiva - ciclica</span></strong><span>. Anche un pizzico di </span><em><span>migliorativa</span></em></li><li><strong><span>Usura</span></strong><span> - </span><strong><span>Preventiva</span></strong><span>. Si sostituiscono i componenti a rischio rottura.</span></li></ol><h2 id='tempi-della-manutenzione'><span>Tempi della manutenzione</span></h2><blockquote><p><span>Da pagina 257</span></p></blockquote><p><span>Un intervento di manutenzione comporta un costo che deriva non solo dall&#39;intervento stesso, ma anche dal </span><strong><span>tempo in cui la macchina non produce</span></strong><span>; diventa quindi importante riuscire a </span><strong><span>calcolare il tempo legato ad un intervento di manutenzione</span></strong><span>.</span></p><h3 id='manutenzione-a-guasto'><span>Manutenzione a guasto</span></h3><p><span>Nel caso di manutenzione a guasto (ovvero quelle attività di manutenzione che si verificano solo dopo un guasto), definiamo il </span><strong><span>tempo medio fino al guasto - MTTF (Mean Time Till Failure)</span></strong><span> che viene calcolato con il seguente integrale:</span></p><p><img src="assets/187th23-201120.png" referrerpolicy="no-referrer" alt="187th23-201120"></p><p><span>Possiamo anche </span><strong><span>integrare la probabilità che l&#39;elemento funzioni dopo un certo tempo</span></strong><span>:</span></p><p><img src="assets/187th23-201421.png" referrerpolicy="no-referrer" alt="187th23-201421"></p><h3 id='sistemi-riparabili'><span>Sistemi riparabili</span></h3><p><span>Il caso che analizzeremo è quello in cui si parla di </span><strong><span>tempo medio tra due guasti, ovvero Mean Time Between failures - MTBF</span></strong><span> e possiamo calcolarlo con la seguente formula:</span></p><p><img src="assets/187th23-202250.png" referrerpolicy="no-referrer" alt="187th23-202250"></p><p><span>Possiamo Rappresentare su un diagramma temporale le fasi della riparazione:</span></p><p><img src="assets/MTBF.png" referrerpolicy="no-referrer" alt="MTBF"></p><p><span>Dove:</span></p><ul><li><strong><span>MTTR - Mean Time To Repair</span></strong><span> ovvero il tempo medio che richiede la riparazione</span></li><li><strong><span>td</span></strong><span> - tempo di diagnosi del guasto</span></li><li><strong><span>ta</span></strong><span> - tempo di attivazione dell&#39;intervento, ovvero il tempo richiesto dalla squadra di riparazioni per sopraggiungere</span></li><li><strong><span>tr</span></strong><span> - tempo di riparazione</span></li><li><strong><span>trs</span></strong><span> - tempo di ripristino funzionalità, ovvero il tempo necessario per riportare la macchina in regime di funzionamento</span></li></ul><h2 id='disponibilità-a-sua-misura'><span>Disponibilità a sua misura</span></h2><p><span>Definiamo disponibilità </span><strong><span>l&#39;attitudine di un sistema a svolgere il proprio compito in un determinato periodo di tempo di osservazione in cui si sono avuti N cicli funzionamento-riparazione</span></strong><span>.</span></p><p><span>indicando con </span><strong><span>T</span><sub><span>i</span></sub><span> i tempi di funzionamento</span></strong><span> e con </span><strong><span>τ</span><sub><span>i</span></sub></strong><span> i tempi di riparazione possiamo definire le seguenti grandezze:</span></p><ul><li><strong><span>Uptime</span></strong><span> ovvero il tempo totale di funzionamento in N cicli:</span>
+<img src="assets/187th23-213836.png" referrerpolicy="no-referrer" alt="187th23-213836">
+<span>Ci basta quindi sommare tutti i tempi di funzionamento rispettivi all&#39;i-esimo ciclo.</span></li><li><strong><span>Downtime</span></strong><span> - ovvero il tempo in cui le macchine non sono state attive per via della riparazione:</span>
+<img src="assets/187th23-214013.png" referrerpolicy="no-referrer" alt="187th23-214013"></li></ul><p><span>Possiamo calcolare finalmente la </span><strong><span>disponibilità</span></strong><span> come:</span></p><p><img src="assets/187th23-214120.png" referrerpolicy="no-referrer" alt="187th23-214120"></p><p><span>E quindi andando a sostituire otteniamo:</span></p><p><img src="assets/187th23-214239.png" referrerpolicy="no-referrer" alt="187th23-214239"></p><h2 id='cenni-di-affidabilità-dei-sistemi'><span>Cenni di affidabilità dei sistemi</span></h2><blockquote><p><span>Pagina 263</span></p></blockquote><p><span>Le componenti di un sistema possono comportarsi, dal punto di vista dell&#39;affidabilità, in maniera </span><strong><span>dipendente o indipendente</span></strong><span>; abbiamo quindi due casi:</span></p><ol start='' ><li><span>Il verificarsi di un guasto di una parte costituisce un evento casuale ed indipendente dal verificarsi di un guasto in un&#39;altra parte del sistema.</span></li><li><span>Il guasto in una parte del sistema </span><strong><span>dipende molto</span></strong><span> dal modo in cui funzionano altre parti del sistema.</span></li></ol><p><span>Possiamo rappresentare queste combinazioni attraverso </span><strong><span>schemi a blocchi</span></strong><span>, in cui ogni blocco rappresenta un sottosistema o un componente; ci corre in aiuto le nozioni apprese in fisica / elettrotecnica: possiamo disporre i componenti in serie o in parallelo.</span></p><h3 id='sistemi-in-serie-indipendenti'><span>Sistemi In serie (indipendenti)</span></h3><p><span>Quando disponiamo i componenti in serie, </span><strong><span>il guasto di uno qualsiasi dei suoi elementi determina il guasto dell&#39;intero sistema</span></strong><span> (essendo in serie il guasto di un singolo componente è da considerare </span><strong><span>indipendente</span></strong><span>).</span></p><p><span>Possiamo calcolare l&#39;affidabilità del sistema andando a moltiplicare tra loro le probabilità dei singoli componenti:</span></p><p><img src="assets/187th23-220023.png" referrerpolicy="no-referrer" alt="187th23-220023"></p><p><span>Dove R</span><sub><span>s</span></sub><span>(t) ed R</span><sub><span>i</span></sub><span>(t) indicano l&#39;affidabilità del sistema e del generico sottosistema.</span></p><h3 id='sistemi-in-parallelo-e-ridondanti-dipendenti'><span>Sistemi In Parallelo e ridondanti (dipendenti)</span></h3><p><span>I sistemi in cui alcune funzioni vengono </span><strong><span>duplicate o triplicate al fine di ottenere una migliore affidabilità sono detti ridondanti</span></strong><span>; possiamo distinguere questi sistemi in:</span></p><h4 id='ridondanza-del-primo-tipo'><span>Ridondanza del primo tipo</span></h4><p><span>I vari sottosistemi posti in parallelo </span><strong><span>operano contemporaneamente</span></strong><span>, ma il sistema funziona anche se </span><strong><span>un solo componente</span></strong><span> funziona in un dato momento.</span></p><p><span>Se consideriamo due elementi in parallelo possiamo calcolare l&#39;affidabilità del sistema nel seguente modo:</span></p><p><img src="assets/187th23-220848.png" referrerpolicy="no-referrer" alt="187th23-220848"></p><h4 id='ridondanza-del-secondo-tipo'><span>Ridondanza del secondo tipo</span></h4><p><span>In questo caso, per ogni istante di tempo, </span><strong><span>solo un singolo elemento è in funzione alla volta</span></strong><span>, mentre gli altri elementi rimangono </span><strong><span>per riserva pronti a partire</span></strong><span>.</span></p><p><span>Per calcolare l&#39;affidabilità risultante del sistema, consideriamo due elementi:</span></p><ul><li><strong><span>A</span></strong><span> - normalmente sotto carico</span></li><li><strong><span>B</span></strong><span> - interviene quando si verifica un guasto in A</span></li></ul><p><span>L&#39;affidabilità del sistema sarà data dalle probabilità che corrispondono agli eventi:</span></p><ul><li><span>A funziona al tempo t --&gt; R</span><sub><span>A</span></sub><span>(t)</span></li><li><span>A si guasta al tempo τ e B che è intervenuto al tempo τ, funziona al tempo t (con t &gt; τ)</span>
+<img src="assets/187th23-221558.png" referrerpolicy="no-referrer" alt="187th23-221558"></li></ul><p><span>Possiamo quindi mettere insieme il tutto:</span></p><p><img src="assets/187th23-221722.png" referrerpolicy="no-referrer" alt="187th23-221722"></p></div></div>
+</body>
+</html>
